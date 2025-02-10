@@ -22,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
+import com.seanpmcb.move.ui.WorkoutPreviewScreen
 
 class MainActivity : ComponentActivity() {
     private val workoutRepository = WorkoutRepository()
@@ -31,29 +32,48 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             var selectedWorkout by remember { mutableStateOf<Workout?>(null) }
+            var isPreviewMode by remember { mutableStateOf(false) }
             
             MoveTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    if (selectedWorkout != null) {
-                        BackHandler {
-                            selectedWorkout = null
+                    when {
+                        selectedWorkout != null && isPreviewMode -> {
+                            BackHandler {
+                                selectedWorkout = null
+                                isPreviewMode = false
+                            }
+                            WorkoutPreviewScreen(
+                                workout = selectedWorkout!!,
+                                onStartWorkout = { isPreviewMode = false },
+                                onBack = {
+                                    selectedWorkout = null
+                                    isPreviewMode = false
+                                }
+                            )
                         }
-                        WorkoutPlayerScreen(
-                            workout = selectedWorkout!!,
-                            onWorkoutComplete = {
+                        selectedWorkout != null -> {
+                            BackHandler {
                                 selectedWorkout = null
                             }
-                        )
-                    } else {
-                        WorkoutGroupList(
-                            groups = workoutRepository.getAllWorkoutGroups(),
-                            onWorkoutSelected = { workout ->
-                                selectedWorkout = workout
-                            }
-                        )
+                            WorkoutPlayerScreen(
+                                workout = selectedWorkout!!,
+                                onWorkoutComplete = {
+                                    selectedWorkout = null
+                                }
+                            )
+                        }
+                        else -> {
+                            WorkoutGroupList(
+                                groups = workoutRepository.getAllWorkoutGroups(),
+                                onWorkoutSelected = { workout ->
+                                    selectedWorkout = workout
+                                    isPreviewMode = true
+                                }
+                            )
+                        }
                     }
                 }
             }
