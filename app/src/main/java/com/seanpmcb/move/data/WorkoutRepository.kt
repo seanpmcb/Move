@@ -10,6 +10,60 @@ class WorkoutRepository {
     }
 
     private fun addSampleWorkoutGroups() {
+        // Add test workout
+        val testWorkout = Workout(
+            id = UUID.randomUUID().toString(),
+            name = "Quick Test",
+            description = "A short workout for testing the app",
+            exercises = buildList {
+                // Exercise 1
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Test Exercise 1",
+                    duration = 5,
+                    type = ExerciseType.WORK,
+                    instructions = "First test exercise"
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 3,
+                    type = ExerciseType.REST
+                ))
+
+                // Exercise 2
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Test Exercise 2",
+                    duration = 5,
+                    type = ExerciseType.WORK,
+                    instructions = "Second test exercise"
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 3,
+                    type = ExerciseType.REST
+                ))
+
+                // Exercise 3
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Test Exercise 3",
+                    duration = 5,
+                    type = ExerciseType.WORK,
+                    instructions = "Final test exercise"
+                ))
+            },
+            totalDuration = 21 // 3 exercises (5s each) + 2 rests (3s each)
+        )
+
+        val testGroup = WorkoutGroup(
+            id = UUID.randomUUID().toString(),
+            name = "Test",
+            workouts = listOf(testWorkout)
+        )
+
         // Morning Group with Wake Up workout
         val wakeUpWorkout = Workout(
             id = UUID.randomUUID().toString(),
@@ -397,7 +451,7 @@ class WorkoutRepository {
             workouts = listOf(quickCoreWorkout)
         )
 
-        workoutGroups.addAll(listOf(morningGroup, coreGroup))
+        workoutGroups.addAll(listOf(testGroup, morningGroup, coreGroup))
     }
 
     fun getAllWorkoutGroups(): List<WorkoutGroup> = workoutGroups.toList()

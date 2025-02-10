@@ -7,9 +7,8 @@ import android.media.ToneGenerator
 import android.media.AudioManager
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
 
 class WorkoutTimer(private val context: Context) {
     private val soundPool: SoundPool = SoundPool.Builder()
@@ -23,33 +22,78 @@ class WorkoutTimer(private val context: Context) {
         .build()
 
     private val toneGen = ToneGenerator(AudioManager.STREAM_MUSIC, 100)
+    private var isPaused = MutableStateFlow(false)
 
-    fun startExerciseTimer(exercise: Exercise): Flow<Int> = flow {
-        // Preparation countdown if it's a work exercise
-        if (exercise.type == ExerciseType.WORK) {
-            for (i in 3 downTo 1) {
-                playCountdownBeep()
-                emit(-i) // Negative numbers indicate preparation time
+    private var currentExercise: Exercise? = null
+    private var currentFlowCollector: FlowCollector<Int>? = null
+
+    fun startExerciseTimer(
+        exercise: Exercise, 
+        isFirstExercise: Boolean = false,
+        withCountdown: Boolean = false
+    ): Flow<Int> = flow {
+        currentExercise = exercise
+        currentFlowCollector = this
+
+        // Initial countdown for first exercise or restart
+        if (isFirstExercise || withCountdown) {
+            for (i in 5 downTo 1) {
+                emit(-i) // Negative numbers indicate preparation countdown
+                if (i <= 3) {
+                    playCountdownBeep()
+                }
                 delay(1000)
+                while (isPaused.value) {
+                    delay(100)
+                }
             }
-            playStartBeep()
+            playCompletionBeep()
         }
 
         // Main exercise timer
         for (i in exercise.duration downTo 1) {
             emit(i)
+            if (i <= 3) {
+                playCountdownBeep()
+            }
             delay(1000)
+            while (isPaused.value) {
+                delay(100)
+            }
         }
+        playCompletionBeep()
+        emit(0) // Emit final zero
     }
+
+    fun restartCurrentExercise(): Flow<Int>? {
+        return currentExercise?.let { startExerciseTimer(it, withCountdown = true) }
+    }
+
+    fun togglePause() {
+        isPaused.value = !isPaused.value
+    }
+
+    fun isPaused(): Flow<Boolean> = isPaused.asStateFlow()
 
     private fun playCountdownBeep() {
         // 800Hz for 100ms
         toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 100)
     }
 
-    private fun playStartBeep() {
+    private fun playCompletionBeep() {
         // 1200Hz for 200ms
         toneGen.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200)
+    }
+
+    private suspend fun playVictorySound() {
+        // Play a higher pitched, longer celebratory sound
+        toneGen.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 500)
+        delay(600)
+        toneGen.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 500)
+    }
+
+    suspend fun playWorkoutCompleteSound() {
+        playVictorySound()
     }
 
     fun release() {
