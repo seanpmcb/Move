@@ -62,7 +62,13 @@ fun WorkoutPreviewScreen(
                 Text("Back")
             }
             
-            Button(onClick = onStartWorkout) {
+            Button(
+                onClick = onStartWorkout,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.tertiary,
+                    contentColor = MaterialTheme.colorScheme.onTertiary
+                )
+            ) {
                 Text("Start Workout")
             }
         }

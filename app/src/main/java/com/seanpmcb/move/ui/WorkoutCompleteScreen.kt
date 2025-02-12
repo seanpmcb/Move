@@ -1,6 +1,7 @@
 package com.seanpmcb.move.ui
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -17,43 +18,66 @@ fun WorkoutCompleteScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .padding(32.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(
-            text = "🎉 Congratulations! 🎉",
-            style = MaterialTheme.typography.displayMedium,
-            textAlign = TextAlign.Center
-        )
+        Column(
+            modifier = Modifier.padding(32.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = "🎉 Congratulations! 🎉",
+                style = MaterialTheme.typography.displayMedium,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+            
+            Spacer(modifier = Modifier.height(24.dp))
+            
+            Text(
+                text = "You've completed",
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+            
+            Text(
+                text = workout.name,
+                style = MaterialTheme.typography.headlineLarge,
+                color = MaterialTheme.colorScheme.primary
+            )
+        }
         
-        Spacer(modifier = Modifier.height(16.dp))
-        
-        Text(
-            text = "You've completed",
-            style = MaterialTheme.typography.headlineMedium
-        )
-        
-        Text(
-            text = workout.name,
-            style = MaterialTheme.typography.headlineLarge,
-            color = MaterialTheme.colorScheme.primary
-        )
-        
-        Spacer(modifier = Modifier.height(32.dp))
-        
-        Text(
-            text = "Total Duration: ${workout.totalDuration / 60}m ${workout.totalDuration % 60}s",
-            style = MaterialTheme.typography.titleMedium
-        )
+        Surface(
+            color = MaterialTheme.colorScheme.secondaryContainer,
+            shape = MaterialTheme.shapes.medium
+        ) {
+            Text(
+                text = "Total Duration: ${workout.totalDuration / 60}m ${workout.totalDuration % 60}s",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp),
+                color = MaterialTheme.colorScheme.onSecondaryContainer
+            )
+        }
         
         Spacer(modifier = Modifier.height(48.dp))
         
-        FilledTonalButton(
+        Button(
             onClick = onDismiss,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 32.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = MaterialTheme.colorScheme.tertiary,
+                contentColor = MaterialTheme.colorScheme.onTertiary
+            ),
+            shape = MaterialTheme.shapes.medium
         ) {
-            Text("Return to Workouts")
+            Text(
+                "Return to Workouts",
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
         }
     }
 } 

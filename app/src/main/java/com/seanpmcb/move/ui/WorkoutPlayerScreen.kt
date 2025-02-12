@@ -1,6 +1,7 @@
 package com.seanpmcb.move.ui
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.background
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -97,32 +98,48 @@ fun WorkoutPlayerScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(16.dp),
+                .background(MaterialTheme.colorScheme.background)
+                .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
                 text = "${currentExerciseIndex + 1}/${workout.exercises.size}",
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(bottom = 16.dp)
+                style = MaterialTheme.typography.titleMedium.copy(
+                    color = MaterialTheme.colorScheme.primary
+                ),
+                modifier = Modifier.padding(bottom = 24.dp)
             )
 
             Text(
                 text = currentExercise.name,
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.onBackground,
+                textAlign = TextAlign.Center
             )
             
-            Spacer(modifier = Modifier.height(8.dp))
+            Spacer(modifier = Modifier.height(12.dp))
             
-            Text(
-                text = currentExercise.instructions,
-                style = MaterialTheme.typography.bodyLarge
-            )
+            Surface(
+                color = MaterialTheme.colorScheme.surfaceVariant,
+                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier.padding(vertical = 8.dp)
+            ) {
+                Text(
+                    text = currentExercise.instructions,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
             
             Spacer(modifier = Modifier.height(32.dp))
             
             Text(
                 text = if (timeRemaining < 0) "Get Ready: ${-timeRemaining}" else "$timeRemaining",
-                style = MaterialTheme.typography.displayLarge
+                style = MaterialTheme.typography.displayLarge.copy(
+                    color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary 
+                    else MaterialTheme.colorScheme.onBackground
+                )
             )
 
             Box(
@@ -130,40 +147,46 @@ fun WorkoutPlayerScreen(
                 contentAlignment = Alignment.Center
             ) {
                 if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
-                    Column(
-                        modifier = Modifier.padding(horizontal = 16.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    Surface(
+                        color = MaterialTheme.colorScheme.primaryContainer,
+                        shape = MaterialTheme.shapes.large,
+                        modifier = Modifier.padding(vertical = 16.dp)
                     ) {
-                        Text(
-                            text = "NEXT",
-                            style = MaterialTheme.typography.labelLarge,
-                            color = MaterialTheme.colorScheme.primary
-                        )
+                        Column(
+                            modifier = Modifier.padding(24.dp),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.spacedBy(16.dp)
+                        ) {
+                            Text(
+                                text = "NEXT",
+                                style = MaterialTheme.typography.labelLarge,
+                                color = MaterialTheme.colorScheme.onPrimaryContainer
+                            )
 
-                        Icon(
-                            imageVector = Icons.Default.ArrowForward,
-                            contentDescription = "Next Exercise",
-                            modifier = Modifier.size(48.dp),
-                            tint = MaterialTheme.colorScheme.primary
-                        )
+                            Icon(
+                                imageVector = Icons.Default.ArrowForward,
+                                contentDescription = "Next Exercise",
+                                modifier = Modifier.size(48.dp),
+                                tint = MaterialTheme.colorScheme.onPrimaryContainer
+                            )
 
-                        Text(
-                            text = if (currentExerciseIndex < workout.exercises.size - 1) {
-                                var nextIndex = currentExerciseIndex + 1
-                                var nextExercise = workout.exercises[nextIndex]
-                                while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
-                                    nextIndex++
-                                    nextExercise = workout.exercises[nextIndex]
-                                }
-                                if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
-                            } else {
-                                "Workout Complete"
-                            },
-                            style = MaterialTheme.typography.headlineMedium,
-                            textAlign = TextAlign.Center,
-                            color = MaterialTheme.colorScheme.primary
-                        )
+                            Text(
+                                text = if (currentExerciseIndex < workout.exercises.size - 1) {
+                                    var nextIndex = currentExerciseIndex + 1
+                                    var nextExercise = workout.exercises[nextIndex]
+                                    while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
+                                        nextIndex++
+                                        nextExercise = workout.exercises[nextIndex]
+                                    }
+                                    if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
+                                } else {
+                                    "Workout Complete"
+                                },
+                                style = MaterialTheme.typography.headlineMedium,
+                                textAlign = TextAlign.Center,
+                                color = MaterialTheme.colorScheme.onPrimaryContainer
+                            )
+                        }
                     }
                 }
             }
@@ -172,17 +195,25 @@ fun WorkoutPlayerScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 16.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
+                    .padding(vertical = 24.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 FilledTonalButton(
-                    onClick = { workoutTimer.togglePause() }
+                    onClick = { workoutTimer.togglePause() },
+                    modifier = Modifier.weight(1f),
+                    colors = ButtonDefaults.filledTonalButtonColors(
+                        containerColor = MaterialTheme.colorScheme.secondaryContainer
+                    )
                 ) {
                     Text(if (isPaused) "Resume" else "Pause")
                 }
 
                 FilledTonalButton(
-                    onClick = { restartTrigger++ }
+                    onClick = { restartTrigger++ },
+                    modifier = Modifier.weight(1f),
+                    colors = ButtonDefaults.filledTonalButtonColors(
+                        containerColor = MaterialTheme.colorScheme.secondaryContainer
+                    )
                 ) {
                     Text("Restart Exercise")
                 }
