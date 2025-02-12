@@ -47,7 +47,6 @@ class WorkoutTimer(private val context: Context) {
                     delay(100)
                 }
             }
-            playCompletionBeep()
         }
 
         // Main exercise timer
@@ -61,7 +60,6 @@ class WorkoutTimer(private val context: Context) {
                 delay(100)
             }
         }
-        playCompletionBeep()
         emit(0) // Emit final zero
     }
 
@@ -80,16 +78,9 @@ class WorkoutTimer(private val context: Context) {
         toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 100)
     }
 
-    private fun playCompletionBeep() {
-        // 1200Hz for 200ms
-        toneGen.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 200)
-    }
-
     private suspend fun playVictorySound() {
-        // Play a higher pitched, longer celebratory sound
-        toneGen.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 500)
-        delay(600)
-        toneGen.startTone(ToneGenerator.TONE_CDMA_ALERT_CALL_GUARD, 500)
+        // Single lower pitch beep instead of high-pitched double beep
+        toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 300)
     }
 
     suspend fun playWorkoutCompleteSound() {

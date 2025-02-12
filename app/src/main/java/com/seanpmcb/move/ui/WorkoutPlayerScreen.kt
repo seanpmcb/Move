@@ -6,6 +6,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
@@ -15,6 +16,9 @@ import kotlinx.coroutines.flow.collect
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.ui.text.style.TextAlign
+import android.view.WindowManager
+import android.app.Activity
 
 @Composable
 fun WorkoutPlayerScreen(
@@ -22,6 +26,7 @@ fun WorkoutPlayerScreen(
     onWorkoutComplete: () -> Unit
 ) {
     val context = LocalContext.current
+    val view = LocalView.current
     val workoutTimer = remember { WorkoutTimer(context) }
     var currentExerciseIndex by remember { mutableStateOf(0) }
     var timeRemaining by remember { mutableStateOf(0) }
@@ -32,6 +37,15 @@ fun WorkoutPlayerScreen(
     // Derive current exercise from the index
     val currentExercise by remember(currentExerciseIndex) {
         derivedStateOf { workout.exercises[currentExerciseIndex] }
+    }
+
+    // Keep screen on while workout is active
+    DisposableEffect(Unit) {
+        val window = (context as Activity).window
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        onDispose {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        }
     }
 
     suspend fun startWorkout() {
@@ -111,46 +125,29 @@ fun WorkoutPlayerScreen(
                 style = MaterialTheme.typography.displayLarge
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Control buttons row
-            Row(
-                modifier = Modifier.padding(vertical = 8.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            Box(
+                modifier = Modifier.weight(1f),
+                contentAlignment = Alignment.Center
             ) {
-                FilledTonalButton(
-                    onClick = { workoutTimer.togglePause() }
-                ) {
-                    Text(if (isPaused) "Resume" else "Pause")
-                }
-
-                FilledTonalButton(
-                    onClick = { restartTrigger++ }
-                ) {
-                    Text("Restart Exercise")
-                }
-            }
-            
-            if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
-                Spacer(modifier = Modifier.height(24.dp))
-                Surface(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp),
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    shape = MaterialTheme.shapes.medium,
-                    tonalElevation = 2.dp
-                ) {
+                if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
                     Column(
-                        modifier = Modifier.padding(16.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
                         Text(
                             text = "NEXT",
                             style = MaterialTheme.typography.labelLarge,
                             color = MaterialTheme.colorScheme.primary
                         )
-                        Spacer(modifier = Modifier.height(4.dp))
+
+                        Icon(
+                            imageVector = Icons.Default.ArrowForward,
+                            contentDescription = "Next Exercise",
+                            modifier = Modifier.size(48.dp),
+                            tint = MaterialTheme.colorScheme.primary
+                        )
+
                         Text(
                             text = if (currentExerciseIndex < workout.exercises.size - 1) {
                                 var nextIndex = currentExerciseIndex + 1
@@ -163,9 +160,31 @@ fun WorkoutPlayerScreen(
                             } else {
                                 "Workout Complete"
                             },
-                            style = MaterialTheme.typography.titleMedium
+                            style = MaterialTheme.typography.headlineMedium,
+                            textAlign = TextAlign.Center,
+                            color = MaterialTheme.colorScheme.primary
                         )
                     }
+                }
+            }
+
+            // Control buttons row
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 16.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                FilledTonalButton(
+                    onClick = { workoutTimer.togglePause() }
+                ) {
+                    Text(if (isPaused) "Resume" else "Pause")
+                }
+
+                FilledTonalButton(
+                    onClick = { restartTrigger++ }
+                ) {
+                    Text("Restart Exercise")
                 }
             }
         }
