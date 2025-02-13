@@ -7,20 +7,16 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
-import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.timer.WorkoutTimer
-import kotlinx.coroutines.flow.collect
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.ui.text.style.TextAlign
 import android.view.WindowManager
 import android.app.Activity
 import androidx.compose.foundation.Image
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
@@ -31,7 +27,6 @@ fun WorkoutPlayerScreen(
     onWorkoutComplete: () -> Unit
 ) {
     val context = LocalContext.current
-    val view = LocalView.current
     val workoutTimer = remember { WorkoutTimer(context) }
     var currentExerciseIndex by remember { mutableStateOf(0) }
     var timeRemaining by remember { mutableStateOf(0) }
@@ -130,12 +125,30 @@ fun WorkoutPlayerScreen(
                 Spacer(modifier = Modifier.height(2.dp))
                 
                 Surface(
-//                    color = MaterialTheme.colorScheme.surfaceVariant,
                     shape = MaterialTheme.shapes.medium,
                     modifier = Modifier.padding(vertical = 4.dp)
                 ) {
                     Text(
-                        text = currentExercise.instructions,
+                        text = if (currentExercise.type == ExerciseType.REST) {
+                            // Show next exercise name during rest
+                            if (currentExerciseIndex < workout.exercises.size - 1) {
+                                var nextIndex = currentExerciseIndex + 1
+                                var nextExercise = workout.exercises[nextIndex]
+                                while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
+                                    nextIndex++
+                                    nextExercise = workout.exercises[nextIndex]
+                                }
+                                if (nextExercise.type == ExerciseType.REST) {
+                                    "Workout Complete"
+                                } else {
+                                    "Next: ${nextExercise.name}"
+                                }
+                            } else {
+                                "Workout Complete"
+                            }
+                        } else {
+                            currentExercise.instructions
+                        },
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(16.dp),
@@ -195,7 +208,7 @@ fun WorkoutPlayerScreen(
             // Next exercise section (now at bottom)
             if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
                 Surface(
-                    color = MaterialTheme.colorScheme.primaryContainer,
+//                    color = MaterialTheme.colorScheme.primaryContainer,
                     shape = MaterialTheme.shapes.large,
                     modifier = Modifier
                         .fillMaxWidth()
@@ -213,7 +226,7 @@ fun WorkoutPlayerScreen(
 //                        )
 
                         Icon(
-                            imageVector = Icons.Default.ArrowForward,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
                             contentDescription = "Next Exercise",
                             modifier = Modifier.size(24.dp),
                             tint = MaterialTheme.colorScheme.onPrimaryContainer
