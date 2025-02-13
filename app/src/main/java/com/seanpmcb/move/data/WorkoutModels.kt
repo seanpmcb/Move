@@ -20,7 +20,8 @@ data class Exercise(
     val duration: Int, // in seconds
     val type: ExerciseType,
     val instructions: String = "",
-    val preparationDuration: Int = if (type == ExerciseType.WORK) 3 else 0 // 3 second countdown for work exercises
+    val preparationDuration: Int = if (type == ExerciseType.WORK) 3 else 0, // 3 second countdown for work exercises
+    val imageResId: Int? = null // Resource ID for the exercise image
 )
 
 enum class ExerciseType {

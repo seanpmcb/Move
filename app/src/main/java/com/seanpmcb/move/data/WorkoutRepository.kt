@@ -1,6 +1,7 @@
 package com.seanpmcb.move.data
 
 import java.util.UUID
+import com.seanpmcb.move.R
 
 class WorkoutRepository {
     private val workoutGroups = mutableListOf<WorkoutGroup>()
@@ -22,13 +23,15 @@ class WorkoutRepository {
                     name = "Test Exercise 1",
                     duration = 5,
                     type = ExerciseType.WORK,
-                    instructions = "First test exercise"
+                    instructions = "First test exercise",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 3,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // Exercise 2
@@ -37,13 +40,15 @@ class WorkoutRepository {
                     name = "Test Exercise 2",
                     duration = 5,
                     type = ExerciseType.WORK,
-                    instructions = "Second test exercise"
+                    instructions = "Second test exercise",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 3,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // Exercise 3
@@ -52,7 +57,8 @@ class WorkoutRepository {
                     name = "Test Exercise 3",
                     duration = 5,
                     type = ExerciseType.WORK,
-                    instructions = "Final test exercise"
+                    instructions = "Final test exercise",
+                    imageResId = null
                 ))
             },
             totalDuration = 21 // 3 exercises (5s each) + 2 rests (3s each)
@@ -76,13 +82,15 @@ class WorkoutRepository {
                     name = "Upward Salute",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Stand tall, reach arms overhead, palms facing each other"
+                    instructions = "Stand tall, reach arms overhead, palms facing each other",
+                    imageResId = R.drawable.upward_salute
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = R.drawable.toe_touch
                 ))
 
                 // Exercise 2: Toe Touch
@@ -91,13 +99,15 @@ class WorkoutRepository {
                     name = "Toe Touch",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Bend forward at hips, reaching for toes"
+                    instructions = "Bend forward at hips, reaching for toes",
+                    imageResId = R.drawable.toe_touch
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = R.drawable.lunge
                 ))
 
                 // Exercise 3: Lunge Sequence
@@ -106,27 +116,31 @@ class WorkoutRepository {
                     name = "Right Lunge",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Step right foot back into a lunge"
+                    instructions = "Step right foot back into a lunge",
+                    imageResId = R.drawable.lunge
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Switch Sides",
                     duration = 5,
                     type = ExerciseType.TRANSITION,
-                    instructions = "Switch to left side"
+                    instructions = "Switch to left side",
+                    imageResId = R.drawable.lunge
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Left Lunge",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Step left foot back into a lunge"
+                    instructions = "Step left foot back into a lunge",
+                    imageResId = R.drawable.lunge
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = R.drawable.upward_dog
                 ))
 
                 // Exercise 4: Upward Dog
@@ -135,13 +149,15 @@ class WorkoutRepository {
                     name = "Upward Dog",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Lie on stomach, push chest up, legs extended"
+                    instructions = "Lie on stomach, push chest up, legs extended",
+                    imageResId = R.drawable.upward_dog
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = R.drawable.childs_pose
                 ))
 
                 // Exercise 5: Child's Pose
@@ -150,13 +166,15 @@ class WorkoutRepository {
                     name = "Child's Pose",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Kneel and sit back on heels, extend arms forward"
+                    instructions = "Kneel and sit back on heels, extend arms forward",
+                    imageResId = R.drawable.childs_pose
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = R.drawable.downward_dog
                 ))
 
                 // Exercise 6: Downward Dog
@@ -165,13 +183,15 @@ class WorkoutRepository {
                     name = "Downward Dog",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Form an inverted V with body, hands and feet pressed into mat"
+                    instructions = "Form an inverted V with body, hands and feet pressed into mat",
+                    imageResId = R.drawable.downward_dog
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = R.drawable.wide_leg_bend
                 ))
 
                 // Exercise 7: Wide Leg Bend
@@ -180,13 +200,15 @@ class WorkoutRepository {
                     name = "Wide Leg Bend",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Stand with legs wide, fold forward at hips"
+                    instructions = "Stand with legs wide, fold forward at hips",
+                    imageResId = R.drawable.wide_leg_bend
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = R.drawable.upward_salute
                 ))
 
                 // Exercise 8: Final Upward Salute
@@ -195,7 +217,8 @@ class WorkoutRepository {
                     name = "Upward Salute",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Stand tall, reach arms overhead, palms facing each other"
+                    instructions = "Stand tall, reach arms overhead, palms facing each other",
+                    imageResId = R.drawable.upward_salute
                 ))
             },
             totalDuration = 275 // Total duration including all exercises and rest periods
@@ -218,13 +241,15 @@ class WorkoutRepository {
                     name = "Hand Plank",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Hold high plank position with straight arms and engaged core"
+                    instructions = "Hold high plank position with straight arms and engaged core",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 2. Elbow Plank
@@ -233,13 +258,15 @@ class WorkoutRepository {
                     name = "Elbow Plank",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Hold plank position on forearms with engaged core"
+                    instructions = "Hold plank position on forearms with engaged core",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 3. Elbow Pike
@@ -248,13 +275,15 @@ class WorkoutRepository {
                     name = "Elbow Pike",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "From elbow plank, pike hips up towards ceiling"
+                    instructions = "From elbow plank, pike hips up towards ceiling",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 4. Elbow Side Plank Sequence
@@ -263,27 +292,31 @@ class WorkoutRepository {
                     name = "Right Side Plank",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Hold side plank on right forearm"
+                    instructions = "Hold side plank on right forearm",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Switch Sides",
                     duration = 5,
                     type = ExerciseType.TRANSITION,
-                    instructions = "Switch to left side"
+                    instructions = "Switch to left side",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Left Side Plank",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Hold side plank on left forearm"
+                    instructions = "Hold side plank on left forearm",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 5. Reverse Plank
@@ -292,13 +325,15 @@ class WorkoutRepository {
                     name = "Reverse Plank",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Hold reverse plank position with straight arms"
+                    instructions = "Hold reverse plank position with straight arms",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 6. Reverse Plank Leg Lift Sequence
@@ -307,27 +342,31 @@ class WorkoutRepository {
                     name = "Right Leg Lift",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "In reverse plank, lift right leg"
+                    instructions = "In reverse plank, lift right leg",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Switch Sides",
                     duration = 5,
                     type = ExerciseType.TRANSITION,
-                    instructions = "Switch to left leg"
+                    instructions = "Switch to left leg",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Left Leg Lift",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "In reverse plank, lift left leg"
+                    instructions = "In reverse plank, lift left leg",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 7. Bridge
@@ -336,13 +375,15 @@ class WorkoutRepository {
                     name = "Bridge",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Lift hips into bridge position, squeeze glutes"
+                    instructions = "Lift hips into bridge position, squeeze glutes",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 8. Leg Lift
@@ -351,13 +392,15 @@ class WorkoutRepository {
                     name = "Leg Lift",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Lying on back, lift both legs to 90 degrees"
+                    instructions = "Lying on back, lift both legs to 90 degrees",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 9. Toe Touch Hold
@@ -366,13 +409,15 @@ class WorkoutRepository {
                     name = "Toe Touch Hold",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Reach for toes with legs at 90 degrees"
+                    instructions = "Reach for toes with legs at 90 degrees",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 10. Bicycle Crunch Hold Sequence
@@ -381,27 +426,31 @@ class WorkoutRepository {
                     name = "Right Bicycle Hold",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Hold bicycle crunch with right elbow to left knee"
+                    instructions = "Hold bicycle crunch with right elbow to left knee",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Switch Sides",
                     duration = 5,
                     type = ExerciseType.TRANSITION,
-                    instructions = "Switch to other side"
+                    instructions = "Switch to other side",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Left Bicycle Hold",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Hold bicycle crunch with left elbow to right knee"
+                    instructions = "Hold bicycle crunch with left elbow to right knee",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 11. Lying Side Leg Raise Sequence
@@ -410,27 +459,31 @@ class WorkoutRepository {
                     name = "Right Side Leg Raise",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Lying on right side, lift left leg"
+                    instructions = "Lying on right side, lift left leg",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Switch Sides",
                     duration = 5,
                     type = ExerciseType.TRANSITION,
-                    instructions = "Switch to other side"
+                    instructions = "Switch to other side",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Left Side Leg Raise",
                     duration = 15,
                     type = ExerciseType.WORK,
-                    instructions = "Lying on left side, lift right leg"
+                    instructions = "Lying on left side, lift right leg",
+                    imageResId = null
                 ))
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Rest",
                     duration = 5,
-                    type = ExerciseType.REST
+                    type = ExerciseType.REST,
+                    imageResId = null
                 ))
 
                 // 12. Superman
@@ -439,7 +492,8 @@ class WorkoutRepository {
                     name = "Superman",
                     duration = 30,
                     type = ExerciseType.WORK,
-                    instructions = "Lying face down, lift arms and legs off ground"
+                    instructions = "Lying face down, lift arms and legs off ground",
+                    imageResId = null
                 ))
             },
             totalDuration = 420 // Total duration including all exercises and rest periods

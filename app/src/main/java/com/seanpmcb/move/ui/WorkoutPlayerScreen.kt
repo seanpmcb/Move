@@ -20,6 +20,10 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.ui.text.style.TextAlign
 import android.view.WindowManager
 import android.app.Activity
+import androidx.compose.foundation.Image
+import androidx.compose.runtime.remember
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.layout.ContentScale
 
 @Composable
 fun WorkoutPlayerScreen(
@@ -110,83 +114,127 @@ fun WorkoutPlayerScreen(
                 modifier = Modifier.padding(bottom = 24.dp)
             )
 
-            Text(
-                text = currentExercise.name,
-                style = MaterialTheme.typography.headlineMedium,
-                color = MaterialTheme.colorScheme.onBackground,
-                textAlign = TextAlign.Center
-            )
-            
-            Spacer(modifier = Modifier.height(12.dp))
-            
-            Surface(
-                color = MaterialTheme.colorScheme.surfaceVariant,
-                shape = MaterialTheme.shapes.medium,
-                modifier = Modifier.padding(vertical = 8.dp)
+            // Center section with exercise info, image, and timer
+            Column(
+                modifier = Modifier.weight(1f),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = currentExercise.instructions,
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(16.dp)
+                    text = currentExercise.name,
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    textAlign = TextAlign.Center
+                )
+                
+                Spacer(modifier = Modifier.height(2.dp))
+                
+                Surface(
+//                    color = MaterialTheme.colorScheme.surfaceVariant,
+                    shape = MaterialTheme.shapes.medium,
+                    modifier = Modifier.padding(vertical = 4.dp)
+                ) {
+                    Text(
+                        text = currentExercise.instructions,
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(16.dp),
+                        textAlign = TextAlign.Center
+                    )
+                }
+                
+                Spacer(modifier = Modifier.height(24.dp))
+                
+                // Image section
+                currentExercise.imageResId?.let { resId ->
+                    Surface(
+                        modifier = Modifier
+                            .size(300.dp)
+                            .padding(vertical = 16.dp),
+                        shape = MaterialTheme.shapes.large,
+//                        color = MaterialTheme.colorScheme.surfaceVariant
+                    ) {
+                        Image(
+                            painter = painterResource(id = resId),
+                            contentDescription = "Exercise: ${currentExercise.name}",
+                            modifier = Modifier.fillMaxSize(),
+                            contentScale = ContentScale.Crop
+                        )
+                    }
+                } ?: Surface(
+                    modifier = Modifier
+                        .size(300.dp)
+                        .padding(vertical = 16.dp),
+                    shape = MaterialTheme.shapes.medium,
+//                    color = MaterialTheme.colorScheme.surfaceVariant
+                ) {
+                    Box(
+                        modifier = Modifier.fillMaxSize(),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "Exercise\nImage",
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                }
+                
+                Spacer(modifier = Modifier.height(24.dp))
+                
+                Text(
+                    text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
+                    style = MaterialTheme.typography.displayLarge.copy(
+                        color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary 
+                        else MaterialTheme.colorScheme.onBackground
+                    )
                 )
             }
-            
-            Spacer(modifier = Modifier.height(32.dp))
-            
-            Text(
-                text = if (timeRemaining < 0) "Get Ready: ${-timeRemaining}" else "$timeRemaining",
-                style = MaterialTheme.typography.displayLarge.copy(
-                    color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary 
-                    else MaterialTheme.colorScheme.onBackground
-                )
-            )
 
-            Box(
-                modifier = Modifier.weight(1f),
-                contentAlignment = Alignment.Center
-            ) {
-                if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
-                    Surface(
-                        color = MaterialTheme.colorScheme.primaryContainer,
-                        shape = MaterialTheme.shapes.large,
-                        modifier = Modifier.padding(vertical = 16.dp)
+            // Next exercise section (now at bottom)
+            if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
+                Surface(
+                    color = MaterialTheme.colorScheme.primaryContainer,
+                    shape = MaterialTheme.shapes.large,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 16.dp)
+                ) {
+                    Column(
+                        modifier = Modifier.padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        Column(
-                            modifier = Modifier.padding(24.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.spacedBy(16.dp)
-                        ) {
-                            Text(
-                                text = "NEXT",
-                                style = MaterialTheme.typography.labelLarge,
-                                color = MaterialTheme.colorScheme.onPrimaryContainer
-                            )
+//                        Text(
+//                            text = "NEXT",
+//                            style = MaterialTheme.typography.labelLarge,
+//                            color = MaterialTheme.colorScheme.onPrimaryContainer
+//                        )
 
-                            Icon(
-                                imageVector = Icons.Default.ArrowForward,
-                                contentDescription = "Next Exercise",
-                                modifier = Modifier.size(48.dp),
-                                tint = MaterialTheme.colorScheme.onPrimaryContainer
-                            )
+                        Icon(
+                            imageVector = Icons.Default.ArrowForward,
+                            contentDescription = "Next Exercise",
+                            modifier = Modifier.size(24.dp),
+                            tint = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
 
-                            Text(
-                                text = if (currentExerciseIndex < workout.exercises.size - 1) {
-                                    var nextIndex = currentExerciseIndex + 1
-                                    var nextExercise = workout.exercises[nextIndex]
-                                    while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
-                                        nextIndex++
-                                        nextExercise = workout.exercises[nextIndex]
-                                    }
-                                    if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
-                                } else {
-                                    "Workout Complete"
-                                },
-                                style = MaterialTheme.typography.headlineMedium,
-                                textAlign = TextAlign.Center,
-                                color = MaterialTheme.colorScheme.onPrimaryContainer
-                            )
-                        }
+                        Text(
+                            text = if (currentExerciseIndex < workout.exercises.size - 1) {
+                                var nextIndex = currentExerciseIndex + 1
+                                var nextExercise = workout.exercises[nextIndex]
+                                while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
+                                    nextIndex++
+                                    nextExercise = workout.exercises[nextIndex]
+                                }
+                                if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
+                            } else {
+                                "Workout Complete"
+                            },
+                            style = MaterialTheme.typography.titleMedium,
+                            textAlign = TextAlign.Center,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
                     }
                 }
             }
@@ -195,7 +243,7 @@ fun WorkoutPlayerScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 24.dp),
+                    .padding(top = 16.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 FilledTonalButton(
