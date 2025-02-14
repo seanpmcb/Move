@@ -68,8 +68,22 @@ fun WorkoutPlayerScreen(
     }
 
     suspend fun restartCurrentExercise() {
-        workoutTimer.restartCurrentExercise()?.collect { time ->
+        // Start the current exercise timer with a countdown
+        workoutTimer.startExerciseTimer(
+            exercise = workout.exercises[currentExerciseIndex],
+            withCountdown = true
+        ).collect { time ->
             timeRemaining = time
+            if (time == 0) {
+                // When exercise completes, continue with the rest of the workout
+                if (currentExerciseIndex < workout.exercises.size - 1) {
+                    currentExerciseIndex++
+                    startWorkout()
+                } else {
+                    workoutTimer.playWorkoutCompleteSound()
+                    isWorkoutComplete = true
+                }
+            }
         }
     }
 
