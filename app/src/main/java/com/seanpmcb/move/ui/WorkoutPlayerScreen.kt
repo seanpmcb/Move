@@ -213,8 +213,8 @@ fun WorkoutPlayerScreen(
                 Text(
                     text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
                     style = MaterialTheme.typography.displayLarge.copy(
-                        color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary 
-                        else MaterialTheme.colorScheme.onBackground
+                        color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary
+                        else MaterialTheme.colorScheme.secondary
                     )
                 )
             }
@@ -258,7 +258,7 @@ fun WorkoutPlayerScreen(
                             } else {
                                 "Workout Complete"
                             },
-                            style = MaterialTheme.typography.titleMedium,
+                            style = MaterialTheme.typography.titleLarge,
                             textAlign = TextAlign.Center,
                             color = MaterialTheme.colorScheme.onPrimaryContainer
                         )
