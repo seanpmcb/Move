@@ -224,10 +224,919 @@ class WorkoutRepository {
             totalDuration = 275 // Total duration including all exercises and rest periods
         )
 
+        // New Wake & Shake 1 workout
+        val wakeAndShakeWorkout = Workout(
+            id = UUID.randomUUID().toString(),
+            name = "Wake & Shake 1",
+            description = "A dynamic workout to wake up your body",
+            exercises = buildList {
+                // Dynamic Side Bends
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Dynamic Side Bends",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and bend side to side dynamically.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Arm Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Arm Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make small circles with your arms.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your arm circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Arm Swings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Arm Swings",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Swing your arms forward and backward.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Good Mornings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Good Mornings",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and hinge at the hips, keeping your back straight.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Trunk Twists
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Trunk Twists",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and twist your torso side to side.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Neck Roll
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Neck Roll",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Gently roll your neck in a circular motion.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Hip Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hip Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with your hips.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your hip circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Dynamic Wide Leg Bend
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Dynamic Wide Leg Bend",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand with legs wide and bend forward at the hips.",
+                    imageResId = null
+                ))
+            },
+            totalDuration = 300 // Total duration including all exercises and rest periods
+        )
+
+        // New Wake & Shake 2 workout
+        val wakeAndShake2Workout = Workout(
+            id = UUID.randomUUID().toString(),
+            name = "Wake & Shake 2",
+            description = "A dynamic workout to wake up your body",
+            exercises = buildList {
+                // Dynamic Side Bends
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Dynamic Side Bends",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and bend side to side dynamically.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Arm Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Arm Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make small circles with your arms.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your arm circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Arm Swings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Arm Swings",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Swing your arms forward and backward.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Good Mornings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Good Mornings",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and hinge at the hips, keeping your back straight.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Trunk Twists
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Trunk Twists",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and twist your torso side to side.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Neck Roll
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Neck Roll",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Gently roll your neck in a circular motion.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Hip Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hip Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with your hips.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your hip circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Hamstring Scoops
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hamstring Scoops",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Reach down towards your toes, alternating legs.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Switch Sides",
+                    duration = 5,
+                    type = ExerciseType.TRANSITION,
+                    instructions = "Switch to left side",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hamstring Scoops",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Continue with the other leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Gate Openers
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Gate Openers",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Open and close your legs like a gate.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Switch Sides",
+                    duration = 5,
+                    type = ExerciseType.TRANSITION,
+                    instructions = "Switch to left side",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Gate Openers",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Switch to the other leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Dynamic Wide Leg Forward Fold
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Dynamic Wide Leg Forward Fold",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand with legs wide and fold forward at the hips.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Wide Leg Torso Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Wide Leg Torso Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with your torso while standing wide leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your torso circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Knee Hugs
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Knee Hugs",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Hug your knees to your chest, alternating legs.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Knee Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Knee Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with your knees.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your knee circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+            },
+            totalDuration = 420 // Total duration including all exercises and rest periods
+        )
+
+        // New Wake & Shake 3 workout
+        val wakeAndShake3Workout = Workout(
+            id = UUID.randomUUID().toString(),
+            name = "Wake & Shake 3",
+            description = "A dynamic workout to wake up your body",
+            exercises = buildList {
+                // Dynamic Side Bends
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Dynamic Side Bends",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and bend side to side dynamically.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Arm Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Arm Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make small circles with your arms.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your arm circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Arm Swings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Arm Swings",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Swing your arms forward and backward.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Good Mornings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Good Mornings",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and hinge at the hips, keeping your back straight.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Trunk Twists
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Trunk Twists",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand tall and twist your torso side to side.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Shoulder Rolls
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Shoulder Rolls",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Roll your shoulders forward and then backward.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Neck Rolls
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Neck Rolls",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Gently roll your neck in a circular motion.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Hip Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hip Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with your hips.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your hip circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Hamstring Scoops
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hamstring Scoops",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Reach down towards your toes, alternating legs.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Switch Sides",
+                    duration = 5,
+                    type = ExerciseType.TRANSITION,
+                    instructions = "Switch to left side",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hamstring Scoops",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Continue with the other leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Gate Openers
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Gate Openers",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Open and close your legs like a gate.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Switch Sides",
+                    duration = 5,
+                    type = ExerciseType.TRANSITION,
+                    instructions = "Switch to left side",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Gate Openers",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Switch to the other leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Leg Swings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Leg Swings",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Swing your leg forward and backward.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Switch Sides",
+                    duration = 5,
+                    type = ExerciseType.TRANSITION,
+                    instructions = "Switch to other side",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Leg Swings",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Switch to the other leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Lateral Leg Swings
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Lateral Leg Swings",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Swing your leg side to side.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Switch Sides",
+                    duration = 5,
+                    type = ExerciseType.TRANSITION,
+                    instructions = "Switch to other side",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Lateral Leg Swings",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Switch to the other leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Dynamic Wide Leg Forward Fold
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Dynamic Wide Leg Forward Fold",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Stand with legs wide and fold forward at the hips.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Wide Leg Torso Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Wide Leg Torso Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with your torso while standing wide leg.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your torso circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Toe Touch Twist
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Toe Touch Twist",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Touch your toes while twisting your torso.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Standing Hip Openers
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Standing Hip Openers",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Open your hips while standing, alternating legs.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // High Knee Twists
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "High Knee Twists",
+                    duration = 30,
+                    type = ExerciseType.WORK,
+                    instructions = "Lift your knees high while twisting your torso.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Knee Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Knee Circles",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with your knees.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 15,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your knee circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+
+                // Ankle Circles
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Ankle Circles",
+                    duration = 10,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with one ankle.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 10,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your ankle circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Switch Sides",
+                    duration = 5,
+                    type = ExerciseType.TRANSITION,
+                    instructions = "Switch to other side",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Ankle Circles",
+                    duration = 10,
+                    type = ExerciseType.WORK,
+                    instructions = "Make circles with the other ankle.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Change Direction",
+                    duration = 10,
+                    type = ExerciseType.WORK,
+                    instructions = "Change the direction of your ankle circles.",
+                    imageResId = null
+                ))
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Rest",
+                    duration = 5,
+                    type = ExerciseType.REST,
+                    imageResId = null
+                ))
+            },
+            totalDuration = 480 // Total duration including all exercises and rest periods
+        )
+
+        // Add the new workout to the Morning group
         val morningGroup = WorkoutGroup(
             id = UUID.randomUUID().toString(),
             name = "Morning",
-            workouts = listOf(wakeUpWorkout)
+            workouts = listOf(wakeUpWorkout, wakeAndShakeWorkout, wakeAndShake2Workout, wakeAndShake3Workout) // Include the new workout
         )
 
         val quickCoreWorkout = Workout(
