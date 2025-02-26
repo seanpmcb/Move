@@ -114,7 +114,7 @@ class WorkoutRepository {
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Right Lunge",
-                    duration = 15,
+                    duration = 30,
                     type = ExerciseType.WORK,
                     instructions = "Step right foot back into a lunge",
                     imageResId = R.drawable.lunge
@@ -130,7 +130,7 @@ class WorkoutRepository {
                 add(Exercise(
                     id = UUID.randomUUID().toString(),
                     name = "Left Lunge",
-                    duration = 15,
+                    duration = 30,
                     type = ExerciseType.WORK,
                     instructions = "Step left foot back into a lunge",
                     imageResId = R.drawable.lunge
@@ -509,10 +509,10 @@ class WorkoutRepository {
     }
 
     fun getAllWorkoutGroups(): List<WorkoutGroup> = workoutGroups.toList()
-    
-    fun getWorkoutGroupById(id: String): WorkoutGroup? = workoutGroups.find { it.id == id }
-    
-    fun getWorkoutById(id: String): Workout? = workoutGroups
-        .flatMap { it.workouts }
-        .find { it.id == id }
-} 
+//
+//    fun getWorkoutGroupById(id: String): WorkoutGroup? = workoutGroups.find { it.id == id }
+//
+//    fun getWorkoutById(id: String): Workout? = workoutGroups
+//        .flatMap { it.workouts }
+//        .find { it.id == id }
+}

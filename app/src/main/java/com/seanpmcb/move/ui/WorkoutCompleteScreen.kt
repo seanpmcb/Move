@@ -28,7 +28,7 @@ fun WorkoutCompleteScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "🎉 Congratulations! 🎉",
+                text = "🎉 🎉 🎉",
                 style = MaterialTheme.typography.displayMedium,
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onPrimaryContainer
