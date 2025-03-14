@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.Workout
+import com.seanpmcb.move.data.ExerciseSet
 
 @Composable
 fun WorkoutPreviewScreen(
@@ -45,9 +46,19 @@ fun WorkoutPreviewScreen(
         LazyColumn(
             modifier = Modifier.weight(1f)
         ) {
-            items(workout.exercises) { exercise ->
-                if (exercise.type == ExerciseType.WORK) {
-                    ExercisePreviewItem(exercise = exercise)
+            workout.exerciseSets.forEachIndexed { setIndex, set ->
+                item {
+                    SetHeader(
+                        setIndex = setIndex,
+                        set = set,
+                        modifier = Modifier.padding(vertical = 8.dp)
+                    )
+                }
+                
+                items(set.exercises) { exercise ->
+                    if (exercise.type == ExerciseType.WORK) {
+                        ExercisePreviewItem(exercise = exercise)
+                    }
                 }
             }
         }
@@ -58,15 +69,19 @@ fun WorkoutPreviewScreen(
                 .padding(vertical = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            OutlinedButton(onClick = onBack) {
+            Button(
+                onClick = onBack,
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.secondary
+                )
+            ) {
                 Text("Back")
             }
             
             Button(
                 onClick = onStartWorkout,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.tertiary,
-                    contentColor = MaterialTheme.colorScheme.onTertiary
+                    containerColor = MaterialTheme.colorScheme.primary
                 )
             ) {
                 Text("Start Workout")
@@ -76,41 +91,83 @@ fun WorkoutPreviewScreen(
 }
 
 @Composable
-private fun ExercisePreviewItem(exercise: Exercise) {
+fun SetHeader(
+    setIndex: Int,
+    set: ExerciseSet,
+    modifier: Modifier = Modifier
+) {
     Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        color = MaterialTheme.colorScheme.surfaceVariant,
-        shape = MaterialTheme.shapes.small
+        color = MaterialTheme.colorScheme.primaryContainer,
+        shape = MaterialTheme.shapes.medium,
+        modifier = modifier.fillMaxWidth()
     ) {
         Column(
-            modifier = Modifier
-                .padding(12.dp)
-                .fillMaxWidth()
+            modifier = Modifier.padding(16.dp)
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
+            Text(
+                text = "Set ${setIndex + 1}",
+                style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+            
+            if (set.repetitions > 1) {
                 Text(
-                    text = exercise.name,
-                    style = MaterialTheme.typography.titleMedium
-                )
-                Text(
-                    text = "${exercise.duration}s",
-                    style = MaterialTheme.typography.bodyMedium
+                    text = "${set.repetitions} repetitions",
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }
             
-            if (exercise.instructions.isNotEmpty()) {
+            if (set.restBetweenRepetitions > 0) {
                 Text(
-                    text = exercise.instructions,
+                    text = "Rest between repetitions: ${set.restBetweenRepetitions}s",
                     style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 4.dp)
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             }
+        }
+    }
+}
+
+@Composable
+fun ExercisePreviewItem(exercise: Exercise) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
+        )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Column(
+                modifier = Modifier.weight(1f)
+            ) {
+                Text(
+                    text = exercise.name,
+                    style = MaterialTheme.typography.titleMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                
+                if (exercise.instructions.isNotEmpty()) {
+                    Text(
+                        text = exercise.instructions,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                    )
+                }
+            }
+            
+            Text(
+                text = "${exercise.duration}s",
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.primary
+            )
         }
     }
 } 

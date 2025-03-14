@@ -10,8 +10,15 @@ data class Workout(
     val id: String,
     val name: String,
     val description: String,
-    val exercises: List<Exercise>,
+    val exerciseSets: List<ExerciseSet>,
     val totalDuration: Int // in seconds
+)
+
+data class ExerciseSet(
+    val id: String,
+    val exercises: List<Exercise>,
+    val repetitions: Int = 1,
+    val restBetweenRepetitions: Int = 0 // in seconds
 )
 
 data class Exercise(
