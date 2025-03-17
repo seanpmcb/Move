@@ -12,7 +12,6 @@ import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.Workout
-import com.seanpmcb.move.data.ExerciseSet
 
 @Composable
 fun WorkoutPreviewScreen(
@@ -46,19 +45,9 @@ fun WorkoutPreviewScreen(
         LazyColumn(
             modifier = Modifier.weight(1f)
         ) {
-            workout.exerciseSets.forEachIndexed { setIndex, set ->
-                item {
-                    SetHeader(
-                        setIndex = setIndex,
-                        set = set,
-                        modifier = Modifier.padding(vertical = 8.dp)
-                    )
-                }
-                
-                items(set.exercises) { exercise ->
-                    if (exercise.type == ExerciseType.WORK) {
-                        ExercisePreviewItem(exercise = exercise)
-                    }
+            items(workout.exercises) { exercise ->
+                if (exercise.type == ExerciseType.WORK) {
+                    ExercisePreviewItem(exercise = exercise)
                 }
             }
         }
@@ -69,19 +58,15 @@ fun WorkoutPreviewScreen(
                 .padding(vertical = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Button(
-                onClick = onBack,
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.secondary
-                )
-            ) {
+            OutlinedButton(onClick = onBack) {
                 Text("Back")
             }
             
             Button(
                 onClick = onStartWorkout,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary
+                    containerColor = MaterialTheme.colorScheme.tertiary,
+                    contentColor = MaterialTheme.colorScheme.onTertiary
                 )
             ) {
                 Text("Start Workout")
@@ -91,83 +76,41 @@ fun WorkoutPreviewScreen(
 }
 
 @Composable
-fun SetHeader(
-    setIndex: Int,
-    set: ExerciseSet,
-    modifier: Modifier = Modifier
-) {
+private fun ExercisePreviewItem(exercise: Exercise) {
     Surface(
-        color = MaterialTheme.colorScheme.primaryContainer,
-        shape = MaterialTheme.shapes.medium,
-        modifier = modifier.fillMaxWidth()
-    ) {
-        Column(
-            modifier = Modifier.padding(16.dp)
-        ) {
-            Text(
-                text = "Set ${setIndex + 1}",
-                style = MaterialTheme.typography.titleLarge,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
-            )
-            
-            if (set.repetitions > 1) {
-                Text(
-                    text = "${set.repetitions} repetitions",
-                    style = MaterialTheme.typography.bodyLarge,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
-                )
-            }
-            
-            if (set.restBetweenRepetitions > 0) {
-                Text(
-                    text = "Rest between repetitions: ${set.restBetweenRepetitions}s",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onPrimaryContainer
-                )
-            }
-        }
-    }
-}
-
-@Composable
-fun ExercisePreviewItem(exercise: Exercise) {
-    Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(vertical = 4.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
-        )
+        color = MaterialTheme.colorScheme.surfaceVariant,
+        shape = MaterialTheme.shapes.small
     ) {
-        Row(
+        Column(
             modifier = Modifier
+                .padding(12.dp)
                 .fillMaxWidth()
-                .padding(16.dp),
-            verticalAlignment = Alignment.CenterVertically
         ) {
-            Column(
-                modifier = Modifier.weight(1f)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
                     text = exercise.name,
-                    style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                    style = MaterialTheme.typography.titleMedium
                 )
-                
-                if (exercise.instructions.isNotEmpty()) {
-                    Text(
-                        text = exercise.instructions,
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
-                    )
-                }
+                Text(
+                    text = "${exercise.duration}s",
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
             
-            Text(
-                text = "${exercise.duration}s",
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.primary
-            )
+            if (exercise.instructions.isNotEmpty()) {
+                Text(
+                    text = exercise.instructions,
+                    style = MaterialTheme.typography.bodyMedium,
+                    modifier = Modifier.padding(top = 4.dp)
+                )
+            }
         }
     }
 } 
