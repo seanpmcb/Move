@@ -2,6 +2,7 @@ package com.seanpmcb.move.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -9,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.ExerciseType
+import com.seanpmcb.move.data.ExerciseMeasurementType
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.timer.WorkoutTimer
 import androidx.compose.material.icons.Icons
@@ -20,6 +22,9 @@ import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.runtime.remember
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @Composable
 fun WorkoutPlayerScreen(
@@ -33,6 +38,7 @@ fun WorkoutPlayerScreen(
     val isPaused by workoutTimer.isPaused().collectAsState(initial = false)
     var restartTrigger by remember { mutableStateOf(0) }
     var isWorkoutComplete by remember { mutableStateOf(false) }
+    var manualProgressionMode by remember { mutableStateOf(false) }
 
     // Derive current exercise from the index
     val currentExercise by remember(currentExerciseIndex) {
@@ -49,40 +55,74 @@ fun WorkoutPlayerScreen(
     }
 
     suspend fun startWorkout() {
-        for (i in currentExerciseIndex until workout.exercises.size) {
+        // Starting a new exercise
+        val currentExercise = workout.exercises[currentExerciseIndex]
+        
+        // Only proceed with timer for TIME-based exercises
+        // For REPS or CUSTOM, we'll let the user progress manually
+        if (currentExercise.measurementType == ExerciseMeasurementType.TIME) {
+            manualProgressionMode = false
             workoutTimer.startExerciseTimer(
-                exercise = workout.exercises[i],
-                isFirstExercise = i == 0
+                exercise = currentExercise,
+                isFirstExercise = currentExerciseIndex == 0
             ).collect { time ->
                 timeRemaining = time
                 if (time == 0) {
-                    if (i == workout.exercises.size - 1) {
+                    // Auto progress to next exercise when timer ends
+                    if (currentExerciseIndex < workout.exercises.size - 1) {
+                        currentExerciseIndex++
+                        startWorkout()
+                    } else {
                         workoutTimer.playWorkoutCompleteSound()
                         isWorkoutComplete = true
-                    } else {
-                        currentExerciseIndex = i + 1
                     }
                 }
+            }
+        } else {
+            // For rep-based or custom exercises, just set manual mode
+            // The user will tap the Complete Exercise button
+            manualProgressionMode = true
+            workoutTimer.startExerciseTimer(
+                exercise = currentExercise,
+                isFirstExercise = currentExerciseIndex == 0
+            ).collect { time ->
+                // We just need to collect this to display the exercise
+                timeRemaining = time
             }
         }
     }
 
     suspend fun restartCurrentExercise() {
-        // Start the current exercise timer with a countdown
-        workoutTimer.startExerciseTimer(
-            exercise = workout.exercises[currentExerciseIndex],
-            withCountdown = true
-        ).collect { time ->
-            timeRemaining = time
-            if (time == 0) {
-                // When exercise completes, continue with the rest of the workout
-                if (currentExerciseIndex < workout.exercises.size - 1) {
-                    currentExerciseIndex++
-                    startWorkout()
-                } else {
-                    workoutTimer.playWorkoutCompleteSound()
-                    isWorkoutComplete = true
+        val currentExercise = workout.exercises[currentExerciseIndex]
+        
+        // Only use timer for TIME-based exercises
+        if (currentExercise.measurementType == ExerciseMeasurementType.TIME) {
+            manualProgressionMode = false
+            // Start the current exercise timer with a countdown
+            workoutTimer.startExerciseTimer(
+                exercise = currentExercise,
+                withCountdown = true
+            ).collect { time ->
+                timeRemaining = time
+                if (time == 0) {
+                    // When exercise completes, continue with the rest of the workout
+                    if (currentExerciseIndex < workout.exercises.size - 1) {
+                        currentExerciseIndex++
+                        startWorkout()
+                    } else {
+                        workoutTimer.playWorkoutCompleteSound()
+                        isWorkoutComplete = true
+                    }
                 }
+            }
+        } else {
+            // For non-timed exercises, just show them
+            manualProgressionMode = true
+            workoutTimer.startExerciseTimer(
+                exercise = currentExercise,
+                withCountdown = true
+            ).collect { time ->
+                timeRemaining = time
             }
         }
     }
@@ -94,6 +134,15 @@ fun WorkoutPlayerScreen(
         } else {
             restartCurrentExercise()
         }
+    }
+
+    // When current exercise index changes, start the next exercise
+    LaunchedEffect(currentExerciseIndex) {
+        if (restartTrigger != 0 || currentExerciseIndex == 0) return@LaunchedEffect
+        
+        // Extra precaution to ensure no multiple timers
+        workoutTimer.cancelCurrentTimer()
+        startWorkout()
     }
 
     DisposableEffect(Unit) {
@@ -180,7 +229,6 @@ fun WorkoutPlayerScreen(
                             .size(300.dp)
                             .padding(vertical = 16.dp),
                         shape = MaterialTheme.shapes.large,
-//                        color = MaterialTheme.colorScheme.surfaceVariant
                     ) {
                         Image(
                             painter = painterResource(id = resId),
@@ -194,7 +242,6 @@ fun WorkoutPlayerScreen(
                         .size(300.dp)
                         .padding(vertical = 16.dp),
                     shape = MaterialTheme.shapes.medium,
-//                    color = MaterialTheme.colorScheme.surfaceVariant
                 ) {
                     Box(
                         modifier = Modifier.fillMaxSize(),
@@ -211,35 +258,112 @@ fun WorkoutPlayerScreen(
                 
                 Spacer(modifier = Modifier.height(24.dp))
                 
-                Text(
-                    text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
-                    style = MaterialTheme.typography.displayLarge.copy(
-                        color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary
-                        else MaterialTheme.colorScheme.secondary
+                // Only show timer for time-based exercises
+                if (currentExercise.measurementType == ExerciseMeasurementType.TIME) {
+                    Text(
+                        text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
+                        style = MaterialTheme.typography.displayLarge.copy(
+                            color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary
+                            else MaterialTheme.colorScheme.secondary
+                        )
                     )
-                )
+                } else {
+                    // For rep-based exercises, show reps
+                    when (currentExercise.measurementType) {
+                        ExerciseMeasurementType.REPS -> {
+                            Text(
+                                text = "${currentExercise.repetitions} reps",
+                                style = MaterialTheme.typography.displayMedium,
+                                color = MaterialTheme.colorScheme.secondary
+                            )
+                            if (currentExercise.weight.isNotEmpty()) {
+                                Text(
+                                    text = currentExercise.weight,
+                                    style = MaterialTheme.typography.titleLarge,
+                                    color = MaterialTheme.colorScheme.secondary
+                                )
+                            }
+                        }
+                        ExerciseMeasurementType.CUSTOM -> {
+                            Text(
+                                text = currentExercise.customMeasurement,
+                                style = MaterialTheme.typography.displayMedium,
+                                color = MaterialTheme.colorScheme.secondary
+                            )
+                            if (currentExercise.weight.isNotEmpty()) {
+                                Text(
+                                    text = currentExercise.weight,
+                                    style = MaterialTheme.typography.titleLarge,
+                                    color = MaterialTheme.colorScheme.secondary
+                                )
+                            }
+                        }
+                        else -> {}
+                    }
+                    
+                    // Add "Complete" button for non-timed exercises
+                    Button(
+                        onClick = {
+                            if (currentExerciseIndex < workout.exercises.size - 1) {
+                                // Cancel the current timer to avoid having multiple timers
+                                workoutTimer.cancelCurrentTimer()
+                                
+                                // Immediately update the timeRemaining for visual feedback
+                                val nextExercise = workout.exercises[currentExerciseIndex + 1]
+                                if (nextExercise.measurementType == ExerciseMeasurementType.TIME) {
+                                    timeRemaining = nextExercise.duration
+                                }
+                                
+                                currentExerciseIndex++
+                            } else {
+                                // Launch a coroutine to play the sound
+                                CoroutineScope(Dispatchers.Main).launch {
+                                    workoutTimer.playWorkoutCompleteSound()
+                                    isWorkoutComplete = true
+                                }
+                            }
+                        },
+                        modifier = Modifier
+                            .padding(vertical = 16.dp)
+                            .fillMaxWidth(0.7f),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary
+                        )
+                    ) {
+                        Text("Complete Exercise")
+                    }
+                }
             }
 
             // Next exercise section (now at bottom)
             if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
                 Surface(
-//                    color = MaterialTheme.colorScheme.primaryContainer,
                     shape = MaterialTheme.shapes.large,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(vertical = 16.dp)
+                        .clickable {
+                            // Skip to next exercise when clicked
+                            if (currentExerciseIndex < workout.exercises.size - 1) {
+                                // Cancel the current timer to avoid having multiple timers
+                                workoutTimer.cancelCurrentTimer()
+                                
+                                // Immediately update the timeRemaining for visual feedback
+                                val nextExercise = workout.exercises[currentExerciseIndex + 1]
+                                if (nextExercise.measurementType == ExerciseMeasurementType.TIME) {
+                                    timeRemaining = nextExercise.duration
+                                }
+                                
+                                // Update exercise index which will trigger the LaunchedEffect to start the next exercise
+                                currentExerciseIndex++
+                            }
+                        },
                 ) {
                     Column(
                         modifier = Modifier.padding(16.dp),
                         horizontalAlignment = Alignment.CenterHorizontally,
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-//                        Text(
-//                            text = "NEXT",
-//                            style = MaterialTheme.typography.labelLarge,
-//                            color = MaterialTheme.colorScheme.onPrimaryContainer
-//                        )
-
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowForward,
                             contentDescription = "Next Exercise",

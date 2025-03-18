@@ -1414,7 +1414,163 @@ class WorkoutRepository {
             workouts = listOf(quickCoreWorkout)
         )
 
-        workoutGroups.addAll(listOf(testGroup, morningGroup, coreGroup))
+        // Add Strength Training group
+        val strengthTraining1 = Workout(
+            id = UUID.randomUUID().toString(),
+            name = "Strength Training 1",
+            description = "A comprehensive strength training workout focusing on major muscle groups",
+            exercises = buildList {
+                // First superset: Lateral Lunge and Dumbbell Fly
+                repeat(3) { setIndex ->
+                    // Lateral Lunge
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Lateral Lunge",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "25 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 25 lbs"
+                    ))
+                    
+                    // Dumbbell Fly
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Dumbbell Fly",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "30 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 30 lbs"
+                    ))
+                }
+
+                // Second superset: Straight Leg Dead Lift and Pull Ups
+                repeat(3) { setIndex ->
+                    // Straight Leg Dead Lift
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Straight Leg Dead Lift",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "50 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 50 lbs"
+                    ))
+                    
+                    // Pull Ups
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Pull Ups",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "65 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 65 lbs"
+                    ))
+                }
+
+                // Hip Tubing (3 rounds)
+                add(Exercise(
+                    id = UUID.randomUUID().toString(),
+                    name = "Hip Tubing",
+                    type = ExerciseType.WORK,
+                    measurementType = ExerciseMeasurementType.CUSTOM,
+                    weight = "65 lbs",
+                    customMeasurement = "3 rounds",
+                    instructions = "Complete 3 rounds at 65 lbs"
+                ))
+
+                // Third superset: Tubing Row and Calf Raise
+                repeat(3) { setIndex ->
+                    // Tubing Row
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Tubing Row",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "75 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 75 lbs"
+                    ))
+                    
+                    // Calf Raise
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Calf Raise",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "67.5 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 67.5 lbs"
+                    ))
+                }
+
+                // Fourth superset: Shoulder Press and Seated Toe Raise
+                repeat(3) { setIndex ->
+                    // Shoulder Press
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Shoulder Press",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "25 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 25 lbs"
+                    ))
+                    
+                    // Seated Toe Raise
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Seated Toe Raise",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "25 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 25 lbs"
+                    ))
+                }
+
+                // Fifth superset: Dumbbell Curl and Tricep Kickback
+                repeat(3) { setIndex ->
+                    // Dumbbell Curl
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Dumbbell Curl",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "30 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 30 lbs"
+                    ))
+                    
+                    // Tricep Kickback
+                    add(Exercise(
+                        id = UUID.randomUUID().toString(),
+                        name = "Tricep Kickback",
+                        type = ExerciseType.WORK,
+                        measurementType = ExerciseMeasurementType.REPS,
+                        repetitions = 12,
+                        weight = "35 lbs",
+                        instructions = "Set ${setIndex + 1}/3: 12 reps at 35 lbs"
+                    ))
+                }
+            },
+            totalDuration = 0  // Duration not applicable for rep-based workout
+        )
+
+        val strengthTrainingGroup = WorkoutGroup(
+            id = UUID.randomUUID().toString(),
+            name = "Strength Training",
+            workouts = listOf(strengthTraining1)
+        )
+
+        workoutGroups.addAll(listOf(
+            testGroup,
+            morningGroup,
+            coreGroup,
+            strengthTrainingGroup  // Add the new strength training group
+        ))
     }
 
     fun getAllWorkoutGroups(): List<WorkoutGroup> = workoutGroups.toList()
