@@ -22,6 +22,7 @@ fun WorkoutPreviewScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .systemBarsPadding()
             .padding(16.dp)
     ) {
         Text(
