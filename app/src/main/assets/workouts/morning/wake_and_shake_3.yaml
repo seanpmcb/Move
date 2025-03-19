@@ -1,0 +1,347 @@
+id: wake_and_shake_3
+name: Wake & Shake 3
+description: A dynamic workout to wake up your body
+totalDuration: 420
+exercises:
+  - id: dynamic_side_bends
+    name: Dynamic Side Bends
+    duration: 30
+    type: WORK
+    instructions: Stand tall and bend side to side dynamically.
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: arm_circles_1
+    name: Arm Circles
+    duration: 15
+    type: WORK
+    instructions: Make small circles with your arms.
+    imageResId: null
+
+  - id: change_direction_1
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your arm circles.
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: arm_swings
+    name: Arm Swings
+    duration: 30
+    type: WORK
+    instructions: Swing your arms forward and backward.
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: good_mornings
+    name: Good Mornings
+    duration: 30
+    type: WORK
+    instructions: Stand tall and hinge at the hips, keeping your back straight.
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: trunk_twists
+    name: Trunk Twists
+    duration: 30
+    type: WORK
+    instructions: Stand tall and twist your torso side to side.
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: shoulder_rolls
+    name: Shoulder Rolls
+    duration: 30
+    type: WORK
+    instructions: Roll your shoulders forward and then backward.
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: neck_rolls
+    name: Neck Rolls
+    duration: 30
+    type: WORK
+    instructions: Gently roll your neck in a circular motion.
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hip_circles_1
+    name: Hip Circles
+    duration: 15
+    type: WORK
+    instructions: Make circles with your hips.
+    imageResId: null
+
+  - id: change_direction_2
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your hip circles.
+    imageResId: null
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: gate_openers_1
+    name: Gate Openers
+    duration: 15
+    type: WORK
+    instructions: Open your hip while standing on one leg.
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: gate_openers_2
+    name: Gate Openers
+    duration: 15
+    type: WORK
+    instructions: Switch to the other leg.
+    imageResId: null
+
+  - id: rest_9
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: leg_swings_1
+    name: Leg Swings
+    duration: 15
+    type: WORK
+    instructions: Swing your leg forward and backward.
+    imageResId: null
+
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to other side
+    imageResId: null
+
+  - id: leg_swings_2
+    name: Leg Swings
+    duration: 15
+    type: WORK
+    instructions: Switch to the other leg.
+    imageResId: null
+
+  - id: rest_10
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: lateral_leg_swings_1
+    name: Lateral Leg Swings
+    duration: 15
+    type: WORK
+    instructions: Swing your leg side to side.
+    imageResId: null
+
+  - id: switch_sides_3
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to other side
+    imageResId: null
+
+  - id: lateral_leg_swings_2
+    name: Lateral Leg Swings
+    duration: 15
+    type: WORK
+    instructions: Switch to the other leg.
+    imageResId: null
+
+  - id: rest_11
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: dynamic_wide_leg_forward_fold
+    name: Dynamic Wide Leg Forward Fold
+    duration: 30
+    type: WORK
+    instructions: Stand with legs wide and fold forward at the hips.
+    imageResId: null
+
+  - id: rest_12
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wide_leg_torso_circles_1
+    name: Wide Leg Torso Circles
+    duration: 15
+    type: WORK
+    instructions: Make circles with your torso while standing wide leg.
+    imageResId: null
+
+  - id: change_direction_3
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your torso circles.
+    imageResId: null
+
+  - id: rest_13
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: toe_touch_twist
+    name: Toe Touch Twist
+    duration: 30
+    type: WORK
+    instructions: Touch your toes while twisting your torso.
+    imageResId: null
+
+  - id: rest_14
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: standing_hip_openers
+    name: Standing Hip Openers
+    duration: 30
+    type: WORK
+    instructions: Open your hips while standing, alternating legs.
+    imageResId: null
+
+  - id: rest_15
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: high_knee_twists
+    name: High Knee Twists
+    duration: 30
+    type: WORK
+    instructions: Lift your knees high while twisting your torso.
+    imageResId: null
+
+  - id: rest_16
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: knee_circles_1
+    name: Knee Circles
+    duration: 15
+    type: WORK
+    instructions: Make circles with your knees.
+    imageResId: null
+
+  - id: change_direction_4
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your knee circles.
+    imageResId: null
+
+  - id: rest_17
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: ankle_circles_1
+    name: Ankle Circles
+    duration: 10
+    type: WORK
+    instructions: Make circles with one ankle.
+    imageResId: null
+
+  - id: change_direction_5
+    name: Change Direction
+    duration: 10
+    type: WORK
+    instructions: Change the direction of your ankle circles.
+    imageResId: null
+
+  - id: switch_sides_4
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to other side
+    imageResId: null
+
+  - id: ankle_circles_2
+    name: Ankle Circles
+    duration: 10
+    type: WORK
+    instructions: Make circles with the other ankle.
+    imageResId: null
+
+  - id: change_direction_6
+    name: Change Direction
+    duration: 10
+    type: WORK
+    instructions: Change the direction of your ankle circles.
+    imageResId: null 

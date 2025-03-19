@@ -1,0 +1,121 @@
+id: strength_training_1
+name: Strength Training 1
+description: A comprehensive strength training workout focusing on major muscle groups
+totalDuration: 0
+exercises:
+  - id: straight_leg_dead_lift_set1
+    name: Straight Leg Dead Lift
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 50
+    instructions: "Set 1/3: 12 reps at 50 lbs"
+    imageResId: null
+
+  - id: pull_ups_set1
+    name: Pull Ups
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 65
+    instructions: "Set 1/3: 12 reps at 65 lbs"
+    imageResId: null
+
+  - id: straight_leg_dead_lift_set2
+    name: Straight Leg Dead Lift
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 50
+    instructions: "Set 2/3: 12 reps at 50 lbs"
+    imageResId: null
+
+  - id: pull_ups_set2
+    name: Pull Ups
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 65
+    instructions: "Set 2/3: 12 reps at 65 lbs"
+    imageResId: null
+
+  - id: straight_leg_dead_lift_set3
+    name: Straight Leg Dead Lift
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 50
+    instructions: "Set 3/3: 12 reps at 50 lbs"
+    imageResId: null
+
+  - id: pull_ups_set3
+    name: Pull Ups
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 65
+    instructions: "Set 3/3: 12 reps at 65 lbs"
+    imageResId: null
+
+  - id: hip_tubing
+    name: Hip Tubing
+    type: WORK
+    measurementType: CUSTOM
+    weight: 65
+    customMeasurement: "3 rounds"
+    instructions: "Complete 3 rounds at 65 lbs"
+    imageResId: null
+
+  - id: dumbbell_curl_set1
+    name: Dumbbell Curl
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 30
+    instructions: "Set 1/3: 12 reps at 30 lbs"
+    imageResId: null
+
+  - id: tricep_kickback_set1
+    name: Tricep Kickback
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 35
+    instructions: "Set 1/3: 12 reps at 35 lbs"
+    imageResId: null
+
+  - id: dumbbell_curl_set2
+    name: Dumbbell Curl
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 30
+    instructions: "Set 2/3: 12 reps at 30 lbs"
+    imageResId: null
+
+  - id: tricep_kickback_set2
+    name: Tricep Kickback
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 35
+    instructions: "Set 2/3: 12 reps at 35 lbs"
+    imageResId: null
+
+  - id: dumbbell_curl_set3
+    name: Dumbbell Curl
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 30
+    instructions: "Set 3/3: 12 reps at 30 lbs"
+    imageResId: null
+
+  - id: tricep_kickback_set3
+    name: Tricep Kickback
+    type: WORK
+    measurementType: REPS
+    repetitions: 12
+    weight: 35
+    instructions: "Set 3/3: 12 reps at 35 lbs"
+    imageResId: null 

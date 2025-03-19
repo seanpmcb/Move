@@ -1,0 +1,109 @@
+id: wake_up_workout
+name: Wake Up
+description: A gentle morning yoga flow to start your day
+totalDuration: 300
+exercises:
+  - id: upward_salute
+    name: Upward Salute
+    duration: 30
+    type: WORK
+    instructions: Stand tall, reach arms overhead, palms facing each other
+    imageResId: upward_salute
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: toe_touch
+
+  - id: toe_touch
+    name: Toe Touch
+    duration: 30
+    type: WORK
+    instructions: Bend forward at hips, reaching for toes
+    imageResId: toe_touch
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: lunge
+
+  - id: right_lunge
+    name: Right Lunge
+    duration: 30
+    type: WORK
+    instructions: Step right foot back into a lunge
+    imageResId: lunge
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: lunge
+
+  - id: left_lunge
+    name: Left Lunge
+    duration: 30
+    type: WORK
+    instructions: Step left foot back into a lunge
+    imageResId: lunge
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: upward_dog
+
+  - id: upward_dog
+    name: Upward Dog
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, push chest up, legs extended
+    imageResId: upward_dog
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: childs_pose
+
+  - id: childs_pose
+    name: Child's Pose
+    duration: 30
+    type: WORK
+    instructions: Kneel and sit back on heels, extend arms forward
+    imageResId: childs_pose
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: downward_dog
+
+  - id: downward_dog
+    name: Downward Dog
+    duration: 30
+    type: WORK
+    instructions: Form an inverted V with body, hands and feet pressed into mat
+    imageResId: downward_dog
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: wide_leg_bend
+
+  - id: wide_leg_bend
+    name: Wide Leg Bend
+    duration: 30
+    type: WORK
+    instructions: Stand with legs wide, fold forward at hips
+    imageResId: wide_leg_bend 

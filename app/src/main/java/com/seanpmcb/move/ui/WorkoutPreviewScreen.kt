@@ -11,7 +11,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
-import com.seanpmcb.move.data.ExerciseMeasurementType
+import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.Workout
 
 // Helper class for workout preview to represent a set of exercises
@@ -37,7 +37,7 @@ private fun groupExercisesIntoSets(exercises: List<Exercise>): List<ExerciseSet>
         
         val currentExercise = workExercises[i]
         val setRegex = "Set (\\d+)/(\\d+):".toRegex()
-        val matchResult = setRegex.find(currentExercise.instructions)
+        val matchResult = currentExercise.instructions?.let { setRegex.find(it) }
         
         if (matchResult != null) {
             // This is part of a set
@@ -53,7 +53,7 @@ private fun groupExercisesIntoSets(exercises: List<Exercise>): List<ExerciseSet>
             var j = i + 1
             while (j < workExercises.size) {
                 val nextExercise = workExercises[j]
-                val nextMatchResult = setRegex.find(nextExercise.instructions)
+                val nextMatchResult = nextExercise.instructions?.let { setRegex.find(it) }
                 
                 if (nextMatchResult != null && 
                     nextMatchResult.groupValues[1].toInt() == setNumber && 
@@ -228,34 +228,31 @@ private fun ExerciseSetPreviewItem(exerciseSet: ExerciseSet) {
                     )
                     
                     when (exercise.measurementType) {
-                        ExerciseMeasurementType.TIME -> {
-                            Text(
-                                text = "${exercise.duration}s",
-                                style = MaterialTheme.typography.bodyMedium
-                            )
+                        null -> {
+                            exercise.duration?.let { duration ->
+                                Text(
+                                    text = "${duration}s",
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                            }
                         }
-                        ExerciseMeasurementType.REPS -> {
-                            Text(
-                                text = "${exercise.repetitions} reps",
-                                style = MaterialTheme.typography.bodyMedium
-                            )
+                        MeasurementType.REPS -> {
+                            exercise.repetitions?.let { reps ->
+                                Text(
+                                    text = "$reps reps${exercise.weight?.let { " at $it" } ?: ""}",
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                            }
                         }
-                        ExerciseMeasurementType.CUSTOM -> {
-                            Text(
-                                text = exercise.customMeasurement,
-                                style = MaterialTheme.typography.bodyMedium
-                            )
+                        MeasurementType.CUSTOM -> {
+                            exercise.customMeasurement?.let { measurement ->
+                                Text(
+                                    text = measurement + (exercise.weight?.let { " at $it" } ?: ""),
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                            }
                         }
                     }
-                }
-                
-                // Show weight if applicable
-                if (exercise.weight.isNotEmpty()) {
-                    Text(
-                        text = "Weight: ${exercise.weight}",
-                        style = MaterialTheme.typography.bodySmall,
-                        modifier = Modifier.padding(start = 16.dp)
-                    )
                 }
             }
         }
@@ -271,59 +268,43 @@ private fun StandaloneExercisePreviewItem(exercise: Exercise) {
         color = MaterialTheme.colorScheme.surfaceVariant,
         shape = MaterialTheme.shapes.small
     ) {
-        Column(
+        Row(
             modifier = Modifier
                 .padding(12.dp)
-                .fillMaxWidth()
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = exercise.name,
-                    style = MaterialTheme.typography.titleMedium
-                )
-                
-                when (exercise.measurementType) {
-                    ExerciseMeasurementType.TIME -> {
+            Text(
+                text = exercise.name,
+                style = MaterialTheme.typography.bodyMedium
+            )
+            
+            when (exercise.measurementType) {
+                null -> {
+                    exercise.duration?.let { duration ->
                         Text(
-                            text = "${exercise.duration}s",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
-                    }
-                    ExerciseMeasurementType.REPS -> {
-                        Text(
-                            text = "${exercise.repetitions} reps",
-                            style = MaterialTheme.typography.bodyMedium
-                        )
-                    }
-                    ExerciseMeasurementType.CUSTOM -> {
-                        Text(
-                            text = exercise.customMeasurement,
+                            text = "${duration}s",
                             style = MaterialTheme.typography.bodyMedium
                         )
                     }
                 }
-            }
-            
-            // Show weight if applicable
-            if (exercise.weight.isNotEmpty()) {
-                Text(
-                    text = "Weight: ${exercise.weight}",
-                    style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.padding(top = 4.dp)
-                )
-            }
-            
-            // Show instructions if available
-            if (exercise.instructions.isNotEmpty() && !exercise.instructions.contains("Set")) {
-                Text(
-                    text = exercise.instructions,
-                    style = MaterialTheme.typography.bodyMedium,
-                    modifier = Modifier.padding(top = 4.dp)
-                )
+                MeasurementType.REPS -> {
+                    exercise.repetitions?.let { reps ->
+                        Text(
+                            text = "$reps reps${exercise.weight?.let { " at $it" } ?: ""}",
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
+                }
+                MeasurementType.CUSTOM -> {
+                    exercise.customMeasurement?.let { measurement ->
+                        Text(
+                            text = measurement + (exercise.weight?.let { " at $it" } ?: ""),
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
+                }
             }
         }
     }

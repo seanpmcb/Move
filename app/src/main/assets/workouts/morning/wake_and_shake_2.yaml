@@ -1,0 +1,193 @@
+id: wake_and_shake_2
+name: Wake & Shake 2
+description: A dynamic workout to wake up your body
+totalDuration: 420
+exercises:
+  - id: dynamic_side_bends
+    name: Dynamic Side Bends
+    duration: 30
+    type: WORK
+    instructions: Stand tall and bend side to side dynamically.
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: arm_circles_1
+    name: Arm Circles
+    duration: 15
+    type: WORK
+    instructions: Make small circles with your arms.
+    imageResId: null
+
+  - id: change_direction_1
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your arm circles.
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: arm_swings
+    name: Arm Swings
+    duration: 30
+    type: WORK
+    instructions: Swing your arms forward and backward.
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: good_mornings
+    name: Good Mornings
+    duration: 30
+    type: WORK
+    instructions: Stand tall and hinge at the hips, keeping your back straight.
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: trunk_twists
+    name: Trunk Twists
+    duration: 30
+    type: WORK
+    instructions: Stand tall and twist your torso side to side.
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: neck_roll
+    name: Neck Roll
+    duration: 30
+    type: WORK
+    instructions: Gently roll your neck in a circular motion.
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hip_circles_1
+    name: Hip Circles
+    duration: 15
+    type: WORK
+    instructions: Make circles with your hips.
+    imageResId: null
+
+  - id: change_direction_2
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your hip circles.
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hamstring_scoops
+    name: Hamstring Scoops
+    duration: 15
+    type: WORK
+    instructions: Reach down towards your toes, alternating legs.
+    imageResId: null
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: dynamic_wide_leg_forward_fold
+    name: Dynamic Wide Leg Forward Fold
+    duration: 30
+    type: WORK
+    instructions: Stand with legs wide and fold forward at the hips.
+    imageResId: null
+
+  - id: rest_9
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wide_leg_torso_circles_1
+    name: Wide Leg Torso Circles
+    duration: 15
+    type: WORK
+    instructions: Make circles with your torso while standing wide leg.
+    imageResId: null
+
+  - id: change_direction_3
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your torso circles.
+    imageResId: null
+
+  - id: rest_10
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: knee_hugs
+    name: Knee Hugs
+    duration: 30
+    type: WORK
+    instructions: Hug your knees to your chest, alternating legs.
+    imageResId: null
+
+  - id: rest_11
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: knee_circles_1
+    name: Knee Circles
+    duration: 15
+    type: WORK
+    instructions: Make circles with your knees.
+    imageResId: null
+
+  - id: change_direction_4
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your knee circles.
+    imageResId: null 

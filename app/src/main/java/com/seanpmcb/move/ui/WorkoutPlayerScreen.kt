@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.ExerciseType
-import com.seanpmcb.move.data.ExerciseMeasurementType
+import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.timer.WorkoutTimer
 import androidx.compose.material.icons.Icons
@@ -60,7 +60,7 @@ fun WorkoutPlayerScreen(
         
         // Only proceed with timer for TIME-based exercises
         // For REPS or CUSTOM, we'll let the user progress manually
-        if (currentExercise.measurementType == ExerciseMeasurementType.TIME) {
+        if (currentExercise.measurementType == null) {
             manualProgressionMode = false
             workoutTimer.startExerciseTimer(
                 exercise = currentExercise,
@@ -75,6 +75,7 @@ fun WorkoutPlayerScreen(
                     } else {
                         workoutTimer.playWorkoutCompleteSound()
                         isWorkoutComplete = true
+                        onWorkoutComplete()
                     }
                 }
             }
@@ -96,7 +97,7 @@ fun WorkoutPlayerScreen(
         val currentExercise = workout.exercises[currentExerciseIndex]
         
         // Only use timer for TIME-based exercises
-        if (currentExercise.measurementType == ExerciseMeasurementType.TIME) {
+        if (currentExercise.measurementType == null) {
             manualProgressionMode = false
             // Start the current exercise timer with a countdown
             workoutTimer.startExerciseTimer(
@@ -112,6 +113,7 @@ fun WorkoutPlayerScreen(
                     } else {
                         workoutTimer.playWorkoutCompleteSound()
                         isWorkoutComplete = true
+                        onWorkoutComplete()
                     }
                 }
             }
@@ -217,7 +219,7 @@ fun WorkoutPlayerScreen(
                                     "Workout Complete"
                                 }
                             } else {
-                                currentExercise.instructions
+                                currentExercise.instructions ?: "No instructions available"
                             },
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
@@ -230,18 +232,40 @@ fun WorkoutPlayerScreen(
                 
                 // Image section
                 currentExercise.imageResId?.let { resId ->
-                    Surface(
-                        modifier = Modifier
-                            .size(300.dp)
-                            .padding(vertical = 8.dp),
-                        shape = MaterialTheme.shapes.medium,
-                    ) {
-                        Image(
-                            painter = painterResource(id = resId),
-                            contentDescription = "Exercise: ${currentExercise.name}",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.Crop
-                        )
+                    val resourceId = context.resources.getIdentifier(resId, "drawable", context.packageName)
+                    if (resourceId != 0) {
+                        Surface(
+                            modifier = Modifier
+                                .size(300.dp)
+                                .padding(vertical = 8.dp),
+                            shape = MaterialTheme.shapes.medium,
+                        ) {
+                            Image(
+                                painter = painterResource(id = resourceId),
+                                contentDescription = "Exercise: ${currentExercise.name}",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.Crop
+                            )
+                        }
+                    } else {
+                        Surface(
+                            modifier = Modifier
+                                .size(300.dp)
+                                .padding(vertical = 8.dp),
+                            shape = MaterialTheme.shapes.medium,
+                        ) {
+                            Box(
+                                modifier = Modifier.fillMaxSize(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = "Exercise\nImage",
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    textAlign = TextAlign.Center
+                                )
+                            }
+                        }
                     }
                 } ?: Surface(
                     modifier = Modifier
@@ -263,7 +287,7 @@ fun WorkoutPlayerScreen(
                 }
                 
                 // Only show timer for time-based exercises
-                if (currentExercise.measurementType == ExerciseMeasurementType.TIME) {
+                if (currentExercise.measurementType == null) {
                     Text(
                         text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
                         style = MaterialTheme.typography.displayLarge.copy(
@@ -274,35 +298,35 @@ fun WorkoutPlayerScreen(
                 } else {
                     // For rep-based exercises, show reps
                     when (currentExercise.measurementType) {
-                        ExerciseMeasurementType.REPS -> {
+                        MeasurementType.REPS -> {
                             Text(
                                 text = "${currentExercise.repetitions} reps",
                                 style = MaterialTheme.typography.displayMedium,
                                 color = MaterialTheme.colorScheme.secondary
                             )
-                            if (currentExercise.weight.isNotEmpty()) {
+                            if (currentExercise.weight != null) {
                                 Text(
-                                    text = currentExercise.weight,
+                                    text = currentExercise.weight.toString(),
                                     style = MaterialTheme.typography.titleLarge,
                                     color = MaterialTheme.colorScheme.secondary
                                 )
                             }
                         }
-                        ExerciseMeasurementType.CUSTOM -> {
+                        MeasurementType.CUSTOM -> {
                             Text(
-                                text = currentExercise.customMeasurement,
+                                text = currentExercise.customMeasurement ?: "",
                                 style = MaterialTheme.typography.displayMedium,
                                 color = MaterialTheme.colorScheme.secondary
                             )
-                            if (currentExercise.weight.isNotEmpty()) {
+                            if (currentExercise.weight != null) {
                                 Text(
-                                    text = currentExercise.weight,
+                                    text = currentExercise.weight.toString(),
                                     style = MaterialTheme.typography.titleLarge,
                                     color = MaterialTheme.colorScheme.secondary
                                 )
                             }
                         }
-                        else -> {}
+                        null -> {}
                     }
                     
                     // Add "Complete" button for non-timed exercises
@@ -314,16 +338,21 @@ fun WorkoutPlayerScreen(
                                 
                                 // Immediately update the timeRemaining for visual feedback
                                 val nextExercise = workout.exercises[currentExerciseIndex + 1]
-                                if (nextExercise.measurementType == ExerciseMeasurementType.TIME) {
-                                    timeRemaining = nextExercise.duration
+                                if (nextExercise.measurementType == null) {
+                                    nextExercise.duration?.let { duration ->
+                                        timeRemaining = duration
+                                    }
                                 }
                                 
                                 currentExerciseIndex++
                             } else {
-                                // Launch a coroutine to play the sound
+                                // Cancel any existing timer
+                                workoutTimer.cancelCurrentTimer()
+                                // Launch a coroutine to play the sound and complete the workout
                                 CoroutineScope(Dispatchers.Main).launch {
                                     workoutTimer.playWorkoutCompleteSound()
                                     isWorkoutComplete = true
+                                    onWorkoutComplete()
                                 }
                             }
                         },
@@ -334,7 +363,7 @@ fun WorkoutPlayerScreen(
                             containerColor = MaterialTheme.colorScheme.primary
                         )
                     ) {
-                        Text("Complete Exercise")
+                        Text(if (currentExerciseIndex == workout.exercises.size - 1) "Complete Workout" else "Complete Exercise")
                     }
                 }
             }
@@ -354,8 +383,10 @@ fun WorkoutPlayerScreen(
                                 
                                 // Immediately update the timeRemaining for visual feedback
                                 val nextExercise = workout.exercises[currentExerciseIndex + 1]
-                                if (nextExercise.measurementType == ExerciseMeasurementType.TIME) {
-                                    timeRemaining = nextExercise.duration
+                                if (nextExercise.measurementType == null) {
+                                    nextExercise.duration?.let { duration ->
+                                        timeRemaining = duration
+                                    }
                                 }
                                 
                                 // Update exercise index which will trigger the LaunchedEffect to start the next exercise

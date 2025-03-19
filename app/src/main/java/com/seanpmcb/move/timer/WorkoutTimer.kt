@@ -7,7 +7,7 @@ import android.media.ToneGenerator
 import android.media.AudioManager
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
-import com.seanpmcb.move.data.ExerciseMeasurementType
+import com.seanpmcb.move.data.MeasurementType
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
@@ -49,7 +49,7 @@ class WorkoutTimer(private val context: Context) {
         currentTimerJob = currentCoroutineContext()[Job]
 
         // For TIME-based exercises, use the timer
-        if (exercise.measurementType == ExerciseMeasurementType.TIME) {
+        if (exercise.measurementType == null) {
             // Initial countdown for first exercise or restart
             if (isFirstExercise || withCountdown) {
                 for (i in 5 downTo 1) {
@@ -65,7 +65,7 @@ class WorkoutTimer(private val context: Context) {
             }
 
             // Main exercise timer
-            for (i in exercise.duration downTo 1) {
+            for (i in exercise.duration!! downTo 1) {
                 emit(i)
                 if (i <= 3) {
                     playCountdownBeep()

@@ -1,0 +1,36 @@
+groups:
+  - id: morning_group
+    name: Morning
+    workouts:
+      - id: wake_up_workout
+        name: Wake Up
+        description: A gentle morning yoga flow to start your day
+        file: morning/wake_up.yaml
+      - id: wake_and_shake_1
+        name: Wake & Shake 1
+        description: A dynamic workout to wake up your body
+        file: morning/wake_and_shake_1.yaml
+      - id: wake_and_shake_2
+        name: Wake & Shake 2
+        description: A dynamic workout to wake up your body
+        file: morning/wake_and_shake_2.yaml
+      - id: wake_and_shake_3
+        name: Wake & Shake 3
+        description: A dynamic workout to wake up your body
+        file: morning/wake_and_shake_3.yaml
+
+  - id: core_group
+    name: Core
+    workouts:
+      - id: quick_core
+        name: Quick Core
+        description: A quick core workout focusing on plank variations
+        file: core/quick_core.yaml
+
+  - id: strength_group
+    name: Strength Training
+    workouts:
+      - id: strength_training_1
+        name: Strength Training 1
+        description: A comprehensive strength training workout focusing on major muscle groups
+        file: strength/strength_training_1.yaml 

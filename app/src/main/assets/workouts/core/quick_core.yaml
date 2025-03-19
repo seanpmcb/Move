@@ -1,0 +1,95 @@
+id: quick_core
+name: Quick Core
+description: A quick core workout focusing on plank variations
+totalDuration: 420
+exercises:
+  - id: hand_plank
+    name: Hand Plank
+    duration: 30
+    type: WORK
+    instructions: Hold high plank position with straight arms and engaged core
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: elbow_plank
+    name: Elbow Plank
+    duration: 30
+    type: WORK
+    instructions: Hold plank position on forearms with engaged core
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: elbow_pike
+    name: Elbow Pike
+    duration: 30
+    type: WORK
+    instructions: From elbow plank, pike hips up towards ceiling
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: right_side_plank
+    name: Right Side Plank
+    duration: 15
+    type: WORK
+    instructions: Hold side plank on right forearm
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: left_side_plank
+    name: Left Side Plank
+    duration: 15
+    type: WORK
+    instructions: Hold side plank on left forearm
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: reverse_plank
+    name: Reverse Plank
+    duration: 30
+    type: WORK
+    instructions: Hold reverse plank position with straight arms
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: superman
+    name: Superman
+    duration: 30
+    type: WORK
+    instructions: Lying face down, lift arms and legs off ground
+    imageResId: null 

@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.data.WorkoutGroup
-import com.seanpmcb.move.data.WorkoutRepository
+import com.seanpmcb.move.data.WorkoutReference
 import com.seanpmcb.move.ui.theme.MoveTheme
 import com.seanpmcb.move.ui.WorkoutPlayerScreen
 import androidx.compose.runtime.remember
@@ -23,16 +23,27 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import com.seanpmcb.move.ui.WorkoutPreviewScreen
+import com.seanpmcb.move.ui.workout.WorkoutViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 class MainActivity : ComponentActivity() {
-    private val workoutRepository = WorkoutRepository()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            var selectedWorkout by remember { mutableStateOf<Workout?>(null) }
             var isPreviewMode by remember { mutableStateOf(false) }
+            val viewModel: WorkoutViewModel = viewModel()
+            
+            // Initialize the ViewModel with the context
+            LaunchedEffect(Unit) {
+                viewModel.initialize(this@MainActivity)
+            }
+            
+            // Collect state from ViewModel
+            val workoutGroups by viewModel.workoutGroups.collectAsState()
+            val selectedWorkout by viewModel.selectedWorkout.collectAsState()
+            val isLoading by viewModel.isLoading.collectAsState()
+            val error by viewModel.error.collectAsState()
             
             MoveTheme {
                 Surface(
@@ -42,36 +53,56 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     when {
+                        isLoading -> {
+                            Box(
+                                modifier = Modifier.fillMaxSize(),
+                                contentAlignment = androidx.compose.ui.Alignment.Center
+                            ) {
+                                CircularProgressIndicator()
+                            }
+                        }
+                        error != null -> {
+                            Box(
+                                modifier = Modifier.fillMaxSize(),
+                                contentAlignment = androidx.compose.ui.Alignment.Center
+                            ) {
+                                Text(
+                                    text = error!!,
+                                    style = MaterialTheme.typography.bodyLarge,
+                                    color = MaterialTheme.colorScheme.error
+                                )
+                            }
+                        }
                         selectedWorkout != null && isPreviewMode -> {
                             BackHandler {
-                                selectedWorkout = null
+                                viewModel.clearSelectedWorkout()
                                 isPreviewMode = false
                             }
                             WorkoutPreviewScreen(
                                 workout = selectedWorkout!!,
                                 onStartWorkout = { isPreviewMode = false },
                                 onBack = {
-                                    selectedWorkout = null
+                                    viewModel.clearSelectedWorkout()
                                     isPreviewMode = false
                                 }
                             )
                         }
                         selectedWorkout != null -> {
                             BackHandler {
-                                selectedWorkout = null
+                                viewModel.clearSelectedWorkout()
                             }
                             WorkoutPlayerScreen(
                                 workout = selectedWorkout!!,
                                 onWorkoutComplete = {
-                                    selectedWorkout = null
+                                    viewModel.clearSelectedWorkout()
                                 }
                             )
                         }
                         else -> {
                             WorkoutGroupList(
-                                groups = workoutRepository.getAllWorkoutGroups(),
+                                groups = workoutGroups,
                                 onWorkoutSelected = { workout ->
-                                    selectedWorkout = workout
+                                    viewModel.loadWorkout(workout.id)
                                     isPreviewMode = true
                                 }
                             )
@@ -86,7 +117,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun WorkoutGroupList(
     groups: List<WorkoutGroup>,
-    onWorkoutSelected: (Workout) -> Unit
+    onWorkoutSelected: (WorkoutReference) -> Unit
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
@@ -104,7 +135,7 @@ fun WorkoutGroupList(
 @Composable
 fun WorkoutGroupCard(
     group: WorkoutGroup,
-    onWorkoutSelected: (Workout) -> Unit
+    onWorkoutSelected: (WorkoutReference) -> Unit
 ) {
     Card(
         modifier = Modifier
@@ -135,8 +166,8 @@ fun WorkoutGroupCard(
 
 @Composable
 fun WorkoutItem(
-    workout: Workout,
-    onWorkoutSelected: (Workout) -> Unit
+    workout: WorkoutReference,
+    onWorkoutSelected: (WorkoutReference) -> Unit
 ) {
     Surface(
         modifier = Modifier
@@ -157,10 +188,6 @@ fun WorkoutItem(
             Text(
                 text = workout.description,
                 style = MaterialTheme.typography.bodyMedium
-            )
-            Text(
-                text = "Duration: ${workout.totalDuration / 60}m ${workout.totalDuration % 60}s",
-                style = MaterialTheme.typography.bodySmall
             )
         }
     }
