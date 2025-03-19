@@ -352,7 +352,6 @@ fun WorkoutPlayerScreen(
                                 CoroutineScope(Dispatchers.Main).launch {
                                     workoutTimer.playWorkoutCompleteSound()
                                     isWorkoutComplete = true
-                                    onWorkoutComplete()
                                 }
                             }
                         },
@@ -391,6 +390,14 @@ fun WorkoutPlayerScreen(
                                 
                                 // Update exercise index which will trigger the LaunchedEffect to start the next exercise
                                 currentExerciseIndex++
+                            } else {
+                                // Cancel any existing timer
+                                workoutTimer.cancelCurrentTimer()
+                                // Launch a coroutine to play the sound and complete the workout
+                                CoroutineScope(Dispatchers.Main).launch {
+                                    workoutTimer.playWorkoutCompleteSound()
+                                    isWorkoutComplete = true
+                                }
                             }
                         },
                 ) {
