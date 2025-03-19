@@ -33,10 +33,10 @@ fun WorkoutPlayerScreen(
 ) {
     val context = LocalContext.current
     val workoutTimer = remember { WorkoutTimer(context) }
-    var currentExerciseIndex by remember { mutableStateOf(0) }
-    var timeRemaining by remember { mutableStateOf(0) }
+    var currentExerciseIndex by remember { mutableIntStateOf(0) }
+    var timeRemaining by remember { mutableIntStateOf(0) }
     val isPaused by workoutTimer.isPaused().collectAsState(initial = false)
-    var restartTrigger by remember { mutableStateOf(0) }
+    var restartTrigger by remember { mutableIntStateOf(0) }
     var isWorkoutComplete by remember { mutableStateOf(false) }
     var manualProgressionMode by remember { mutableStateOf(false) }
 
@@ -227,8 +227,6 @@ fun WorkoutPlayerScreen(
                         )
                     }
                 }
-                
-                Spacer(modifier = Modifier.height(24.dp))
                 
                 // Image section
                 currentExercise.imageResId?.let { resId ->
