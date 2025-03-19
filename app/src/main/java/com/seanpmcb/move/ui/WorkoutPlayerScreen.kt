@@ -186,38 +186,44 @@ fun WorkoutPlayerScreen(
                     textAlign = TextAlign.Center
                 )
                 
-                Spacer(modifier = Modifier.height(2.dp))
-                
                 Surface(
                     shape = MaterialTheme.shapes.medium,
-                    modifier = Modifier.padding(vertical = 4.dp)
+                    modifier = Modifier
+                        .height(120.dp)
+                        .padding(vertical = 4.dp)
                 ) {
-                    Text(
-                        text = if (currentExercise.type == ExerciseType.REST) {
-                            // Show next exercise name during rest
-                            if (currentExerciseIndex < workout.exercises.size - 1) {
-                                var nextIndex = currentExerciseIndex + 1
-                                var nextExercise = workout.exercises[nextIndex]
-                                while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
-                                    nextIndex++
-                                    nextExercise = workout.exercises[nextIndex]
-                                }
-                                if (nextExercise.type == ExerciseType.REST) {
-                                    "Workout Complete"
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(16.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = if (currentExercise.type == ExerciseType.REST) {
+                                // Show next exercise name during rest
+                                if (currentExerciseIndex < workout.exercises.size - 1) {
+                                    var nextIndex = currentExerciseIndex + 1
+                                    var nextExercise = workout.exercises[nextIndex]
+                                    while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
+                                        nextIndex++
+                                        nextExercise = workout.exercises[nextIndex]
+                                    }
+                                    if (nextExercise.type == ExerciseType.REST) {
+                                        "Workout Complete"
+                                    } else {
+                                        "Next: ${nextExercise.name}"
+                                    }
                                 } else {
-                                    "Next: ${nextExercise.name}"
+                                    "Workout Complete"
                                 }
                             } else {
-                                "Workout Complete"
-                            }
-                        } else {
-                            currentExercise.instructions
-                        },
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(16.dp),
-                        textAlign = TextAlign.Center
-                    )
+                                currentExercise.instructions
+                            },
+                            style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            textAlign = TextAlign.Center
+                        )
+                    }
                 }
                 
                 Spacer(modifier = Modifier.height(24.dp))
@@ -227,8 +233,8 @@ fun WorkoutPlayerScreen(
                     Surface(
                         modifier = Modifier
                             .size(300.dp)
-                            .padding(vertical = 16.dp),
-                        shape = MaterialTheme.shapes.large,
+                            .padding(vertical = 8.dp),
+                        shape = MaterialTheme.shapes.medium,
                     ) {
                         Image(
                             painter = painterResource(id = resId),
@@ -240,7 +246,7 @@ fun WorkoutPlayerScreen(
                 } ?: Surface(
                     modifier = Modifier
                         .size(300.dp)
-                        .padding(vertical = 16.dp),
+                        .padding(vertical = 8.dp),
                     shape = MaterialTheme.shapes.medium,
                 ) {
                     Box(
@@ -255,8 +261,6 @@ fun WorkoutPlayerScreen(
                         )
                     }
                 }
-                
-                Spacer(modifier = Modifier.height(24.dp))
                 
                 // Only show timer for time-based exercises
                 if (currentExercise.measurementType == ExerciseMeasurementType.TIME) {
@@ -324,7 +328,7 @@ fun WorkoutPlayerScreen(
                             }
                         },
                         modifier = Modifier
-                            .padding(vertical = 16.dp)
+                            .padding(vertical = 8.dp)
                             .fillMaxWidth(0.7f),
                         colors = ButtonDefaults.buttonColors(
                             containerColor = MaterialTheme.colorScheme.primary
@@ -341,7 +345,7 @@ fun WorkoutPlayerScreen(
                     shape = MaterialTheme.shapes.large,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 16.dp)
+                        .padding(vertical = 8.dp)
                         .clickable {
                             // Skip to next exercise when clicked
                             if (currentExerciseIndex < workout.exercises.size - 1) {
