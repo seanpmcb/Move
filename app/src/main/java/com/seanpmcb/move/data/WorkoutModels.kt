@@ -40,7 +40,7 @@ data class Exercise(
     val type: ExerciseType = ExerciseType.WORK,
     val measurementType: MeasurementType? = null,
     val repetitions: Int? = null,
-    val weight: Int? = null,
+    var weight: Int? = null,
     val customMeasurement: String? = null,
     val instructions: String? = null,
     val imageResId: String? = null

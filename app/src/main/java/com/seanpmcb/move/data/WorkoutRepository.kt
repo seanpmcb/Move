@@ -25,4 +25,15 @@ class WorkoutRepository(private val context: Context) {
             emit(null)
         }
     }
+
+    suspend fun updateExerciseWeight(workoutId: String, exerciseIndex: Int, newWeight: Int) {
+        val groups = yamlParser.loadWorkoutGroups()
+        val workoutReference = groups
+            .flatMap { it.workouts }
+            .find { it.id == workoutId }
+
+        workoutReference?.let { ref ->
+            yamlParser.updateExerciseWeight(ref.file, exerciseIndex, newWeight)
+        }
+    }
 }

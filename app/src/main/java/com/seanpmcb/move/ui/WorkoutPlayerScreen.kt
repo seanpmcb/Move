@@ -14,14 +14,16 @@ import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.timer.WorkoutTimer
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.ui.text.style.TextAlign
 import android.view.WindowManager
 import android.app.Activity
 import androidx.compose.foundation.Image
-import androidx.compose.material.icons.automirrored.filled.ArrowForward
-import androidx.compose.runtime.remember
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -29,7 +31,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun WorkoutPlayerScreen(
     workout: Workout,
-    onWorkoutComplete: () -> Unit
+    onWorkoutComplete: () -> Unit,
+    onWeightUpdate: (exerciseIndex: Int, newWeight: Int) -> Unit
 ) {
     val context = LocalContext.current
     val workoutTimer = remember { WorkoutTimer(context) }
@@ -39,6 +42,8 @@ fun WorkoutPlayerScreen(
     var restartTrigger by remember { mutableIntStateOf(0) }
     var isWorkoutComplete by remember { mutableStateOf(false) }
     var manualProgressionMode by remember { mutableStateOf(false) }
+    var showWeightDialog by remember { mutableStateOf(false) }
+    var currentWeight by remember { mutableStateOf("") }
 
     // Derive current exercise from the index
     val currentExercise by remember(currentExerciseIndex) {
@@ -303,11 +308,28 @@ fun WorkoutPlayerScreen(
                                 color = MaterialTheme.colorScheme.secondary
                             )
                             if (currentExercise.weight != null) {
-                                Text(
-                                    text = currentExercise.weight.toString(),
-                                    style = MaterialTheme.typography.titleLarge,
-                                    color = MaterialTheme.colorScheme.secondary
-                                )
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.Center,
+                                    modifier = Modifier.clickable { 
+                                        currentWeight = currentExercise.weight.toString()
+                                        showWeightDialog = true 
+                                    }
+                                ) {
+                                    Text(
+                                        text = "${currentExercise.weight} lbs",
+                                        style = MaterialTheme.typography.titleLarge,
+                                        color = MaterialTheme.colorScheme.secondary
+                                    )
+                                    Icon(
+                                        imageVector = Icons.Filled.Edit,
+                                        contentDescription = "Edit weight",
+                                        modifier = Modifier
+                                            .padding(start = 8.dp)
+                                            .size(24.dp),
+                                        tint = MaterialTheme.colorScheme.secondary
+                                    )
+                                }
                             }
                         }
                         MeasurementType.CUSTOM -> {
@@ -317,11 +339,28 @@ fun WorkoutPlayerScreen(
                                 color = MaterialTheme.colorScheme.secondary
                             )
                             if (currentExercise.weight != null) {
-                                Text(
-                                    text = currentExercise.weight.toString(),
-                                    style = MaterialTheme.typography.titleLarge,
-                                    color = MaterialTheme.colorScheme.secondary
-                                )
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically,
+                                    horizontalArrangement = Arrangement.Center,
+                                    modifier = Modifier.clickable { 
+                                        currentWeight = currentExercise.weight.toString()
+                                        showWeightDialog = true 
+                                    }
+                                ) {
+                                    Text(
+                                        text = "${currentExercise.weight} lbs",
+                                        style = MaterialTheme.typography.titleLarge,
+                                        color = MaterialTheme.colorScheme.secondary
+                                    )
+                                    Icon(
+                                        imageVector = Icons.Filled.Edit,
+                                        contentDescription = "Edit weight",
+                                        modifier = Modifier
+                                            .padding(start = 8.dp)
+                                            .size(24.dp),
+                                        tint = MaterialTheme.colorScheme.secondary
+                                    )
+                                }
                             }
                         }
                         null -> {}
@@ -459,5 +498,44 @@ fun WorkoutPlayerScreen(
                 }
             }
         }
+    }
+
+    if (showWeightDialog) {
+        AlertDialog(
+            onDismissRequest = { showWeightDialog = false },
+            title = { Text("Edit Weight") },
+            text = {
+                OutlinedTextField(
+                    value = currentWeight,
+                    onValueChange = { newValue ->
+                        // Only allow numbers
+                        if (newValue.isEmpty() || newValue.all { it.isDigit() }) {
+                            currentWeight = newValue
+                        }
+                    },
+                    label = { Text("Weight (lbs)") },
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+                )
+            },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        currentWeight.toIntOrNull()?.let { weight ->
+                            onWeightUpdate(currentExerciseIndex, weight)
+                            // Update the workout object to reflect the change immediately
+                            workout.exercises[currentExerciseIndex].weight = weight
+                        }
+                        showWeightDialog = false
+                    }
+                ) {
+                    Text("Save")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showWeightDialog = false }) {
+                    Text("Cancel")
+                }
+            }
+        )
     }
 } 

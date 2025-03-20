@@ -95,6 +95,9 @@ class MainActivity : ComponentActivity() {
                                 workout = selectedWorkout!!,
                                 onWorkoutComplete = {
                                     viewModel.clearSelectedWorkout()
+                                },
+                                onWeightUpdate = { exerciseIndex, newWeight ->
+                                    viewModel.updateExerciseWeight(exerciseIndex, newWeight)
                                 }
                             )
                         }
