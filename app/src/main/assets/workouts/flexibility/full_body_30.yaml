@@ -1,0 +1,809 @@
+id: full_body_30
+name: 30 Minute Full Body
+description: A comprehensive 30-minute full body flexibility workout focusing on major muscle groups
+totalDuration: 1800
+exercises:
+  - id: upward_salute
+    name: Upward Salute
+    duration: 30
+    type: WORK
+    instructions: Stand tall, reach arms overhead, palms facing each other
+    imageResId: upward_salute
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: rag_doll
+
+  - id: rag_doll
+    name: Rag Doll
+    duration: 30
+    type: WORK
+    instructions: Stand with feet hip-width apart, fold forward at hips, let arms hang
+    imageResId: rag_doll
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: chest_opener
+
+  - id: chest_opener
+    name: Chest Opener
+    duration: 30
+    type: WORK
+    instructions: Stand tall, clasp hands behind back, lift chest
+    imageResId: chest_opener
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: toe_touch
+
+  - id: toe_touch
+    name: Toe Touch
+    duration: 30
+    type: WORK
+    instructions: Bend forward at hips, reaching for toes
+    imageResId: toe_touch
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: overhead_tricep
+
+  - id: right_overhead_tricep
+    name: Right Overhead Tricep
+    duration: 15
+    type: WORK
+    instructions: Bend right arm behind head, hold with left hand
+    imageResId: overhead_tricep
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: overhead_tricep
+
+  - id: left_overhead_tricep
+    name: Left Overhead Tricep
+    duration: 15
+    type: WORK
+    instructions: Bend left arm behind head, hold with right hand
+    imageResId: overhead_tricep
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: forward_fold
+
+  - id: forward_fold
+    name: Forward Fold
+    duration: 30
+    type: WORK
+    instructions: Stand with feet together, fold forward at hips
+    imageResId: forward_fold
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: one_arm_hug
+
+  - id: right_one_arm_hug
+    name: Right One Arm Hug
+    duration: 15
+    type: WORK
+    instructions: Hug right arm across chest, hold with left hand
+    imageResId: one_arm_hug
+
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: one_arm_hug
+
+  - id: left_one_arm_hug
+    name: Left One Arm Hug
+    duration: 15
+    type: WORK
+    instructions: Hug left arm across chest, hold with right hand
+    imageResId: one_arm_hug
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: wide_leg_bend
+
+  - id: wide_leg_bend
+    name: Wide Leg Bend
+    duration: 30
+    type: WORK
+    instructions: Stand with legs wide, fold forward at hips
+    imageResId: wide_leg_bend
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: side_lunge
+
+  - id: right_side_lunge
+    name: Right Side Lunge
+    duration: 30
+    type: WORK
+    instructions: Step right foot out to side, bend right knee
+    imageResId: side_lunge
+
+  - id: switch_sides_3
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: side_lunge
+
+  - id: left_side_lunge
+    name: Left Side Lunge
+    duration: 30
+    type: WORK
+    instructions: Step left foot out to side, bend left knee
+    imageResId: side_lunge
+
+  - id: rest_9
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: squat_stretch
+
+  - id: squat_stretch
+    name: Squat Stretch
+    duration: 30
+    type: WORK
+    instructions: Stand with feet wide, squat down, elbows inside knees
+    imageResId: squat_stretch
+
+  - id: rest_10
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: lunge
+
+  - id: right_lunge
+    name: Right Lunge
+    duration: 30
+    type: WORK
+    instructions: Step right foot back into a lunge
+    imageResId: lunge
+
+  - id: switch_sides_4
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: lunge
+
+  - id: left_lunge
+    name: Left Lunge
+    duration: 30
+    type: WORK
+    instructions: Step left foot back into a lunge
+    imageResId: lunge
+
+  - id: rest_11
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: reverse_lunge
+
+  - id: right_reverse_lunge
+    name: Right Reverse Lunge
+    duration: 30
+    type: WORK
+    instructions: Step right foot forward into a lunge
+    imageResId: reverse_lunge
+
+  - id: switch_sides_5
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: reverse_lunge
+
+  - id: left_reverse_lunge
+    name: Left Reverse Lunge
+    duration: 30
+    type: WORK
+    instructions: Step left foot forward into a lunge
+    imageResId: reverse_lunge
+
+  - id: rest_12
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: kneeling_quad
+
+  - id: right_kneeling_quad
+    name: Right Kneeling Quad
+    duration: 30
+    type: WORK
+    instructions: Kneel on left knee, bend right knee back, hold right foot
+    imageResId: kneeling_quad
+
+  - id: switch_sides_6
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: kneeling_quad
+
+  - id: left_kneeling_quad
+    name: Left Kneeling Quad
+    duration: 30
+    type: WORK
+    instructions: Kneel on right knee, bend left knee back, hold left foot
+    imageResId: kneeling_quad
+
+  - id: rest_13
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: upward_dog
+
+  - id: upward_dog
+    name: Upward Dog
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, push chest up, legs extended
+    imageResId: upward_dog
+
+  - id: rest_14
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: childs_pose
+
+  - id: childs_pose
+    name: Child's Pose
+    duration: 30
+    type: WORK
+    instructions: Kneel and sit back on heels, extend arms forward
+    imageResId: childs_pose
+
+  - id: rest_15
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: downward_dog
+
+  - id: downward_dog
+    name: Downward Dog
+    duration: 30
+    type: WORK
+    instructions: Form an inverted V with body, hands and feet pressed into mat
+    imageResId: downward_dog
+
+  - id: rest_16
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: kneel
+
+  - id: kneel
+    name: Kneel
+    duration: 30
+    type: WORK
+    instructions: Kneel on mat with knees together
+    imageResId: kneel
+
+  - id: rest_17
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: saddle_pose
+
+  - id: saddle_pose
+    name: Saddle Pose
+    duration: 30
+    type: WORK
+    instructions: Sit between heels, lean back
+    imageResId: saddle_pose
+
+  - id: rest_18
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: toe_squat
+
+  - id: toe_squat
+    name: Toe Squat
+    duration: 30
+    type: WORK
+    instructions: Kneel with toes tucked under
+    imageResId: toe_squat
+
+  - id: rest_19
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: wrist_extension
+
+  - id: wrist_extension
+    name: Wrist Extension
+    duration: 30
+    type: WORK
+    instructions: Kneel, place hands on mat, fingers facing knees
+    imageResId: wrist_extension
+
+  - id: rest_20
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: lizard_pose
+
+  - id: right_lizard_pose
+    name: Right Lizard Pose
+    duration: 30
+    type: WORK
+    instructions: Right foot outside right hand, lower back knee
+    imageResId: lizard_pose
+
+  - id: switch_sides_7
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: lizard_pose
+
+  - id: left_lizard_pose
+    name: Left Lizard Pose
+    duration: 30
+    type: WORK
+    instructions: Left foot outside left hand, lower back knee
+    imageResId: lizard_pose
+
+  - id: rest_21
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: pigeon
+
+  - id: right_pigeon
+    name: Right Pigeon
+    duration: 30
+    type: WORK
+    instructions: Right leg bent in front, left leg extended behind
+    imageResId: pigeon
+
+  - id: switch_sides_8
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: pigeon
+
+  - id: left_pigeon
+    name: Left Pigeon
+    duration: 30
+    type: WORK
+    instructions: Left leg bent in front, right leg extended behind
+    imageResId: pigeon
+
+  - id: rest_22
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: frog_pose
+
+  - id: frog_pose
+    name: Frog Pose
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, knees bent out to sides
+    imageResId: frog_pose
+
+  - id: rest_23
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: puppy_pose
+
+  - id: puppy_pose
+    name: Puppy Pose
+    duration: 30
+    type: WORK
+    instructions: Kneel, extend arms forward, chest to mat
+    imageResId: puppy_pose
+
+  - id: rest_24
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: twisted_sphinx
+
+  - id: right_twisted_sphinx
+    name: Right Twisted Sphinx
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, prop up on elbows, twist right
+    imageResId: twisted_sphinx
+
+  - id: switch_sides_9
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: twisted_sphinx
+
+  - id: left_twisted_sphinx
+    name: Left Twisted Sphinx
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, prop up on elbows, twist left
+    imageResId: twisted_sphinx
+
+  - id: rest_25
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: seated_twist
+
+  - id: right_seated_twist
+    name: Right Seated Twist
+    duration: 30
+    type: WORK
+    instructions: Sit with legs extended, twist right
+    imageResId: seated_twist
+
+  - id: switch_sides_10
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: seated_twist
+
+  - id: left_seated_twist
+    name: Left Seated Twist
+    duration: 30
+    type: WORK
+    instructions: Sit with legs extended, twist left
+    imageResId: seated_twist
+
+  - id: rest_26
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: knees_to_chest
+
+  - id: knees_to_chest
+    name: Knees to Chest
+    duration: 30
+    type: WORK
+    instructions: Lie on back, hug knees to chest
+    imageResId: knees_to_chest
+
+  - id: rest_27
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: happy_baby
+
+  - id: happy_baby
+    name: Happy Baby
+    duration: 30
+    type: WORK
+    instructions: Lie on back, grab feet, rock side to side
+    imageResId: happy_baby
+
+  - id: rest_28
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: figure_four
+
+  - id: right_figure_four
+    name: Right Figure Four
+    duration: 30
+    type: WORK
+    instructions: Lie on back, right ankle on left knee
+    imageResId: figure_four
+
+  - id: switch_sides_11
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: figure_four
+
+  - id: left_figure_four
+    name: Left Figure Four
+    duration: 30
+    type: WORK
+    instructions: Lie on back, left ankle on right knee
+    imageResId: figure_four
+
+  - id: rest_29
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: hamstring
+
+  - id: right_hamstring
+    name: Right Hamstring
+    duration: 30
+    type: WORK
+    instructions: Lie on back, right leg straight up
+    imageResId: hamstring
+
+  - id: switch_sides_12
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: hamstring
+
+  - id: left_hamstring
+    name: Left Hamstring
+    duration: 30
+    type: WORK
+    instructions: Lie on back, left leg straight up
+    imageResId: hamstring
+
+  - id: rest_30
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: butterfly
+
+  - id: reclined_butterfly
+    name: Reclined Butterfly
+    duration: 30
+    type: WORK
+    instructions: Lie on back, soles of feet together
+    imageResId: butterfly
+
+  - id: rest_31
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: spinal_twist
+
+  - id: right_spinal_twist
+    name: Right Spinal Twist
+    duration: 30
+    type: WORK
+    instructions: Lie on back, knees bent right
+    imageResId: spinal_twist
+
+  - id: switch_sides_13
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: spinal_twist
+
+  - id: left_spinal_twist
+    name: Left Spinal Twist
+    duration: 30
+    type: WORK
+    instructions: Lie on back, knees bent left
+    imageResId: spinal_twist
+
+  - id: rest_32
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: quad_stretch
+
+  - id: right_quad_stretch
+    name: Right Quad Stretch
+    duration: 30
+    type: WORK
+    instructions: Lie on side, bend right knee back
+    imageResId: quad_stretch
+
+  - id: switch_sides_14
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: quad_stretch
+
+  - id: left_quad_stretch
+    name: Left Quad Stretch
+    duration: 30
+    type: WORK
+    instructions: Lie on side, bend left knee back
+    imageResId: quad_stretch
+
+  - id: rest_33
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: butterfly
+
+  - id: butterfly
+    name: Butterfly
+    duration: 30
+    type: WORK
+    instructions: Sit with soles of feet together
+    imageResId: butterfly
+
+  - id: rest_34
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: folded_butterfly
+
+  - id: folded_butterfly
+    name: Folded Butterfly
+    duration: 30
+    type: WORK
+    instructions: Sit with soles of feet together, fold forward
+    imageResId: folded_butterfly
+
+  - id: rest_35
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: double_pigeon
+
+  - id: right_double_pigeon
+    name: Right Double Pigeon
+    duration: 30
+    type: WORK
+    instructions: Sit with right ankle on left knee, left ankle on right knee
+    imageResId: double_pigeon
+
+  - id: switch_sides_15
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch leg positions
+    imageResId: double_pigeon
+
+  - id: left_double_pigeon
+    name: Left Double Pigeon
+    duration: 30
+    type: WORK
+    instructions: Sit with left ankle on right knee, right ankle on left knee
+    imageResId: double_pigeon
+
+  - id: rest_36
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: seated_fold
+
+  - id: seated_fold
+    name: Seated Fold
+    duration: 30
+    type: WORK
+    instructions: Sit with legs extended, fold forward
+    imageResId: seated_fold
+
+  - id: rest_37
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: seated_straddle
+
+  - id: seated_straddle
+    name: Seated Straddle
+    duration: 30
+    type: WORK
+    instructions: Sit with legs wide apart
+    imageResId: seated_straddle
+
+  - id: rest_38
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: hurdler
+
+  - id: right_hurdler
+    name: Right Hurdler
+    duration: 30
+    type: WORK
+    instructions: Sit with right leg extended, left leg bent
+    imageResId: hurdler
+
+  - id: switch_sides_16
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: hurdler
+
+  - id: left_hurdler
+    name: Left Hurdler
+    duration: 30
+    type: WORK
+    instructions: Sit with left leg extended, right leg bent
+    imageResId: hurdler
+
+  - id: rest_39
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: shoulder_stand
+
+  - id: shoulder_stand
+    name: Shoulder Stand
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift legs overhead
+    imageResId: shoulder_stand
+
+  - id: rest_40
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: plow
+
+  - id: plow
+    name: Plow
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift legs overhead
+    imageResId: plow
+
+  - id: rest_41
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: legs_up_wall
+
+  - id: legs_up_wall
+    name: Legs Up Wall
+    duration: 120
+    type: WORK
+    instructions: Lie on back with legs up against wall
+    imageResId: legs_up_wall 

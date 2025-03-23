@@ -33,4 +33,16 @@ groups:
       - id: strength_training_1
         name: Strength Training 1
         description: A comprehensive strength training workout focusing on major muscle groups
-        file: strength/strength_training_1.yaml 
+        file: strength/strength_training_1.yaml
+
+  - id: flexibility_group
+    name: Flexibility
+    workouts:
+      - id: full_body
+        name: 15 Minute Full Body
+        description: A comprehensive full body flexibility workout focusing on major muscle groups
+        file: flexibility/full_body.yaml
+      - id: full_body_30
+        name: 30 Minute Full Body
+        description: A comprehensive 30-minute full body flexibility workout focusing on major muscle groups
+        file: flexibility/full_body_30.yaml 
