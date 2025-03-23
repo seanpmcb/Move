@@ -87,6 +87,132 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
+  - id: reverse_plank_leg_lift
+    name: Reverse Plank Leg Lift
+    duration: 15
+    type: WORK
+    instructions: Raise leg while holding a reverse plank
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch sides
+    imageResId: null
+
+  - id: reverse_plank_leg_lift
+    name: Reverse Plank Leg Lift
+    duration: 15
+    type: WORK
+    instructions: Raise leg while holding a reverse plank
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bridge
+    name: Bridge
+    duration: 30
+    type: WORK
+    instructions: Lay on back and lift hips up
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: leg_lift
+    name: Leg Lift
+    duration: 30
+    type: WORK
+    instructions: While laying on you back, raise feet up
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: toe_touch_hold
+    name: Toe Touch Hold
+    duration: 30
+    type: WORK
+    instructions: With feet above hips, try to touch your toes
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bicycle_crunch_hold
+    name: Bicycle Crunch Hold
+    duration: 15
+    type: WORK
+    instructions: Try to touch elbow to knee and hold
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch sides
+    imageResId: null
+
+  - id: bicycle_crunch_hold
+    name: Bicycle Crunch Hold
+    duration: 15
+    type: WORK
+    instructions: Try to touch elbow to knee and hold
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: lying_leg_raise
+    name: Lying Leg Raise
+    duration: 15
+    type: WORK
+    instructions: Lift leg and reach for foot
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch sides
+    imageResId: null
+
+  - id: lying_leg_raise
+    name: Lying Leg Raise
+    duration: 15
+    type: WORK
+    instructions: Lift leg and reach for foot
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
   - id: superman
     name: Superman
     duration: 30

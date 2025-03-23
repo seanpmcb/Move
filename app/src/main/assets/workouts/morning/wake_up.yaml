@@ -106,4 +106,18 @@ exercises:
     duration: 30
     type: WORK
     instructions: Stand with legs wide, fold forward at hips
-    imageResId: wide_leg_bend 
+    imageResId: wide_leg_bend
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: upward_salute
+
+  - id: upward_salute
+    name: Upward Salute
+    duration: 30
+    type: WORK
+    instructions: Stand tall, reach arms overhead, palms facing each other
+    imageResId: upward_salute

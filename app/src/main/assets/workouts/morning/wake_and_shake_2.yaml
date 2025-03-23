@@ -119,10 +119,52 @@ exercises:
     name: Hamstring Scoops
     duration: 15
     type: WORK
-    instructions: Reach down towards your toes, alternating legs.
+    instructions: With one leg straight, bend at the hips
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Switch Sides
+    imageResId: null
+
+  - id: hamstring_scoops
+    name: Hamstring Scoops
+    duration: 15
+    type: WORK
+    instructions: With one leg straight, bend at the hips
     imageResId: null
 
   - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: gate_openers
+    name: Gate Openers
+    duration: 15
+    type: WORK
+    instructions: Lift knee, swing leg out to side, lower knee, repeat
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch sides
+    imageResId: null
+
+  - id: gate_openers
+    name: Gate Openers
+    duration: 15
+    type: WORK
+    instructions: Lift knee, swing leg out to side, lower knee, repeat
+    imageResId: null
+
+  - id: rest_4
     name: Rest
     duration: 5
     type: REST

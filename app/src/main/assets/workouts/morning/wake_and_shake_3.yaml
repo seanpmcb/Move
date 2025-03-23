@@ -82,9 +82,16 @@ exercises:
 
   - id: shoulder_rolls
     name: Shoulder Rolls
-    duration: 30
+    duration: 15
     type: WORK
     instructions: Roll your shoulders forward and then backward.
+    imageResId: null
+
+  - id: shoulder_rolls_2
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your shoulder rolls.
     imageResId: null
 
   - id: rest_6
@@ -123,6 +130,34 @@ exercises:
     imageResId: null
 
   - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hamstring_scoops
+    name: Hamstring Scoops
+    duration: 15
+    type: WORK
+    instructions: With one leg straight, bend at the hips
+    imageResId: null
+
+  - id: rest_9
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hamstring_scoops_2
+    name: Hamstring Scoops
+    duration: 15
+    type: WORK
+    instructions: With one leg straight, bend at the hips
+    imageResId: null
+
+  - id: rest_10
     name: Rest
     duration: 5
     type: REST
@@ -345,3 +380,24 @@ exercises:
     type: WORK
     instructions: Change the direction of your ankle circles.
     imageResId: null 
+
+  - id: rest_18
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wrist_circles
+    name: Wrist Circles
+    duration: 15
+    type: WORK
+    instructions: Make circles with your wrists.
+    imageResId: null
+
+  - id: wrist_circles_2
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your wrist circles.
+    imageResId: null
