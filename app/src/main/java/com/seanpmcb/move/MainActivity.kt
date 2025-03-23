@@ -81,7 +81,7 @@ class MainActivity : ComponentActivity() {
                             WorkoutPreviewScreen(
                                 workout = selectedWorkout!!,
                                 onStartWorkout = { isPreviewMode = false },
-                                onBack = {
+                                onBackClick = {
                                     viewModel.clearSelectedWorkout()
                                     isPreviewMode = false
                                 }

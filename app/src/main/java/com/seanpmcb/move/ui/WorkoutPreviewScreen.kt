@@ -114,7 +114,7 @@ private fun groupExercisesIntoSets(exercises: List<Exercise>): List<ExerciseSet>
 fun WorkoutPreviewScreen(
     workout: Workout,
     onStartWorkout: () -> Unit,
-    onBack: () -> Unit
+    onBackClick: () -> Unit
 ) {
     // Group exercises into sets
     val exerciseSets = remember(workout) {
@@ -140,9 +140,9 @@ fun WorkoutPreviewScreen(
         )
         
         // Only show duration for time-based workouts
-        if (workout.totalDuration > 0) {
+        if (workout.totalDuration != null && workout.totalDuration > 0) {
             Text(
-                text = "Total Duration: ${workout.totalDuration / 60}m ${workout.totalDuration % 60}s",
+                text = "Total Duration: ${(workout.totalDuration / 60)}m ${(workout.totalDuration % 60)}s",
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
@@ -170,7 +170,7 @@ fun WorkoutPreviewScreen(
                 .padding(vertical = 16.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            OutlinedButton(onClick = onBack) {
+            OutlinedButton(onClick = onBackClick) {
                 Text("Back")
             }
             
