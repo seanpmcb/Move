@@ -1,7 +1,6 @@
 id: strength_training_1
 name: Strength Training 1
 description: A comprehensive strength training workout focusing on major muscle groups
-totalDuration: 0
 exercises:
   - id: straight_leg_dead_lift_set1
     name: Straight Leg Dead Lift

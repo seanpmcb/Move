@@ -1,7 +1,6 @@
 id: full_body
 name: Full Body
 description: A comprehensive full body flexibility workout focusing on major muscle groups
-totalDuration: 1200
 exercises:
   - id: upward_salute
     name: Upward Salute

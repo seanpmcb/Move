@@ -49,16 +49,15 @@ fun WorkoutCompleteScreen(
                 color = MaterialTheme.colorScheme.primary
             )
         }
-        
+
         Surface(
             color = MaterialTheme.colorScheme.secondaryContainer,
             shape = MaterialTheme.shapes.medium
         ) {
             Text(
-                text = "Total Duration: ${(workout.totalDuration ?: 0) + (workout.exercises.sumOf { it.duration ?: 0 })} seconds",
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(horizontal = 24.dp, vertical = 16.dp),
-                color = MaterialTheme.colorScheme.onSecondaryContainer
+                text = "Total Duration: ${(workout.calculateDuration() ?: 0)} seconds",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
         

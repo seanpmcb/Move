@@ -140,11 +140,14 @@ fun WorkoutPreviewScreen(
         )
         
         // Only show duration for time-based workouts
-        if (workout.totalDuration != null && workout.totalDuration > 0) {
+        if (workout.calculateDuration() != null && workout.calculateDuration()!! > 0) {
+            val totalSeconds = workout.calculateDuration()!!
+            val minutes = totalSeconds / 60
+            val seconds = totalSeconds % 60
             Text(
-                text = "Total Duration: ${(workout.totalDuration / 60)}m ${(workout.totalDuration % 60)}s",
-                style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(bottom = 16.dp)
+                text = "Total Duration: ${minutes}m ${seconds}s",
+                style = MaterialTheme.typography.bodyLarge,
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
 

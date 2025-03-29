@@ -1,7 +1,6 @@
 id: full_body_30
 name: 30 Minute Full Body
 description: A comprehensive 30-minute full body flexibility workout focusing on major muscle groups
-totalDuration: 1800
 exercises:
   - id: upward_salute
     name: Upward Salute

@@ -1,7 +1,6 @@
 id: quick_core
 name: Quick Core
 description: A quick core workout focusing on plank variations
-totalDuration: 420
 exercises:
   - id: hand_plank
     name: Hand Plank

@@ -1,7 +1,6 @@
 id: wake_up_workout
 name: Wake Up
 description: A gentle morning yoga flow to start your day
-totalDuration: 300
 exercises:
   - id: upward_salute
     name: Upward Salute

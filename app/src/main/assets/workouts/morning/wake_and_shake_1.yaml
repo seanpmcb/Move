@@ -1,7 +1,6 @@
 id: wake_and_shake_1
 name: Wake & Shake 1
 description: A dynamic workout to wake up your body
-totalDuration: 300
 exercises:
   - id: dynamic_side_bends
     name: Dynamic Side Bends
