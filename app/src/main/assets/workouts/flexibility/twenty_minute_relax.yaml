@@ -1,0 +1,248 @@
+id: twenty_minute_relax
+name: 20 Minute Relax
+description: A comprehensive stretching routine to help you unwind and relax
+exercises:
+  - id: upward_salute
+    name: Upward Salute
+    duration: 30
+    type: WORK
+    instructions: Stand tall, reach arms overhead, palms facing each other
+    imageResId: upward_salute
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: rag_doll
+    name: Rag Doll
+    duration: 60
+    type: WORK
+    instructions: Stand with feet hip-width apart, fold forward at hips, let arms hang
+    imageResId: rag_doll
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: upward_dog
+    name: Upward Dog
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, push chest up, legs extended
+    imageResId: upward_dog
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: childs_pose
+    name: Child's Pose
+    duration: 60
+    type: WORK
+    instructions: Kneel and sit back on heels, extend arms forward
+    imageResId: childs_pose
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: knees_to_chest
+    name: Knees-to-chest
+    duration: 120
+    type: WORK
+    instructions: Lie on back, hug knees to chest
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: lying_figure_four_right
+    name: Lying Figure Four (Right)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, cross right ankle over left knee, thread arms through
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: lying_figure_four_left
+    name: Lying Figure Four (Left)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, cross left ankle over right knee, thread arms through
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: spinal_twist_right
+    name: Spinal Twist (Right)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, drop knees to right, arms out to sides
+    imageResId: null
+
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: spinal_twist_left
+    name: Spinal Twist (Left)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, drop knees to left, arms out to sides
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: supine_quad_stretch_right
+    name: Supine Quad Stretch (Right)
+    duration: 60
+    type: WORK
+    instructions: Lie on side, bend top knee, hold foot with hand
+    imageResId: null
+
+  - id: switch_sides_3
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: supine_quad_stretch_left
+    name: Supine Quad Stretch (Left)
+    duration: 60
+    type: WORK
+    instructions: Lie on side, bend top knee, hold foot with hand
+    imageResId: null
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: seated_fold
+    name: Seated Fold
+    duration: 60
+    type: WORK
+    instructions: Sit with legs extended, fold forward at hips
+    imageResId: null
+
+  - id: rest_9
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: butterfly
+    name: Butterfly
+    duration: 60
+    type: WORK
+    instructions: Sit with soles of feet together, let knees fall open
+    imageResId: null
+
+  - id: rest_10
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: folded_butterfly
+    name: Folded Butterfly
+    duration: 60
+    type: WORK
+    instructions: From butterfly pose, fold forward
+    imageResId: null
+
+  - id: rest_11
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: happy_baby
+    name: Happy Baby
+    duration: 60
+    type: WORK
+    instructions: Lie on back, grab feet with hands, knees bent
+    imageResId: null
+
+  - id: rest_12
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: plow
+    name: Plow
+    duration: 60
+    type: WORK
+    instructions: Lie on back, lift legs over head, toes touch floor behind
+    imageResId: null
+
+  - id: rest_13
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: reclined_butterfly
+    name: Reclined Butterfly
+    duration: 120
+    type: WORK
+    instructions: Lie on back, bring soles of feet together, let knees fall open
+    imageResId: null
+
+  - id: rest_14
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: legs_up_wall
+    name: Legs Up Wall
+    duration: 120
+    type: WORK
+    instructions: Lie on back with legs extended up against wall
+    imageResId: null 

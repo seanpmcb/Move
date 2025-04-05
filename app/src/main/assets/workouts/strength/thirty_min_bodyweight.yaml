@@ -1,0 +1,836 @@
+id: thirty_min_bodyweight
+name: 30 Minute Bodyweight
+description: A comprehensive bodyweight workout focusing on isometric holds to build strength and endurance
+exercises:
+  - id: squat_hold
+    name: Squat Hold
+    duration: 30
+    type: WORK
+    instructions: Stand with feet shoulder-width, lower to squat, hold position
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: narrow_squat_hold
+    name: Narrow Squat Hold
+    duration: 30
+    type: WORK
+    instructions: Stand with feet together, lower to squat, hold position
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: sumo_squat_hold
+    name: Sumo Squat Hold
+    duration: 30
+    type: WORK
+    instructions: Stand with feet wide, toes out, lower to squat, hold position
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: split_lunge_hold_right
+    name: Split Lunge Hold (Right)
+    duration: 30
+    type: WORK
+    instructions: Step right foot back, lower to lunge, hold position
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: split_lunge_hold_left
+    name: Split Lunge Hold (Left)
+    duration: 30
+    type: WORK
+    instructions: Step left foot back, lower to lunge, hold position
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: side_lunge_hold_right
+    name: Side Lunge Hold (Right)
+    duration: 30
+    type: WORK
+    instructions: Step right foot to side, lower to lunge, hold position
+    imageResId: null
+
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: side_lunge_hold_left
+    name: Side Lunge Hold (Left)
+    duration: 30
+    type: WORK
+    instructions: Step left foot to side, lower to lunge, hold position
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: curtsey_lunge_hold_right
+    name: Curtsey Lunge Hold (Right)
+    duration: 30
+    type: WORK
+    instructions: Step right foot behind left, lower to lunge, hold position
+    imageResId: null
+
+  - id: switch_sides_3
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: curtsey_lunge_hold_left
+    name: Curtsey Lunge Hold (Left)
+    duration: 30
+    type: WORK
+    instructions: Step left foot behind right, lower to lunge, hold position
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: pistol_squat_hold_right
+    name: Pistol Squat Hold (Right)
+    duration: 30
+    type: WORK
+    instructions: Stand on right leg, extend left leg forward, lower to squat, hold position
+    imageResId: null
+
+  - id: switch_sides_4
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: pistol_squat_hold_left
+    name: Pistol Squat Hold (Left)
+    duration: 30
+    type: WORK
+    instructions: Stand on left leg, extend right leg forward, lower to squat, hold position
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hand_plank
+    name: Hand Plank
+    duration: 30
+    type: WORK
+    instructions: Support on hands and toes, hold position
+    imageResId: null
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hand_plank_leg_lift_right
+    name: Hand Plank Leg Lift (Right)
+    duration: 15
+    type: WORK
+    instructions: From plank, lift right leg, hold position
+    imageResId: null
+
+  - id: switch_sides_5
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: hand_plank_leg_lift_left
+    name: Hand Plank Leg Lift (Left)
+    duration: 15
+    type: WORK
+    instructions: From plank, lift left leg, hold position
+    imageResId: null
+
+  - id: rest_9
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hand_side_plank_right
+    name: Hand Side Plank (Right)
+    duration: 15
+    type: WORK
+    instructions: Support on right hand, lift hips, hold position
+    imageResId: null
+
+  - id: switch_sides_6
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: hand_side_plank_left
+    name: Hand Side Plank (Left)
+    duration: 15
+    type: WORK
+    instructions: Support on left hand, lift hips, hold position
+    imageResId: null
+
+  - id: rest_10
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hand_side_plank_leg_lift_right
+    name: Hand Side Plank Leg Lift (Right)
+    duration: 15
+    type: WORK
+    instructions: From side plank, lift top leg, hold position
+    imageResId: null
+
+  - id: switch_sides_7
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: hand_side_plank_leg_lift_left
+    name: Hand Side Plank Leg Lift (Left)
+    duration: 15
+    type: WORK
+    instructions: From side plank, lift top leg, hold position
+    imageResId: null
+
+  - id: rest_11
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: elbow_plank
+    name: Elbow Plank
+    duration: 30
+    type: WORK
+    instructions: Support on elbows and toes, hold position
+    imageResId: null
+
+  - id: rest_12
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: elbow_plank_leg_lift_right
+    name: Elbow Plank Leg Lift (Right)
+    duration: 15
+    type: WORK
+    instructions: From elbow plank, lift right leg, hold position
+    imageResId: null
+
+  - id: switch_sides_8
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: elbow_plank_leg_lift_left
+    name: Elbow Plank Leg Lift (Left)
+    duration: 15
+    type: WORK
+    instructions: From elbow plank, lift left leg, hold position
+    imageResId: null
+
+  - id: rest_13
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: elbow_side_plank_right
+    name: Elbow Side Plank (Right)
+    duration: 15
+    type: WORK
+    instructions: Support on right elbow, lift hips, hold position
+    imageResId: null
+
+  - id: switch_sides_9
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: elbow_side_plank_left
+    name: Elbow Side Plank (Left)
+    duration: 15
+    type: WORK
+    instructions: Support on left elbow, lift hips, hold position
+    imageResId: null
+
+  - id: rest_14
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: elbow_side_plank_leg_lift_right
+    name: Elbow Side Plank Leg Lift (Right)
+    duration: 15
+    type: WORK
+    instructions: From side plank, lift top leg, hold position
+    imageResId: null
+
+  - id: switch_sides_10
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: elbow_side_plank_leg_lift_left
+    name: Elbow Side Plank Leg Lift (Left)
+    duration: 15
+    type: WORK
+    instructions: From side plank, lift top leg, hold position
+    imageResId: null
+
+  - id: rest_15
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: single_arm_plank_right
+    name: Single Arm Plank (Right)
+    duration: 15
+    type: WORK
+    instructions: From plank, lift left arm, hold position
+    imageResId: null
+
+  - id: switch_sides_11
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: single_arm_plank_left
+    name: Single Arm Plank (Left)
+    duration: 15
+    type: WORK
+    instructions: From plank, lift right arm, hold position
+    imageResId: null
+
+  - id: rest_16
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bulldog
+    name: Bulldog
+    duration: 30
+    type: WORK
+    instructions: From plank, lower halfway down, hold position
+    imageResId: null
+
+  - id: rest_17
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bird_dog_right
+    name: Bird Dog (Right)
+    duration: 15
+    type: WORK
+    instructions: On hands and knees, extend right arm and left leg, hold position
+    imageResId: null
+
+  - id: switch_sides_12
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: bird_dog_left
+    name: Bird Dog (Left)
+    duration: 15
+    type: WORK
+    instructions: On hands and knees, extend left arm and right leg, hold position
+    imageResId: null
+
+  - id: rest_18
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bird_dog_plank_right
+    name: Bird Dog Plank (Right)
+    duration: 15
+    type: WORK
+    instructions: From plank, extend right arm and left leg, hold position
+    imageResId: null
+
+  - id: switch_sides_13
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: bird_dog_plank_left
+    name: Bird Dog Plank (Left)
+    duration: 15
+    type: WORK
+    instructions: From plank, extend left arm and right leg, hold position
+    imageResId: null
+
+  - id: rest_19
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: pushup_hold
+    name: Pushup Hold
+    duration: 30
+    type: WORK
+    instructions: Lower to bottom of pushup, hold position
+    imageResId: null
+
+  - id: rest_20
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: narrow_pushup_hold
+    name: Narrow Pushup Hold
+    duration: 30
+    type: WORK
+    instructions: Lower to bottom of pushup with hands close together, hold position
+    imageResId: null
+
+  - id: rest_21
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: spiderman_pushup_hold_right
+    name: Spiderman Pushup Hold (Right)
+    duration: 15
+    type: WORK
+    instructions: From pushup, bring right knee to right elbow, hold position
+    imageResId: null
+
+  - id: switch_sides_14
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: spiderman_pushup_hold_left
+    name: Spiderman Pushup Hold (Left)
+    duration: 15
+    type: WORK
+    instructions: From pushup, bring left knee to left elbow, hold position
+    imageResId: null
+
+  - id: rest_22
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bridge
+    name: Bridge
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift hips off ground, hold position
+    imageResId: null
+
+  - id: rest_23
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bridge_leg_lift_right
+    name: Bridge Leg Lift (Right)
+    duration: 15
+    type: WORK
+    instructions: From bridge position, lift right leg, hold position
+    imageResId: null
+
+  - id: switch_sides_15
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: bridge_leg_lift_left
+    name: Bridge Leg Lift (Left)
+    duration: 15
+    type: WORK
+    instructions: From bridge position, lift left leg, hold position
+    imageResId: null
+
+  - id: rest_24
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: reverse_plank
+    name: Reverse Plank
+    duration: 30
+    type: WORK
+    instructions: Sit with legs extended, lift hips, hold position
+    imageResId: null
+
+  - id: rest_25
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: reverse_plank_leg_lift_right
+    name: Reverse Plank Leg Lift (Right)
+    duration: 15
+    type: WORK
+    instructions: From reverse plank, lift right leg, hold position
+    imageResId: null
+
+  - id: switch_sides_16
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: reverse_plank_leg_lift_left
+    name: Reverse Plank Leg Lift (Left)
+    duration: 15
+    type: WORK
+    instructions: From reverse plank, lift left leg, hold position
+    imageResId: null
+
+  - id: rest_26
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: crunch_hold
+    name: Crunch Hold
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift shoulders off ground, hold position
+    imageResId: null
+
+  - id: rest_27
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bicycle_crunch_hold_right
+    name: Bicycle Crunch Hold (Right)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift shoulders, bring right elbow to left knee, hold position
+    imageResId: null
+
+  - id: switch_sides_17
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: bicycle_crunch_hold_left
+    name: Bicycle Crunch Hold (Left)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift shoulders, bring left elbow to right knee, hold position
+    imageResId: null
+
+  - id: rest_28
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: toe_touch_hold
+    name: Toe Touch Hold
+    duration: 30
+    type: WORK
+    instructions: Lie on back, reach for toes with straight legs, hold position
+    imageResId: null
+
+  - id: rest_29
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: v_up
+    name: V-Up
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift arms and legs to form V shape, hold position
+    imageResId: null
+
+  - id: rest_30
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: leg_lift
+    name: Leg Lift
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift legs straight up, hold position
+    imageResId: null
+
+  - id: rest_31
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hollow_body
+    name: Hollow Body
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift shoulders and legs off ground, hold position
+    imageResId: null
+
+  - id: rest_32
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: dead_bug_right
+    name: Dead Bug (Right)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift right arm and left leg, hold position
+    imageResId: null
+
+  - id: switch_sides_18
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: dead_bug_left
+    name: Dead Bug (Left)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, lift left arm and right leg, hold position
+    imageResId: null
+
+  - id: rest_33
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: superman
+    name: Superman
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, lift arms and legs, hold position
+    imageResId: null
+
+  - id: rest_34
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: aquaman_right
+    name: Aquaman (Right)
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, lift right arm and left leg, hold position
+    imageResId: null
+
+  - id: switch_sides_19
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: aquaman_left
+    name: Aquaman (Left)
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach, lift left arm and right leg, hold position
+    imageResId: null
+
+  - id: rest_35
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: airplane
+    name: Airplane
+    duration: 30
+    type: WORK
+    instructions: Stand on one leg, lean forward, lift back leg, hold position
+    imageResId: null
+
+  - id: rest_36
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: pike
+    name: Pike
+    duration: 30
+    type: WORK
+    instructions: From plank, lift hips, hold position
+    imageResId: null
+
+  - id: rest_37
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bent_arm_pike
+    name: Bent Arm Pike
+    duration: 30
+    type: WORK
+    instructions: From plank with bent arms, lift hips, hold position
+    imageResId: null
+
+  - id: rest_38
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wall_plank
+    name: Wall Plank
+    duration: 30
+    type: WORK
+    instructions: Support on hands and toes against wall, hold position
+    imageResId: null
+
+  - id: rest_39
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wall_pike
+    name: Wall Pike
+    duration: 30
+    type: WORK
+    instructions: From wall plank, lift hips, hold position
+    imageResId: null
+
+  - id: rest_40
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wall_handstand
+    name: Wall Handstand
+    duration: 30
+    type: WORK
+    instructions: Support on hands against wall, hold position
+    imageResId: null 

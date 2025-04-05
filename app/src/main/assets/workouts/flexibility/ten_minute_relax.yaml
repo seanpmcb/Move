@@ -1,0 +1,150 @@
+id: ten_minute_relax
+name: 10 Minute Relax
+description: A gentle stretching routine to help you unwind and relax
+exercises:
+  - id: rag_doll
+    name: Rag Doll
+    duration: 60
+    type: WORK
+    instructions: Stand with feet hip-width apart, fold forward at hips, let arms hang
+    imageResId: rag_doll
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: upward_dog
+    name: Upward Dog
+    duration: 60
+    type: WORK
+    instructions: Lie on stomach, push chest up, legs extended
+    imageResId: upward_dog
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: childs_pose
+    name: Child's Pose
+    duration: 60
+    type: WORK
+    instructions: Kneel and sit back on heels, extend arms forward
+    imageResId: childs_pose
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: knees_to_chest
+    name: Knees-to-chest
+    duration: 60
+    type: WORK
+    instructions: Lie on back, hug knees to chest
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: happy_baby
+    name: Happy Baby
+    duration: 60
+    type: WORK
+    instructions: Lie on back, grab feet with hands, knees bent
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: reclined_butterfly
+    name: Reclined Butterfly
+    duration: 60
+    type: WORK
+    instructions: Lie on back, bring soles of feet together, let knees fall open
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: spinal_twist_right
+    name: Spinal Twist (Right)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, drop knees to right, arms out to sides
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: spinal_twist_left
+    name: Spinal Twist (Left)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, drop knees to left, arms out to sides
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: quad_stretch_right
+    name: Supine Quad Stretch (Right)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, bend right knee, hold right foot
+    imageResId: null
+
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: quad_stretch_left
+    name: Supine Quad Stretch (Left)
+    duration: 30
+    type: WORK
+    instructions: Lie on back, bend left knee, hold left foot
+    imageResId: null
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: legs_up_wall
+    name: Legs Up Wall
+    duration: 120
+    type: WORK
+    instructions: Lie on back with legs extended up against wall
+    imageResId: null 
