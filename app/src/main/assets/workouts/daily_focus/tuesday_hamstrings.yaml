@@ -1,0 +1,164 @@
+id: tuesday_hamstrings
+name: Tuesday - Hamstrings
+description: A focused hamstring stretching workout for Tuesdays
+exercises:
+  - id: ride_doll
+    name: Ride Doll
+    duration: 60
+    type: WORK
+    instructions: Stand relaxed, hinge forward from the hips, let your upper body hang loose
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wide_leg_bend
+    name: Wide Leg Bend
+    duration: 60
+    type: WORK
+    instructions: Stand with feet wide apart, hinge forward from the hips, reaching toward the floor
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: side_lunge_right
+    name: Side Lunge (Right)
+    duration: 60
+    type: WORK
+    instructions: Step right foot out wide, lunge deeply while keeping left leg straight
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: side_lunge_left
+    name: Side Lunge (Left)
+    duration: 60
+    type: WORK
+    instructions: Step left foot out wide, lunge deeply while keeping right leg straight
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: reverse_lunge_right
+    name: Reverse Lunge (Right)
+    duration: 60
+    type: WORK
+    instructions: Step back with right leg, lower into a lunge position
+    imageResId: null
+
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs
+    imageResId: null
+
+  - id: reverse_lunge_left
+    name: Reverse Lunge (Left)
+    duration: 60
+    type: WORK
+    instructions: Step back with left leg, lower into a lunge position
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: seated_fold
+    name: Seated Fold
+    duration: 60
+    type: WORK
+    instructions: Sit with legs straight out, hinge forward at hips, reaching towards feet
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: hurdler_right
+    name: Hurdler (Right)
+    duration: 60
+    type: WORK
+    instructions: Sit with left leg extended, bend right knee placing foot against inner thigh, hinge forward
+    imageResId: null
+
+  - id: switch_sides_3
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs
+    imageResId: null
+
+  - id: hurdler_left
+    name: Hurdler (Left)
+    duration: 60
+    type: WORK
+    instructions: Sit with right leg extended, bend left knee placing foot against inner thigh, hinge forward
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: seated_straddle
+    name: Seated Straddle
+    duration: 60
+    type: WORK
+    instructions: Sit with legs wide apart, hinge forward from hips reaching forward
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: supine_hamstring_right
+    name: Supine Hamstring Pull (Right)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, extend right leg up, gently pull leg towards chest
+    imageResId: null
+
+  - id: switch_sides_4
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs
+    imageResId: null
+
+  - id: supine_hamstring_left
+    name: Supine Hamstring Pull (Left)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, extend left leg up, gently pull leg towards chest
+    imageResId: null

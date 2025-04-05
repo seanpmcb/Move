@@ -1,0 +1,178 @@
+id: wednesday_lower_back
+name: Wednesday - Lower Back
+description: A focused lower back stretching and relaxing workout for Wednesdays
+exercises:
+  - id: rag_doll
+    name: Rag Doll
+    duration: 60
+    type: WORK
+    instructions: Stand relaxed, hinge forward from hips, let upper body hang loose
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: lunge_right
+    name: Lunge (Right)
+    duration: 60
+    type: WORK
+    instructions: Step forward with right leg, lower into lunge position
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch sides
+    imageResId: null
+
+  - id: lunge_left
+    name: Lunge (Left)
+    duration: 60
+    type: WORK
+    instructions: Step forward with left leg, lower into lunge position
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: childs_pose
+    name: Child's Pose
+    duration: 60
+    type: WORK
+    instructions: Kneel on mat, sit back onto heels, extend arms forward and lower chest toward floor
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: cat_cow
+    name: Cat-Cow
+    duration: 60
+    type: WORK
+    instructions: On hands and knees, alternate arching and rounding the spine
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: kneeling
+    name: Kneeling
+    duration: 60
+    type: WORK
+    instructions: Kneel on floor, sit back on heels, lengthen spine upward
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: seated_fold
+    name: Seated Fold
+    duration: 60
+    type: WORK
+    instructions: Sit with legs straight, hinge forward from hips, reach toward feet
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: pancake
+    name: Pancake
+    duration: 60
+    type: WORK
+    instructions: Sit with legs wide apart, hinge forward and reach forward
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: knees_to_chest
+    name: Knees to Chest
+    duration: 60
+    type: WORK
+    instructions: Lie on back, draw knees into chest, gently hug knees
+    imageResId: null
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: lying_figure_four_right
+    name: Lying Figure Four (Right)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, cross right ankle over left knee, hold position
+    imageResId: null
+
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs
+    imageResId: null
+
+  - id: lying_figure_four_left
+    name: Lying Figure Four (Left)
+    duration: 60
+    type: WORK
+    instructions: Lie on back, cross left ankle over right knee, hold position
+    imageResId: null
+
+  - id: rest_9
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: happy_baby
+    name: Happy Baby
+    duration: 60
+    type: WORK
+    instructions: Lie on back, bend knees to chest, grab feet with hands
+    imageResId: null
+
+  - id: rest_10
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: legs_up_wall
+    name: Legs Up Wall
+    duration: 60
+    type: WORK
+    instructions: Lie on back near wall, extend legs vertically up wall
+    imageResId: null

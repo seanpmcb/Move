@@ -70,3 +70,19 @@ groups:
         name: Monday - Hips
         description: A focused hip opening and stretching workout for Mondays
         file: daily_focus/monday_hips.yaml
+      - id: tuesday_hamstrings
+        name: Tuesday - Hamstrings
+        description: A focused hamstring stretching workout for Tuesdays
+        file: daily_focus/tuesday_hamstrings.yaml
+      - id: wednesday_lower_back
+        name: Wednesday - Lower Back
+        description: A focused lower back stretching workout for Wednesdays
+        file: daily_focus/iwednesday_lower_back.yaml
+      - id: thursday_splits
+        name: Thursday - Splits
+        description: A focused splits preparation workout for Thursdays
+        file: daily_focus/thursday_splits.yaml
+      - id: friday_shoulders
+        name: Friday - Shoulders
+        description: A focused shoulder opening workout for Fridays
+        file: daily_focus/friday_shoulders.yaml
