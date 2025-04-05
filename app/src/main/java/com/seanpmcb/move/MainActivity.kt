@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.Workout
@@ -107,7 +108,8 @@ class MainActivity : ComponentActivity() {
                                 onWorkoutSelected = { workout ->
                                     viewModel.loadWorkout(workout.id)
                                     isPreviewMode = true
-                                }
+                                },
+                                workoutDurations = viewModel.workoutDurations.collectAsState().value
                             )
                         }
                     }
@@ -120,7 +122,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun WorkoutGroupList(
     groups: List<WorkoutGroup>,
-    onWorkoutSelected: (WorkoutReference) -> Unit
+    onWorkoutSelected: (WorkoutReference) -> Unit,
+    workoutDurations: Map<String, Int?> = emptyMap()
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
@@ -129,7 +132,8 @@ fun WorkoutGroupList(
         items(groups) { group ->
             WorkoutGroupCard(
                 group = group,
-                onWorkoutSelected = onWorkoutSelected
+                onWorkoutSelected = onWorkoutSelected,
+                workoutDurations = workoutDurations
             )
         }
     }
@@ -138,7 +142,8 @@ fun WorkoutGroupList(
 @Composable
 fun WorkoutGroupCard(
     group: WorkoutGroup,
-    onWorkoutSelected: (WorkoutReference) -> Unit
+    onWorkoutSelected: (WorkoutReference) -> Unit,
+    workoutDurations: Map<String, Int?> = emptyMap()
 ) {
     Card(
         modifier = Modifier
@@ -159,7 +164,8 @@ fun WorkoutGroupCard(
             group.workouts.forEach { workout ->
                 WorkoutItem(
                     workout = workout,
-                    onWorkoutSelected = onWorkoutSelected
+                    onWorkoutSelected = onWorkoutSelected,
+                    duration = workoutDurations[workout.id]
                 )
                 Spacer(modifier = Modifier.height(4.dp))
             }
@@ -170,7 +176,8 @@ fun WorkoutGroupCard(
 @Composable
 fun WorkoutItem(
     workout: WorkoutReference,
-    onWorkoutSelected: (WorkoutReference) -> Unit
+    onWorkoutSelected: (WorkoutReference) -> Unit,
+    duration: Int? = null
 ) {
     Surface(
         modifier = Modifier
@@ -179,19 +186,36 @@ fun WorkoutItem(
         color = MaterialTheme.colorScheme.surfaceVariant,
         shape = MaterialTheme.shapes.small
     ) {
-        Column(
+        Row(
             modifier = Modifier
                 .padding(8.dp)
-                .fillMaxWidth()
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = workout.name,
-                style = MaterialTheme.typography.bodyLarge
-            )
-            Text(
-                text = workout.description,
-                style = MaterialTheme.typography.bodyMedium
-            )
+            Column(
+                modifier = Modifier.weight(1f)
+            ) {
+                Text(
+                    text = workout.name,
+                    style = MaterialTheme.typography.bodyLarge
+                )
+                Text(
+                    text = workout.description,
+                    style = MaterialTheme.typography.bodyMedium
+                )
+            }
+            
+            // Display duration if available
+            duration?.let { totalSeconds ->
+                val minutes = totalSeconds / 60
+                val seconds = totalSeconds % 60
+                Text(
+                    text = "${minutes}m ${seconds}s",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.primary
+                )
+            }
         }
     }
 }

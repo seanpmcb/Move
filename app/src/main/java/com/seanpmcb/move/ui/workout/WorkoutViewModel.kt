@@ -9,6 +9,7 @@ import com.seanpmcb.move.data.WorkoutRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class WorkoutViewModel : ViewModel() {
@@ -24,6 +25,10 @@ class WorkoutViewModel : ViewModel() {
     private var _error = MutableStateFlow<String?>(null)
     val error: StateFlow<String?> = _error.asStateFlow()
     
+    // Map to store workout durations by ID
+    private var _workoutDurations = MutableStateFlow<Map<String, Int?>>(emptyMap())
+    val workoutDurations: StateFlow<Map<String, Int?>> = _workoutDurations.asStateFlow()
+    
     private lateinit var workoutRepository: WorkoutRepository
     private var currentWorkoutId: String? = null
     
@@ -33,6 +38,23 @@ class WorkoutViewModel : ViewModel() {
             try {
                 workoutRepository.getWorkoutGroups().collect { groups ->
                     _workoutGroups.value = groups
+                    
+                    // Load all workout durations
+                    val durations = mutableMapOf<String, Int?>()
+                    groups.forEach { group ->
+                        group.workouts.forEach { workoutRef ->
+                            try {
+                                val workout = workoutRepository.getWorkout(workoutRef.id).first()
+                                if (workout != null) {
+                                    durations[workoutRef.id] = workout.calculateDuration()
+                                }
+                            } catch (e: Exception) {
+                                // Skip if workout can't be loaded
+                            }
+                        }
+                    }
+                    _workoutDurations.value = durations
+                    
                     _isLoading.value = false
                 }
             } catch (e: Exception) {
