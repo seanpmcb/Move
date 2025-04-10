@@ -15,6 +15,16 @@ fun WorkoutCompleteScreen(
     workout: Workout,
     onDismiss: () -> Unit
 ) {
+    // Calculate minutes and seconds
+    val totalSeconds = workout.calculateDuration() ?: 0
+    val minutes = totalSeconds / 60
+    val seconds = totalSeconds % 60
+    val durationText = if (minutes > 0) {
+        "$minutes min ${if (seconds > 0) "$seconds sec" else ""}"
+    } else {
+        "$seconds sec"
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -52,10 +62,10 @@ fun WorkoutCompleteScreen(
 
         Surface(
             color = MaterialTheme.colorScheme.secondaryContainer,
-            shape = MaterialTheme.shapes.medium
+            shape = MaterialTheme.shapes.large
         ) {
             Text(
-                text = "Total Duration: ${(workout.calculateDuration() ?: 0)} seconds",
+                text = "Total Duration: $durationText",
                 style = MaterialTheme.typography.bodyLarge,
                 color = MaterialTheme.colorScheme.onSurface
             )

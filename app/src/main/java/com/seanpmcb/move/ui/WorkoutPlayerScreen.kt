@@ -80,7 +80,6 @@ fun WorkoutPlayerScreen(
                     } else {
                         workoutTimer.playWorkoutCompleteSound()
                         isWorkoutComplete = true
-                        onWorkoutComplete()
                     }
                 }
             }
@@ -118,7 +117,6 @@ fun WorkoutPlayerScreen(
                     } else {
                         workoutTimer.playWorkoutCompleteSound()
                         isWorkoutComplete = true
-                        onWorkoutComplete()
                     }
                 }
             }
