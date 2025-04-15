@@ -185,15 +185,20 @@ fun WorkoutPlayerScreen(
                     trackColor = MaterialTheme.colorScheme.primaryContainer
                 )
                 
-                // Center the text inside the progress bar
-                Text(
-                    text = "${currentExerciseIndex + 1}/${workout.exercises.size}",
-                    style = MaterialTheme.typography.titleMedium.copy(
-                        color = MaterialTheme.colorScheme.onPrimary
-                    ),
-                    modifier = Modifier
-                        .align(Alignment.Center)
-                )
+                // Center the text inside the progress bar with improved readability
+                Surface(
+                    modifier = Modifier.align(Alignment.Center),
+                    color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
+                    shape = MaterialTheme.shapes.small
+                ) {
+                    Text(
+                        text = "${currentExerciseIndex + 1}/${workout.exercises.size}",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            color = MaterialTheme.colorScheme.onSurface
+                        ),
+                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
+                    )
+                }
             }
 
             // Center section with exercise info, image, and timer
