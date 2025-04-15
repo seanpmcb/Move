@@ -170,13 +170,31 @@ fun WorkoutPlayerScreen(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "${currentExerciseIndex + 1}/${workout.exercises.size}",
-                style = MaterialTheme.typography.titleMedium.copy(
-                    color = MaterialTheme.colorScheme.primary
-                ),
-                modifier = Modifier.padding(bottom = 24.dp)
-            )
+            // Progress bar with exercise counter text inside
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 24.dp)
+            ) {
+                LinearProgressIndicator(
+                    progress = (currentExerciseIndex + 1).toFloat() / workout.exercises.size,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(32.dp),
+                    color = MaterialTheme.colorScheme.primary,
+                    trackColor = MaterialTheme.colorScheme.primaryContainer
+                )
+                
+                // Center the text inside the progress bar
+                Text(
+                    text = "${currentExerciseIndex + 1}/${workout.exercises.size}",
+                    style = MaterialTheme.typography.titleMedium.copy(
+                        color = MaterialTheme.colorScheme.onPrimary
+                    ),
+                    modifier = Modifier
+                        .align(Alignment.Center)
+                )
+            }
 
             // Center section with exercise info, image, and timer
             Column(
