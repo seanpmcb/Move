@@ -6,6 +6,10 @@ groups:
         name: Wake Up
         description: A gentle morning yoga flow to start your day
         file: morning/wake_up.yaml
+      - id: quick_core
+        name: Quick Core
+        description: A quick core workout focusing on plank variations
+        file: core/quick_core.yaml
       - id: wake_and_shake_1
         name: Wake & Shake Short
         description: A dynamic workout to wake up your body
@@ -18,50 +22,6 @@ groups:
         name: Wake & Shake Long
         description: A dynamic workout to wake up your body
         file: morning/wake_and_shake_3.yaml
-
-  - id: core_group
-    name: Core
-    workouts:
-      - id: quick_core
-        name: Quick Core
-        description: A quick core workout focusing on plank variations
-        file: core/quick_core.yaml
-
-  - id: strength_group
-    name: Strength Training
-    workouts:
-      - id: strength_training_1
-        name: Strength Training 1
-        description: A comprehensive strength training workout focusing on major muscle groups
-        file: strength/strength_training_1.yaml
-      - id: fifteen_min_bodyweight
-        name: 15 Minute Bodyweight
-        description: A 15-minute bodyweight workout focusing on major muscle groups
-        file: strength/fifteen_min_bodyweight.yaml
-      - id: thirty_min_bodyweight
-        name: 30 Minute Bodyweight
-        description: A 30-minute bodyweight workout focusing on major muscle groups
-        file: strength/thirty_min_bodyweight.yaml
-
-  - id: flexibility_group
-    name: Flexibility
-    workouts:
-      - id: full_body
-        name: 15 Minute Full Body
-        description: A comprehensive full body flexibility workout focusing on major muscle groups
-        file: flexibility/full_body.yaml
-      - id: full_body_30
-        name: 30 Minute Full Body
-        description: A comprehensive 30-minute full body flexibility workout focusing on major muscle groups
-        file: flexibility/full_body_30.yaml 
-      - id: ten_minute_relax
-        name: 10 Minute Relax
-        description: A 10-minute relaxation workout focusing on major muscle groups
-        file: flexibility/ten_minute_relax.yaml
-      - id: twenty_minute_relax
-        name: 20 Minute Relax
-        description: A 20-minute relaxation workout focusing on major muscle groups 
-        file: flexibility/twenty_minute_relax.yaml
 
   - id: daily_focus_group
     name: Daily Focus
@@ -86,3 +46,47 @@ groups:
         name: Friday - Shoulders
         description: A focused shoulder opening workout for Fridays
         file: daily_focus/friday_shoulders.yaml
+
+  - id: flexibility_group
+    name: Flexibility
+    workouts:
+      - id: full_body
+        name: 15 Minute Full Body
+        description: A comprehensive full body flexibility workout focusing on major muscle groups
+        file: flexibility/full_body.yaml
+      - id: full_body_30
+        name: 30 Minute Full Body
+        description: A comprehensive 30-minute full body flexibility workout focusing on major muscle groups
+        file: flexibility/full_body_30.yaml 
+      - id: ten_minute_relax
+        name: 10 Minute Relax
+        description: A 10-minute relaxation workout focusing on major muscle groups
+        file: flexibility/ten_minute_relax.yaml
+      - id: twenty_minute_relax
+        name: 20 Minute Relax
+        description: A 20-minute relaxation workout focusing on major muscle groups 
+        file: flexibility/twenty_minute_relax.yaml
+
+  - id: core_group
+    name: Core
+    workouts:
+      - id: quick_core
+        name: Quick Core
+        description: A quick core workout focusing on plank variations
+        file: core/quick_core.yaml
+
+  - id: strength_group
+    name: Strength Training
+    workouts:
+      - id: strength_training_1
+        name: Strength Training 1
+        description: A comprehensive strength training workout focusing on major muscle groups
+        file: strength/strength_training_1.yaml
+      - id: fifteen_min_bodyweight
+        name: 15 Minute Bodyweight
+        description: A 15-minute bodyweight workout focusing on major muscle groups
+        file: strength/fifteen_min_bodyweight.yaml
+      - id: thirty_min_bodyweight
+        name: 30 Minute Bodyweight
+        description: A 30-minute bodyweight workout focusing on major muscle groups
+        file: strength/thirty_min_bodyweight.yaml
