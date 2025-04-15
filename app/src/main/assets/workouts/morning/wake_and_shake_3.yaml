@@ -347,14 +347,14 @@ exercises:
 
   - id: ankle_circles_1
     name: Ankle Circles
-    duration: 10
+    duration: 15
     type: WORK
     instructions: Make circles with one ankle.
     imageResId: null
 
   - id: change_direction_5
     name: Change Direction
-    duration: 10
+    duration: 15
     type: WORK
     instructions: Change the direction of your ankle circles.
     imageResId: null
@@ -368,14 +368,14 @@ exercises:
 
   - id: ankle_circles_2
     name: Ankle Circles
-    duration: 10
+    duration: 15
     type: WORK
     instructions: Make circles with the other ankle.
     imageResId: null
 
   - id: change_direction_6
     name: Change Direction
-    duration: 10
+    duration: 15
     type: WORK
     instructions: Change the direction of your ankle circles.
     imageResId: null 

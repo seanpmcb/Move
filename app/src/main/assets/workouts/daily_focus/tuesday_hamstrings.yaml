@@ -2,8 +2,8 @@ id: tuesday_hamstrings
 name: Tuesday - Hamstrings
 description: A focused hamstring stretching workout for Tuesdays
 exercises:
-  - id: ride_doll
-    name: Ride Doll
+  - id: rag_doll
+    name: Rag Doll
     duration: 60
     type: WORK
     instructions: Stand relaxed, hinge forward from the hips, let your upper body hang loose
@@ -53,35 +53,35 @@ exercises:
 
   - id: rest_3
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: reverse_lunge_right
-    name: Reverse Lunge (Right)
+  - id: kneeling_hamstring_lunge_right
+    name: Kneeling Hamstring Lunge (Right)
     duration: 60
     type: WORK
-    instructions: Step back with right leg, lower into a lunge position
+    instructions: Kneel on left leg, keep right leg straight, fold forward
     imageResId: null
 
   - id: switch_sides_2
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
     instructions: Switch legs
     imageResId: null
 
-  - id: reverse_lunge_left
-    name: Reverse Lunge (Left)
+  - id: kneeling_hamstring_lunge_left
+    name: Kneeling Hamstring Lunge (Left)
     duration: 60
     type: WORK
-    instructions: Step back with left leg, lower into a lunge position
+    instructions: Kneel on right leg, keep left leg straight, fold forward
     imageResId: null
 
   - id: rest_4
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -123,13 +123,13 @@ exercises:
 
   - id: rest_6
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: seated_straddle
-    name: Seated Straddle
+  - id: pancake
+    name: Pancake
     duration: 60
     type: WORK
     instructions: Sit with legs wide apart, hinge forward from hips reaching forward
@@ -137,7 +137,7 @@ exercises:
 
   - id: rest_7
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null

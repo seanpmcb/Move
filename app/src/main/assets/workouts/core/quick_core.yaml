@@ -44,11 +44,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: right_side_plank
-    name: Right Side Plank
+  - id: right_side_star_plank
+    name: Right Side Star Plank
     duration: 15
     type: WORK
-    instructions: Hold side plank on right forearm
+    instructions: Hold side star plank, keeping right arm straight
     imageResId: null
 
   - id: switch_sides_1
@@ -58,11 +58,11 @@ exercises:
     instructions: Switch to left side
     imageResId: null
 
-  - id: left_side_plank
-    name: Left Side Plank
+  - id: left_side_star_plank
+    name: Left Side Star Plank
     duration: 15
     type: WORK
-    instructions: Hold side plank on left forearm
+    instructions: Hold side star plank, keeping left arm straight
     imageResId: null
 
   - id: rest_4
