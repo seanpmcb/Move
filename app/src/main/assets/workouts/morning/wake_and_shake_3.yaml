@@ -324,6 +324,20 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
+  - id: knee_hugs
+    name: Knee Hugs
+    duration: 30
+    type: WORK
+    instructions: Hug your knees to your chest.
+    imageResId: null
+
+  - id: rest_17
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
   - id: knee_circles_1
     name: Knee Circles
     duration: 15
@@ -338,7 +352,7 @@ exercises:
     instructions: Change the direction of your knee circles.
     imageResId: null
 
-  - id: rest_17
+  - id: rest_18
     name: Rest
     duration: 5
     type: REST
@@ -380,7 +394,7 @@ exercises:
     instructions: Change the direction of your ankle circles.
     imageResId: null 
 
-  - id: rest_18
+  - id: rest_19
     name: Rest
     duration: 5
     type: REST
