@@ -49,6 +49,27 @@ fun WorkoutPlayerScreen(
     val currentExercise by remember(currentExerciseIndex) {
         derivedStateOf { workout.exercises[currentExerciseIndex] }
     }
+    
+    // Calculate work exercise indices and count
+    val workExerciseIndices by remember(workout) {
+        derivedStateOf {
+            workout.exercises.mapIndexedNotNull { index, exercise ->
+                if (exercise.type == ExerciseType.WORK) index else null
+            }
+        }
+    }
+    
+    // Find the current work exercise index
+    val currentWorkExerciseIndex by remember(currentExerciseIndex, workExerciseIndices) {
+        derivedStateOf {
+            workExerciseIndices.indexOfFirst { it >= currentExerciseIndex }
+        }
+    }
+    
+    // Calculate total work exercises
+    val totalWorkExercises by remember(workExerciseIndices) {
+        derivedStateOf { workExerciseIndices.size }
+    }
 
     // Keep screen on while workout is active
     DisposableEffect(Unit) {
@@ -170,14 +191,18 @@ fun WorkoutPlayerScreen(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Progress bar with exercise counter text inside
+            // Progress bar with exercise counter text inside - only counting WORK exercises
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 24.dp)
             ) {
                 LinearProgressIndicator(
-                    progress = (currentExerciseIndex + 1).toFloat() / workout.exercises.size,
+                    progress = if (totalWorkExercises > 0) {
+                        (currentWorkExerciseIndex + 1).toFloat() / totalWorkExercises
+                    } else {
+                        0f
+                    },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(32.dp),
@@ -192,7 +217,11 @@ fun WorkoutPlayerScreen(
                     shape = MaterialTheme.shapes.small
                 ) {
                     Text(
-                        text = "${currentExerciseIndex + 1}/${workout.exercises.size}",
+                        text = if (totalWorkExercises > 0) {
+                            "${currentWorkExerciseIndex + 1}/${totalWorkExercises}"
+                        } else {
+                            "${currentExerciseIndex + 1}/${workout.exercises.size}"
+                        },
                         style = MaterialTheme.typography.titleMedium.copy(
                             color = MaterialTheme.colorScheme.onSurface
                         ),

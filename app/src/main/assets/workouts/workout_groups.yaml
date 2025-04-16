@@ -37,7 +37,7 @@ groups:
       - id: wednesday_lower_back
         name: Wednesday - Lower Back
         description: A focused lower back stretching workout for Wednesdays
-        file: daily_focus/iwednesday_lower_back.yaml
+        file: daily_focus/wednesday_lower_back.yaml
       - id: thursday_splits
         name: Thursday - Splits
         description: A focused splits preparation workout for Thursdays

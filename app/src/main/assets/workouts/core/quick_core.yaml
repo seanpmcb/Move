@@ -53,7 +53,7 @@ exercises:
 
   - id: switch_sides_1
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
     instructions: Switch to left side
     imageResId: null
@@ -128,11 +128,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: leg_lift
-    name: Leg Lift
+  - id: hollow_body_hold 
+    name: Hollow Body Hold
     duration: 30
     type: WORK
-    instructions: While laying on you back, raise feet up
+    instructions: While laying on you back with arms out, raise hands and feet up
     imageResId: null
 
   - id: rest_5
@@ -184,11 +184,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: lying_leg_raise
-    name: Lying Leg Raise
+  - id: side_leg_raise_right
+    name: Side Leg Raise Right
     duration: 15
     type: WORK
-    instructions: Lift leg and reach for foot
+    instructions: Lay on side, lift leg and reach for foot
     imageResId: null
 
   - id: switch_sides_1
@@ -198,11 +198,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: lying_leg_raise
-    name: Lying Leg Raise
+  - id: side_leg_raise_left
+    name: Side Leg Raise Left
     duration: 15
     type: WORK
-    instructions: Lift leg and reach for foot
+    instructions: Lay on side, lift leg and reach for foot
     imageResId: null
 
   - id: rest_4

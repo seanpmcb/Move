@@ -95,7 +95,7 @@ exercises:
 
   - id: rest_6
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -165,7 +165,7 @@ exercises:
 
   - id: rest_10
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: null
