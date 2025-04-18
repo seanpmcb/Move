@@ -39,7 +39,7 @@ exercises:
 
   - id: switch_sides_2
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
     instructions: Switch sides
     imageResId: null
@@ -53,7 +53,7 @@ exercises:
 
   - id: rest_2
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -179,7 +179,7 @@ exercises:
 
   - id: switch_sides_7
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
     instructions: Switch sides
     imageResId: null

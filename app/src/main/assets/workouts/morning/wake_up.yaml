@@ -1,5 +1,5 @@
 id: wake_up_workout
-name: Wake Up
+name: Wake Up Stretch
 description: A gentle morning yoga flow to start your day
 exercises:
   - id: upward_salute
@@ -56,6 +56,27 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
+    imageResId: calf_stretch
+
+  - id: calf_stretch_right
+    name: Calf Stretch
+    duration: 30
+    type: WORK
+    instructions: Push against wall, bend knee and hold
+    imageResId: calf_stretch
+
+  - id: calf_stretch_left
+    name: Switch Sides
+    duration: 30
+    type: WORK
+    instructions: Push against wall, bend knee and hold
+    imageResId: calf_stretch
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
     imageResId: upward_dog
 
   - id: upward_dog
@@ -65,7 +86,7 @@ exercises:
     instructions: Lie on stomach, push chest up, legs extended
     imageResId: upward_dog
 
-  - id: rest_4
+  - id: rest_5
     name: Rest
     duration: 5
     type: REST
@@ -79,7 +100,7 @@ exercises:
     instructions: Kneel and sit back on heels, extend arms forward
     imageResId: childs_pose
 
-  - id: rest_5
+  - id: rest_6
     name: Rest
     duration: 5
     type: REST
@@ -93,7 +114,7 @@ exercises:
     instructions: Form an inverted V with body, hands and feet pressed into mat
     imageResId: downward_dog
 
-  - id: rest_6
+  - id: rest_7
     name: Rest
     duration: 5
     type: REST
@@ -107,7 +128,7 @@ exercises:
     instructions: Stand with legs wide, fold forward at hips
     imageResId: wide_leg_bend
 
-  - id: rest_6
+  - id: rest_8
     name: Rest
     duration: 5
     type: REST

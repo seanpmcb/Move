@@ -18,7 +18,7 @@ exercises:
 
   - id: chest_opener
     name: Chest Opener
-    duration: 60
+    duration: 30
     type: WORK
     instructions: Interlace hands behind back, gently lift arms away from body
     imageResId: null
@@ -58,6 +58,34 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
+  - id: wall_arm_right
+    name: Straight Wall Arm (Right)
+    duration: 30
+    type: WORK
+    instructions: Place right arm against wall, twist away from wall
+    imageResId: null
+    
+  - id: switch_sides_2
+    name: Switch Arms
+    duration: 5
+    type: TRANSITION
+    instructions: Switch arms
+    imageResId: null
+
+  - id: wall_arm_left
+    name: Straight Wall Arm (Left)
+    duration: 30
+    type: WORK
+    instructions: Place left arm against wall, twist away from wall
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
   - id: one_arm_hug_right
     name: One Arm Hug (Right)
     duration: 30
@@ -65,7 +93,7 @@ exercises:
     instructions: Cross right arm across chest, use left arm to deepen stretch
     imageResId: null
 
-  - id: switch_sides_2
+  - id: switch_sides_3
     name: Switch Arms
     duration: 5
     type: TRANSITION
@@ -91,6 +119,27 @@ exercises:
     duration: 60
     type: WORK
     instructions: Place hands on wall, walk feet back, lower chest towards floor
+    imageResId: null
+
+  - id: wall_pec_right
+    name: Wall Pec (Right)
+    duration: 30
+    type: WORK
+    instructions: Place bent right arm against wall, twist away from wall
+    imageResId: null
+    
+  - id: switch_sides_4
+    name: Switch Arms
+    duration: 5
+    type: TRANSITION
+    instructions: Switch arms
+    imageResId: null
+
+  - id: wall_pec_left
+    name: Wall Pec (Left)
+    duration: 30
+    type: WORK
+    instructions: Place bent left arm against wall, twist away from wall
     imageResId: null
 
   - id: rest_5
@@ -121,7 +170,7 @@ exercises:
     instructions: Lie on back with right arm extended. Roll over to the right to stetch the rigth shoulder
     imageResId: null
 
-  - id: switch_sides_3
+  - id: switch_sides_4
     name: Switch Sides
     duration: 5
     type: TRANSITION
@@ -149,7 +198,7 @@ exercises:
     instructions: Reach right arm behind back, grasp right wrist with left hand, gently pull
     imageResId: null
 
-  - id: switch_sides_4
+  - id: switch_sides_5
     name: Switch Sides
     duration: 5
     type: TRANSITION
@@ -164,6 +213,20 @@ exercises:
     imageResId: null
 
   - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: seated_chest_stretch
+    name: Seated Chest Stretch
+    duration: 60
+    type: WORK
+    instructions: Sit on the floor, chest up, slide arms back with fingers pointing away
+    imageResId: null
+
+  - id: rest_9
     name: Rest
     duration: 5
     type: REST
