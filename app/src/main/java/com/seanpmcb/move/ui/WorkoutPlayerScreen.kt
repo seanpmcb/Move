@@ -44,6 +44,7 @@ fun WorkoutPlayerScreen(
     var manualProgressionMode by remember { mutableStateOf(false) }
     var showWeightDialog by remember { mutableStateOf(false) }
     var currentWeight by remember { mutableStateOf("") }
+    var isInitialStart by remember { mutableStateOf(true) }
 
     // Derive current exercise from the index
     val currentExercise by remember(currentExerciseIndex) {
@@ -131,6 +132,8 @@ fun WorkoutPlayerScreen(
             ).collect { time ->
                 timeRemaining = time
                 if (time == 0) {
+                    // Reset the restart trigger before moving to next exercise
+                    restartTrigger = 0
                     // When exercise completes, continue with the rest of the workout
                     if (currentExerciseIndex < workout.exercises.size - 1) {
                         currentExerciseIndex++
@@ -154,10 +157,11 @@ fun WorkoutPlayerScreen(
     }
 
     LaunchedEffect(restartTrigger) {
-        if (restartTrigger == 0) {
+        if (isInitialStart) {
+            isInitialStart = false
             currentExerciseIndex = 0
             startWorkout()
-        } else {
+        } else if (restartTrigger > 0) {
             restartCurrentExercise()
         }
     }
