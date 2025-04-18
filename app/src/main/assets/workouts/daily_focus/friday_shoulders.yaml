@@ -121,6 +121,13 @@ exercises:
     instructions: Place hands on wall, walk feet back, lower chest towards floor
     imageResId: null
 
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
   - id: wall_pec_right
     name: Wall Pec (Right)
     duration: 30
@@ -142,7 +149,7 @@ exercises:
     instructions: Place bent left arm against wall, twist away from wall
     imageResId: null
 
-  - id: rest_5
+  - id: rest_6
     name: Rest
     duration: 5
     type: REST
@@ -156,9 +163,9 @@ exercises:
     instructions: Stand relaxed, hinge forward from hips, let upper body hang loosely
     imageResId: null
 
-  - id: rest_6
+  - id: rest_7
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -172,7 +179,7 @@ exercises:
 
   - id: switch_sides_4
     name: Switch Sides
-    duration: 5
+    duration: 10
     type: TRANSITION
     instructions: Switch sides
     imageResId: null
@@ -184,9 +191,9 @@ exercises:
     instructions: Lie on back with left arm extended. Roll over to the left to stretch the left shoulder
     imageResId: null
 
-  - id: rest_7
+  - id: rest_8
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -200,7 +207,7 @@ exercises:
 
   - id: switch_sides_5
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
     instructions: Switch sides
     imageResId: null
@@ -212,7 +219,21 @@ exercises:
     instructions: Reach left arm behind back, grasp left wrist with right hand, gently pull
     imageResId: null
 
-  - id: rest_8
+  - id: rest_9
+    name: Rest
+    duration: 10
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: childs_pose
+    name: Child's Pose
+    duration: 60
+    type: WORK
+    instructions: Kneel, sit back onto heels, stretch arms forward and relax chest towards floor
+    imageResId: null
+
+  - id: rest_10
     name: Rest
     duration: 5
     type: REST
@@ -224,18 +245,4 @@ exercises:
     duration: 60
     type: WORK
     instructions: Sit on the floor, chest up, slide arms back with fingers pointing away
-    imageResId: null
-
-  - id: rest_9
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
-  - id: childs_pose
-    name: Child's Pose
-    duration: 60
-    type: WORK
-    instructions: Kneel, sit back onto heels, stretch arms forward and relax chest towards floor
     imageResId: null
