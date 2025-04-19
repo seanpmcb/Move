@@ -58,25 +58,25 @@ exercises:
     instructions: Take a short break
     imageResId: overhead_tricep
 
-  - id: right_overhead_tricep
-    name: Right Overhead Tricep
+  - id: overhead_tricep_1
+    name: Overhead Tricep
     duration: 15
     type: WORK
-    instructions: Bend right arm behind head, hold with left hand
+    instructions: Bend one arm behind head, hold with opposite hand
     imageResId: overhead_tricep
 
   - id: switch_sides_1
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: overhead_tricep
 
-  - id: left_overhead_tricep
-    name: Left Overhead Tricep
+  - id: overhead_tricep_2
+    name: Overhead Tricep
     duration: 15
     type: WORK
-    instructions: Bend left arm behind head, hold with right hand
+    instructions: Bend one arm behind head, hold with opposite hand
     imageResId: overhead_tricep
 
   - id: rest_5
@@ -100,25 +100,25 @@ exercises:
     instructions: Take a short break
     imageResId: one_arm_hug
 
-  - id: right_one_arm_hug
-    name: Right One Arm Hug
+  - id: one_arm_hug_1
+    name: One Arm Hug
     duration: 15
     type: WORK
-    instructions: Hug right arm across chest, hold with left hand
+    instructions: Hug one arm across chest, hold with opposite hand
     imageResId: one_arm_hug
 
   - id: switch_sides_2
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: one_arm_hug
 
-  - id: left_one_arm_hug
-    name: Left One Arm Hug
+  - id: one_arm_hug_2
+    name: One Arm Hug
     duration: 15
     type: WORK
-    instructions: Hug left arm across chest, hold with right hand
+    instructions: Hug one arm across chest, hold with opposite hand
     imageResId: one_arm_hug
 
   - id: rest_7
@@ -142,25 +142,25 @@ exercises:
     instructions: Take a short break
     imageResId: side_lunge
 
-  - id: right_side_lunge
-    name: Right Side Lunge
+  - id: side_lunge_1
+    name: Side Lunge
     duration: 30
     type: WORK
-    instructions: Step right foot out to side, bend right knee
+    instructions: Step one foot out to side, bend that knee
     imageResId: side_lunge
 
   - id: switch_sides_3
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: side_lunge
 
-  - id: left_side_lunge
-    name: Left Side Lunge
+  - id: side_lunge_2
+    name: Side Lunge
     duration: 30
     type: WORK
-    instructions: Step left foot out to side, bend left knee
+    instructions: Step one foot out to side, bend that knee
     imageResId: side_lunge
 
   - id: rest_9
@@ -184,25 +184,25 @@ exercises:
     instructions: Take a short break
     imageResId: lunge
 
-  - id: right_lunge
-    name: Right Lunge
+  - id: lunge_1
+    name: Lunge
     duration: 30
     type: WORK
-    instructions: Step right foot back into a lunge
+    instructions: Step one foot back into a lunge, extend arms overhead
     imageResId: lunge
 
   - id: switch_sides_4
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: lunge
 
-  - id: left_lunge
-    name: Left Lunge
+  - id: lunge_2
+    name: Lunge
     duration: 30
     type: WORK
-    instructions: Step left foot back into a lunge
+    instructions: Step one foot back into a lunge, extend arms overhead
     imageResId: lunge
 
   - id: rest_11
@@ -210,60 +210,60 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: reverse_lunge
+    imageResId: reverse_runners_lunge
 
-  - id: right_reverse_lunge
-    name: Right Reverse Lunge
+  - id: reverse_runners_lunge_1
+    name: Reverse Runners Lunge
     duration: 30
     type: WORK
-    instructions: Step right foot forward into a lunge
-    imageResId: reverse_lunge
+    instructions: Step back onto one knee, extend other leg stretching the hamstring
+    imageResId: reverse_runners_lunge
 
   - id: switch_sides_5
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
-    imageResId: reverse_lunge
+    instructions: Switch to the other side
+    imageResId: reverse_runners_lunge
 
-  - id: left_reverse_lunge
-    name: Left Reverse Lunge
+  - id: reverse_runners_lunge_2
+    name: Reverse Runners Lunge
     duration: 30
     type: WORK
-    instructions: Step left foot forward into a lunge
-    imageResId: reverse_lunge
+    instructions: Step back onto one knee, extend other leg stretching the hamstring
+    imageResId: reverse_runners_lunge
 
   - id: rest_12
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: kneeling_quad
 
-  - id: right_kneeling_quad
-    name: Right Kneeling Quad
+  - id: standing_quad_stretch_1
+    name: Standing Quad Stretch
     duration: 30
     type: WORK
-    instructions: Kneel on left knee, bend right knee back, hold right foot
-    imageResId: kneeling_quad
+    instructions: Stand with one leg extended, bend the other knee back, hold that foot
+    imageResId: standing_quad_stretch
 
   - id: switch_sides_6
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
-    imageResId: kneeling_quad
+    instructions: Switch to the other side
+    imageResId: standing_quad_stretch
 
-  - id: left_kneeling_quad
-    name: Left Kneeling Quad
+  - id: standing_quad_stretch_2
+    name: Standing Quad Stretch
     duration: 30
     type: WORK
-    instructions: Kneel on right knee, bend left knee back, hold left foot
-    imageResId: kneeling_quad
+    instructions: Stand with one leg extended, bend the other knee back, hold that foot
+    imageResId: standing_quad_stretch
 
   - id: rest_13
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: upward_dog
@@ -328,22 +328,22 @@ exercises:
     name: Saddle Pose
     duration: 30
     type: WORK
-    instructions: Sit between heels, lean back
+    instructions: Kneel between heels, lean back
     imageResId: saddle_pose
 
   - id: rest_18
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
-    imageResId: toe_squat
+    imageResId: toe_kneeling_squat
 
-  - id: toe_squat
-    name: Toe Squat
+  - id: toe_kneeling_squat
+    name: Toe Kneeling Squat
     duration: 30
     type: WORK
     instructions: Kneel with toes tucked under
-    imageResId: toe_squat
+    imageResId: toe_kneeling_squat
 
   - id: rest_19
     name: Rest
@@ -361,58 +361,58 @@ exercises:
 
   - id: rest_20
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: lizard_pose
 
-  - id: right_lizard_pose
-    name: Right Lizard Pose
+  - id: lizard_pose_1
+    name: Lizard Pose
     duration: 30
     type: WORK
-    instructions: Right foot outside right hand, lower back knee
+    instructions: Place one foot outside the same hand, lower back knee
     imageResId: lizard_pose
 
   - id: switch_sides_7
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: lizard_pose
 
-  - id: left_lizard_pose
-    name: Left Lizard Pose
+  - id: lizard_pose_2
+    name: Lizard Pose
     duration: 30
     type: WORK
-    instructions: Left foot outside left hand, lower back knee
+    instructions: Place one foot outside the same hand, lower back knee
     imageResId: lizard_pose
 
   - id: rest_21
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: pigeon
 
-  - id: right_pigeon
-    name: Right Pigeon
+  - id: pigeon_1
+    name: Pigeon
     duration: 30
     type: WORK
-    instructions: Right leg bent in front, left leg extended behind
+    instructions: Bend one leg in front, extend the other leg behind
     imageResId: pigeon
 
   - id: switch_sides_8
     name: Switch Sides
-    duration: 5
+    duration: 10
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: pigeon
 
-  - id: left_pigeon
-    name: Left Pigeon
+  - id: pigeon_2
+    name: Pigeon
     duration: 30
     type: WORK
-    instructions: Left leg bent in front, right leg extended behind
+    instructions: Bend one leg in front, extend the other leg behind
     imageResId: pigeon
 
   - id: rest_22
@@ -445,30 +445,30 @@ exercises:
 
   - id: rest_24
     name: Rest
-    duration: 5
+    duration: 15
     type: REST
     instructions: Take a short break
     imageResId: twisted_sphinx
 
-  - id: right_twisted_sphinx
-    name: Right Twisted Sphinx
+  - id: twisted_sphinx_1
+    name: Twisted Sphinx
     duration: 30
     type: WORK
-    instructions: Lie on stomach, prop up on elbows, twist right
+    instructions: Lie on stomach, prop up on elbows, twist to one side
     imageResId: twisted_sphinx
 
   - id: switch_sides_9
     name: Switch Sides
-    duration: 5
+    duration: 15
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: twisted_sphinx
 
-  - id: left_twisted_sphinx
-    name: Left Twisted Sphinx
+  - id: twisted_sphinx_2
+    name: Twisted Sphinx
     duration: 30
     type: WORK
-    instructions: Lie on stomach, prop up on elbows, twist left
+    instructions: Lie on stomach, prop up on elbows, twist to one side
     imageResId: twisted_sphinx
 
   - id: rest_25
@@ -478,25 +478,25 @@ exercises:
     instructions: Take a short break
     imageResId: seated_twist
 
-  - id: right_seated_twist
-    name: Right Seated Twist
+  - id: seated_twist_1
+    name: Seated Twist
     duration: 30
     type: WORK
-    instructions: Sit with legs extended, twist right
+    instructions: Sit with legs extended, twist to one side
     imageResId: seated_twist
 
   - id: switch_sides_10
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: seated_twist
 
-  - id: left_seated_twist
-    name: Left Seated Twist
+  - id: seated_twist_2
+    name: Seated Twist
     duration: 30
     type: WORK
-    instructions: Sit with legs extended, twist left
+    instructions: Sit with legs extended, twist to one side
     imageResId: seated_twist
 
   - id: rest_26
@@ -534,25 +534,25 @@ exercises:
     instructions: Take a short break
     imageResId: figure_four
 
-  - id: right_figure_four
-    name: Right Figure Four
+  - id: figure_four_1
+    name: Lying Figure Four
     duration: 30
     type: WORK
-    instructions: Lie on back, right ankle on left knee
+    instructions: Lie on back, place one ankle on opposite knee
     imageResId: figure_four
 
   - id: switch_sides_11
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: figure_four
 
-  - id: left_figure_four
-    name: Left Figure Four
+  - id: figure_four_2
+    name: Lying Figure Four
     duration: 30
     type: WORK
-    instructions: Lie on back, left ankle on right knee
+    instructions: Lie on back, place one ankle on opposite knee
     imageResId: figure_four
 
   - id: rest_29
@@ -562,26 +562,26 @@ exercises:
     instructions: Take a short break
     imageResId: hamstring
 
-  - id: right_hamstring
-    name: Right Hamstring
+  - id: lying_hamstring_pull_1
+    name: Lying Hamstring Pull
     duration: 30
     type: WORK
-    instructions: Lie on back, right leg straight up
-    imageResId: hamstring
+    instructions: Lie on back, extend one leg straight up
+    imageResId: lying_hamstring_pull
 
   - id: switch_sides_12
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: hamstring
 
-  - id: left_hamstring
-    name: Left Hamstring
+  - id: lying_hamstring_pull_2
+    name: Lying Hamstring Pull
     duration: 30
     type: WORK
-    instructions: Lie on back, left leg straight up
-    imageResId: hamstring
+    instructions: Lie on back, extend one leg straight up
+    imageResId: lying_hamstring_pull
 
   - id: rest_30
     name: Rest
@@ -604,25 +604,25 @@ exercises:
     instructions: Take a short break
     imageResId: spinal_twist
 
-  - id: right_spinal_twist
-    name: Right Spinal Twist
+  - id: spinal_twist_1
+    name: Lying Spinal Twist
     duration: 30
     type: WORK
-    instructions: Lie on back, knees bent right
+    instructions: Lie on back, extend arms, twist extending leg to one side
     imageResId: spinal_twist
 
   - id: switch_sides_13
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: spinal_twist
 
-  - id: left_spinal_twist
-    name: Left Spinal Twist
+  - id: spinal_twist_2
+    name: Lying Spinal Twist
     duration: 30
     type: WORK
-    instructions: Lie on back, knees bent left
+    instructions: Lie on back, extend arms, twist extending leg to one side
     imageResId: spinal_twist
 
   - id: rest_32
@@ -630,28 +630,28 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: quad_stretch
+    imageResId: lying_quad_stretch
 
-  - id: right_quad_stretch
-    name: Right Quad Stretch
+  - id: lying_quad_stretch_1
+    name: Lying Quad Stretch
     duration: 30
     type: WORK
-    instructions: Lie on side, bend right knee back
-    imageResId: quad_stretch
+    instructions: Lie on side, bend one knee back
+    imageResId: lying_quad_stretch
 
   - id: switch_sides_14
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
-    imageResId: quad_stretch
+    instructions: Switch to the other side
+    imageResId: lying_quad_stretch
 
-  - id: left_quad_stretch
-    name: Left Quad Stretch
+  - id: lying_quad_stretch_2
+    name: Lying Quad Stretch
     duration: 30
     type: WORK
-    instructions: Lie on side, bend left knee back
-    imageResId: quad_stretch
+    instructions: Lie on side, bend one knee back
+    imageResId: lying_quad_stretch
 
   - id: rest_33
     name: Rest
@@ -688,11 +688,11 @@ exercises:
     instructions: Take a short break
     imageResId: double_pigeon
 
-  - id: right_double_pigeon
-    name: Right Double Pigeon
+  - id: double_pigeon_1
+    name: Double Pigeon
     duration: 30
     type: WORK
-    instructions: Sit with right ankle on left knee, left ankle on right knee
+    instructions: Sit with one ankle on opposite knee, other ankle on opposite knee
     imageResId: double_pigeon
 
   - id: switch_sides_15
@@ -702,11 +702,11 @@ exercises:
     instructions: Switch leg positions
     imageResId: double_pigeon
 
-  - id: left_double_pigeon
-    name: Left Double Pigeon
+  - id: double_pigeon_2
+    name: Double Pigeon
     duration: 30
     type: WORK
-    instructions: Sit with left ankle on right knee, right ankle on left knee
+    instructions: Sit with one ankle on opposite knee, other ankle on opposite knee
     imageResId: double_pigeon
 
   - id: rest_36
@@ -728,14 +728,14 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: seated_straddle
+    imageResId: pancake
 
-  - id: seated_straddle
-    name: Seated Straddle
+  - id: pancake
+    name: Pancake
     duration: 30
     type: WORK
     instructions: Sit with legs wide apart
-    imageResId: seated_straddle
+    imageResId: pancake
 
   - id: rest_38
     name: Rest
@@ -744,25 +744,25 @@ exercises:
     instructions: Take a short break
     imageResId: hurdler
 
-  - id: right_hurdler
-    name: Right Hurdler
+  - id: hurdler_1
+    name: Hurdler
     duration: 30
     type: WORK
-    instructions: Sit with right leg extended, left leg bent
+    instructions: Sit with one leg extended, other leg bent
     imageResId: hurdler
 
   - id: switch_sides_16
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: hurdler
 
-  - id: left_hurdler
-    name: Left Hurdler
+  - id: hurdler_2
+    name: Hurdler
     duration: 30
     type: WORK
-    instructions: Sit with left leg extended, right leg bent
+    instructions: Sit with one leg extended, other leg bent
     imageResId: hurdler
 
   - id: rest_39
@@ -795,7 +795,7 @@ exercises:
 
   - id: rest_41
     name: Rest
-    duration: 5
+    duration: 15
     type: REST
     instructions: Take a short break
     imageResId: legs_up_wall

@@ -39,7 +39,7 @@ exercises:
 
   - id: rest_3
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null

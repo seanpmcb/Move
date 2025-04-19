@@ -74,7 +74,7 @@ exercises:
 
   - id: rest_4
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: upward_dog
