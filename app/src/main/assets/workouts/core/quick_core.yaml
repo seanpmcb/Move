@@ -44,25 +44,25 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: right_side_star_plank
-    name: Right Side Star Plank
+  - id: side_star_plank
+    name: Side Star Plank
     duration: 15
     type: WORK
-    instructions: Hold side star plank, keeping right arm straight
+    instructions: Hold side star plank, keeping arms straight
     imageResId: null
 
   - id: switch_sides_1
     name: Switch Sides
     duration: 7
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to other side
     imageResId: null
 
-  - id: left_side_star_plank
-    name: Left Side Star Plank
+  - id: side_star_plank
+    name: Side Star Plank
     duration: 15
     type: WORK
-    instructions: Hold side star plank, keeping left arm straight
+    instructions: Hold side star plank, keeping arms straight
     imageResId: null
 
   - id: rest_4
@@ -184,8 +184,8 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: side_leg_raise_right
-    name: Side Leg Raise Right
+  - id: side_leg_raise
+    name: Side Leg Raise
     duration: 15
     type: WORK
     instructions: Lay on side, lift leg and reach for foot
@@ -198,8 +198,8 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: side_leg_raise_left
-    name: Side Leg Raise Left
+  - id: side_leg_raise
+    name: Side Leg Raise
     duration: 15
     type: WORK
     instructions: Lay on side, lift leg and reach for foot
