@@ -2,58 +2,58 @@ id: monday_hips
 name: Monday - Hips
 description: A focused hip opening and stretching workout for Mondays
 exercises:
-  - id: lizard_pose_right
-    name: Lizard Pose (Right)
+  - id: lizard_pose_1
+    name: Lizard Pose
     duration: 60
     type: WORK
-    instructions: Start in a low lunge with right foot forward, lower right forearm to the ground, hold position
+    instructions: Start in a low lunge with one foot forward, lower that forearm to the ground
     imageResId: null
 
   - id: switch_sides_1
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: null
 
-  - id: lizard_pose_left
-    name: Lizard Pose (Left)
+  - id: lizard_pose_2
+    name: Lizard Pose
     duration: 60
     type: WORK
-    instructions: Start in a low lunge with left foot forward, lower left forearm to the ground, hold position
+    instructions: Start in a low lunge with one foot forward, lower that forearm to the ground
     imageResId: null
 
   - id: rest_1
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: pigeon_right
-    name: Pigeon (Right)
+  - id: pigeon_1
+    name: Pigeon
     duration: 60
     type: WORK
-    instructions: From downward dog, bring right knee forward between hands, extend left leg back, hold position
+    instructions: Lunge forward with foot on opposite side of bode, lower knee to ground, lower body to stetch hip
     imageResId: null
 
   - id: switch_sides_2
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: null
 
-  - id: pigeon_left
-    name: Pigeon (Left)
+  - id: pigeon_2
+    name: Pigeon
     duration: 60
     type: WORK
-    instructions: From downward dog, bring left knee forward between hands, extend right leg back, hold position
+    instructions: Lunge forward with foot on opposite side of bode, lower knee to ground, lower body to stetch hip
     imageResId: null
 
   - id: rest_2
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -62,7 +62,7 @@ exercises:
     name: Folded Butterfly
     duration: 60
     type: WORK
-    instructions: Sit with soles of feet together, fold forward, hold position
+    instructions: Sit with soles of feet together, fold forward
     imageResId: null
 
   - id: rest_3
@@ -76,7 +76,7 @@ exercises:
     name: Happy Baby
     duration: 60
     type: WORK
-    instructions: Lie on back, bend knees to chest, grab feet with hands, hold position
+    instructions: Lie on back, bend knees to chest, grab feet with hands
     imageResId: null
 
   - id: rest_4
@@ -86,30 +86,30 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: lying_figure_four_right
-    name: Lying Figure Four (Right)
+  - id: lying_figure_four_1
+    name: Lying Figure Four
     duration: 60
     type: WORK
-    instructions: Lie on back, cross right ankle over left knee, hold position
+    instructions: Lie on back, cross one ankle over opposite knee, pull towards body
     imageResId: null
 
   - id: switch_sides_3
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: null
 
-  - id: lying_figure_four_left
-    name: Lying Figure Four (Left)
+  - id: lying_figure_four_2
+    name: Lying Figure Four
     duration: 60
     type: WORK
-    instructions: Lie on back, cross left ankle over right knee, hold position
+    instructions: Lie on back, cross one ankle over opposite knee, pull towards body
     imageResId: null
 
   - id: rest_5
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -118,12 +118,12 @@ exercises:
     name: Frog Pose
     duration: 60
     type: WORK
-    instructions: Lie on stomach, bend knees, open legs to sides, hold position
+    instructions: Lie on stomach, bend knees, open legs to sides
     imageResId: null
 
   - id: rest_6
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -132,35 +132,35 @@ exercises:
     name: Squat Stretch
     duration: 60
     type: WORK
-    instructions: Stand with feet wide, lower to squat, hold position
+    instructions: Stand with feet wide, lower to squat
     imageResId: null
 
   - id: rest_7
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: double_pigeon_right
-    name: Double Pigeon (Right)
+  - id: double_pigeon_1
+    name: Double Pigeon
     duration: 60
     type: WORK
-    instructions: Sit with right shin parallel to front of mat, left shin stacked on top, hold position
+    instructions: Sit with one shin parallel to front of mat, other shin stacked on top
     imageResId: null
 
   - id: switch_sides_4
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: null
 
-  - id: double_pigeon_left
-    name: Double Pigeon (Left)
+  - id: double_pigeon_2
+    name: Double Pigeon
     duration: 60
     type: WORK
-    instructions: Sit with left shin parallel to front of mat, right shin stacked on top, hold position
+    instructions: Sit with one shin parallel to front of mat, other shin stacked on top
     imageResId: null
 
   - id: rest_8
@@ -174,5 +174,5 @@ exercises:
     name: Reclined Butterfly
     duration: 60
     type: WORK
-    instructions: Lie on back, bring soles of feet together, let knees fall to sides, hold position
+    instructions: Lie on back, bring soles of feet together, let knees fall to sides
     imageResId: null 
