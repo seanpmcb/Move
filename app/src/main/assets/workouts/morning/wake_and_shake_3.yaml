@@ -100,11 +100,18 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: neck_rolls
-    name: Neck Rolls
-    duration: 30
+  - id: neck_roll_1
+    name: Neck Roll
+    duration: 15
     type: WORK
     instructions: Gently roll your neck in a circular motion.
+    imageResId: null
+
+  - id: neck_roll_2
+    name: Change Direction
+    duration: 15
+    type: WORK
+    instructions: Change the direction of your neck roll.
     imageResId: null
 
   - id: rest_7

@@ -30,25 +30,25 @@ exercises:
     instructions: Take a short break
     imageResId: lunge
 
-  - id: right_lunge
-    name: Right Lunge
+  - id: lunge_1
+    name: Lunge
     duration: 30
     type: WORK
-    instructions: Step right foot back into a lunge
+    instructions: Step one foot back into a lunge
     imageResId: lunge
 
   - id: switch_sides_1
     name: Switch Sides
     duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Switch to the other side
     imageResId: lunge
 
-  - id: left_lunge
-    name: Left Lunge
+  - id: lunge_2
+    name: Lunge
     duration: 30
     type: WORK
-    instructions: Step left foot back into a lunge
+    instructions: Step one foot back into a lunge
     imageResId: lunge
 
   - id: rest_3
@@ -58,15 +58,15 @@ exercises:
     instructions: Take a short break
     imageResId: calf_stretch
 
-  - id: calf_stretch_right
+  - id: calf_stretch_1
     name: Calf Stretch
     duration: 30
     type: WORK
     instructions: Push against wall, bend knee and hold
     imageResId: calf_stretch
 
-  - id: calf_stretch_left
-    name: Switch Sides
+  - id: calf_stretch_2
+    name: Calf Stretch
     duration: 30
     type: WORK
     instructions: Push against wall, bend knee and hold
