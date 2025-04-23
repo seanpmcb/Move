@@ -459,68 +459,66 @@ fun WorkoutPlayerScreen(
             }
 
             // Next exercise section (now at bottom)
-            if (currentExercise.type == ExerciseType.WORK || currentExercise.type == ExerciseType.REST) {
-                Surface(
-                    shape = MaterialTheme.shapes.large,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 8.dp)
-                        .clickable {
-                            // Skip to next exercise when clicked
-                            if (currentExerciseIndex < workout.exercises.size - 1) {
-                                // Cancel the current timer to avoid having multiple timers
-                                workoutTimer.cancelCurrentTimer()
-                                
-                                // Immediately update the timeRemaining for visual feedback
-                                val nextExercise = workout.exercises[currentExerciseIndex + 1]
-                                if (nextExercise.measurementType == null) {
-                                    nextExercise.duration?.let { duration ->
-                                        timeRemaining = duration
-                                    }
-                                }
-                                
-                                // Update exercise index which will trigger the LaunchedEffect to start the next exercise
-                                currentExerciseIndex++
-                            } else {
-                                // Cancel any existing timer
-                                workoutTimer.cancelCurrentTimer()
-                                // Launch a coroutine to play the sound and complete the workout
-                                CoroutineScope(Dispatchers.Main).launch {
-                                    workoutTimer.playWorkoutCompleteSound()
-                                    isWorkoutComplete = true
+            Surface(
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 8.dp)
+                    .clickable {
+                        // Skip to next exercise when clicked
+                        if (currentExerciseIndex < workout.exercises.size - 1) {
+                            // Cancel the current timer to avoid having multiple timers
+                            workoutTimer.cancelCurrentTimer()
+                            
+                            // Immediately update the timeRemaining for visual feedback
+                            val nextExercise = workout.exercises[currentExerciseIndex + 1]
+                            if (nextExercise.measurementType == null) {
+                                nextExercise.duration?.let { duration ->
+                                    timeRemaining = duration
                                 }
                             }
-                        },
+                            
+                            // Update exercise index which will trigger the LaunchedEffect to start the next exercise
+                            currentExerciseIndex++
+                        } else {
+                            // Cancel any existing timer
+                            workoutTimer.cancelCurrentTimer()
+                            // Launch a coroutine to play the sound and complete the workout
+                            CoroutineScope(Dispatchers.Main).launch {
+                                workoutTimer.playWorkoutCompleteSound()
+                                isWorkoutComplete = true
+                            }
+                        }
+                    },
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    Column(
-                        modifier = Modifier.padding(16.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                            contentDescription = "Next Exercise",
-                            modifier = Modifier.size(24.dp),
-                            tint = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                        contentDescription = "Next Exercise",
+                        modifier = Modifier.size(24.dp),
+                        tint = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
 
-                        Text(
-                            text = if (currentExerciseIndex < workout.exercises.size - 1) {
-                                var nextIndex = currentExerciseIndex + 1
-                                var nextExercise = workout.exercises[nextIndex]
-                                while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
-                                    nextIndex++
-                                    nextExercise = workout.exercises[nextIndex]
-                                }
-                                if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
-                            } else {
-                                "Workout Complete"
-                            },
-                            style = MaterialTheme.typography.titleLarge,
-                            textAlign = TextAlign.Center,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
-                    }
+                    Text(
+                        text = if (currentExerciseIndex < workout.exercises.size - 1) {
+                            var nextIndex = currentExerciseIndex + 1
+                            var nextExercise = workout.exercises[nextIndex]
+                            while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
+                                nextIndex++
+                                nextExercise = workout.exercises[nextIndex]
+                            }
+                            if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
+                        } else {
+                            "Workout Complete"
+                        },
+                        style = MaterialTheme.typography.titleLarge,
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
                 }
             }
 
