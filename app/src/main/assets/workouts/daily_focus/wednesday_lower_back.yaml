@@ -16,11 +16,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: lunge_right
-    name: Lunge (Right)
+  - id: lunge_side_1
+    name: Lunge
     duration: 60
     type: WORK
-    instructions: Step forward with right leg, lower into lunge position
+    instructions: Step forward with one leg, lower into lunge position
     imageResId: null
 
   - id: switch_sides_1
@@ -30,11 +30,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: lunge_left
-    name: Lunge (Left)
+  - id: lunge_side_2
+    name: Lunge
     duration: 60
     type: WORK
-    instructions: Step forward with left leg, lower into lunge position
+    instructions: Step forward with the other leg, lower into lunge position
     imageResId: null
 
   - id: rest_2
@@ -53,7 +53,7 @@ exercises:
 
   - id: rest_3
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -128,11 +128,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: lying_figure_four_right
-    name: Lying Figure Four (Right)
+  - id: figure_four_side_1
+    name: Figure Four
     duration: 60
     type: WORK
-    instructions: Lie on back, cross right ankle over left knee, hold position
+    instructions: Lie on back, cross one ankle over opposite knee, hold position
     imageResId: null
 
   - id: switch_sides_2
@@ -142,11 +142,11 @@ exercises:
     instructions: Switch legs
     imageResId: null
 
-  - id: lying_figure_four_left
-    name: Lying Figure Four (Left)
+  - id: figure_four_side_2
+    name: Figure Four
     duration: 60
     type: WORK
-    instructions: Lie on back, cross left ankle over right knee, hold position
+    instructions: Lie on back, cross the other ankle over opposite knee, hold position
     imageResId: null
 
   - id: rest_9

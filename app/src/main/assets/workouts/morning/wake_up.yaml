@@ -62,14 +62,28 @@ exercises:
     name: Calf Stretch
     duration: 30
     type: WORK
-    instructions: Push against wall, bend knee and hold
+    instructions: Push against wall, with straight leg and hold
     imageResId: calf_stretch
 
   - id: calf_stretch_2
-    name: Calf Stretch
+    name: Soleus Stretch
     duration: 30
     type: WORK
-    instructions: Push against wall, bend knee and hold
+    instructions: Push against wall, with bent knee and hold
+    imageResId: calf_stretch
+
+  - id: calf_stretch_1
+    name: Switch Sides
+    duration: 30
+    type: WORK
+    instructions: Push against wall, straight legand hold
+    imageResId: calf_stretch
+
+  - id: calf_stretch_2
+    name: Soleus Stretch
+    duration: 30
+    type: WORK
+    instructions: Push against wall, with bent knee and hold
     imageResId: calf_stretch
 
   - id: rest_4

@@ -11,7 +11,10 @@ import com.seanpmcb.move.data.MeasurementType
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
-class WorkoutTimer(private val context: Context) {
+class WorkoutTimer(
+    private val context: Context,
+    private val visualFeedbackListener: VisualFeedbackListener? = null
+) {
     private val soundPool: SoundPool = SoundPool.Builder()
         .setMaxStreams(2)
         .setAudioAttributes(
@@ -105,11 +108,13 @@ class WorkoutTimer(private val context: Context) {
     private fun playCountdownBeep() {
         // 800Hz for 100ms
         toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 100)
+        visualFeedbackListener?.onFlashScreen()
     }
 
     private suspend fun playVictorySound() {
         // Single lower pitch beep instead of high-pitched double beep
         toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 300)
+        visualFeedbackListener?.onFlashScreen()
     }
 
     suspend fun playWorkoutCompleteSound() {

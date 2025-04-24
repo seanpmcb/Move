@@ -13,6 +13,7 @@ import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.timer.WorkoutTimer
+import com.seanpmcb.move.timer.VisualFeedbackListener
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
@@ -27,6 +28,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.delay
+import androidx.compose.ui.graphics.Color
+import androidx.compose.animation.core.*
+import androidx.compose.ui.draw.alpha
 
 @Composable
 fun WorkoutPlayerScreen(
@@ -35,7 +40,32 @@ fun WorkoutPlayerScreen(
     onWeightUpdate: (exerciseIndex: Int, newWeight: Int) -> Unit
 ) {
     val context = LocalContext.current
-    val workoutTimer = remember { WorkoutTimer(context) }
+    var flashAlpha by remember { mutableFloatStateOf(0f) }
+    val flashAnimation = rememberInfiniteTransition(label = "flash")
+    val flashAlphaAnim = flashAnimation.animateFloat(
+        initialValue = 0f,
+        targetValue = 1f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(100),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "flash"
+    )
+
+    val visualFeedbackListener = remember {
+        object : VisualFeedbackListener {
+            override fun onFlashScreen() {
+                flashAlpha = 0.5f // Set to 50% opacity
+                // Reset alpha after animation
+                CoroutineScope(Dispatchers.Main).launch {
+                    delay(200)
+                    flashAlpha = 0f
+                }
+            }
+        }
+    }
+
+    val workoutTimer = remember { WorkoutTimer(context, visualFeedbackListener) }
     var currentExerciseIndex by remember { mutableIntStateOf(0) }
     var timeRemaining by remember { mutableIntStateOf(0) }
     val isPaused by workoutTimer.isPaused().collectAsState(initial = false)
@@ -187,242 +217,289 @@ fun WorkoutPlayerScreen(
             onDismiss = onWorkoutComplete
         )
     } else {
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .systemBarsPadding()
-                .background(MaterialTheme.colorScheme.background)
-                .padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+        Box(
+            modifier = Modifier.fillMaxSize()
         ) {
-            // Progress bar with exercise counter text inside - only counting WORK exercises
-            Box(
+            // Main content
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 24.dp)
+                    .fillMaxSize()
+                    .systemBarsPadding()
+                    .background(MaterialTheme.colorScheme.background)
+                    .padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                LinearProgressIndicator(
-                    progress = if (totalWorkExercises > 0) {
-                        (currentWorkExerciseIndex + 1).toFloat() / totalWorkExercises
-                    } else {
-                        0f
-                    },
+                // Progress bar with exercise counter text inside - only counting WORK exercises
+                Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(32.dp),
-                    color = MaterialTheme.colorScheme.primary,
-                    trackColor = MaterialTheme.colorScheme.primaryContainer
-                )
-                
-                // Center the text inside the progress bar with improved readability
-                Surface(
-                    modifier = Modifier.align(Alignment.Center),
-                    color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
-                    shape = MaterialTheme.shapes.small
+                        .padding(bottom = 24.dp)
                 ) {
-                    Text(
-                        text = if (totalWorkExercises > 0) {
-                            "${currentWorkExerciseIndex + 1}/${totalWorkExercises}"
+                    LinearProgressIndicator(
+                        progress = if (totalWorkExercises > 0) {
+                            (currentWorkExerciseIndex + 1).toFloat() / totalWorkExercises
                         } else {
-                            "${currentExerciseIndex + 1}/${workout.exercises.size}"
+                            0f
                         },
-                        style = MaterialTheme.typography.titleMedium.copy(
-                            color = MaterialTheme.colorScheme.onSurface
-                        ),
-                        modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
-                    )
-                }
-            }
-
-            // Center section with exercise info, image, and timer
-            Column(
-                modifier = Modifier.weight(1f),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = currentExercise.name,
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = MaterialTheme.colorScheme.onBackground,
-                    textAlign = TextAlign.Center
-                )
-                
-                Surface(
-                    shape = MaterialTheme.shapes.medium,
-                    modifier = Modifier
-                        .height(120.dp)
-                        .padding(vertical = 4.dp)
-                ) {
-                    Box(
                         modifier = Modifier
-                            .fillMaxSize()
-                            .padding(16.dp),
-                        contentAlignment = Alignment.Center
+                            .fillMaxWidth()
+                            .height(32.dp),
+                        color = MaterialTheme.colorScheme.primary,
+                        trackColor = MaterialTheme.colorScheme.primaryContainer
+                    )
+                    
+                    // Center the text inside the progress bar with improved readability
+                    Surface(
+                        modifier = Modifier.align(Alignment.Center),
+                        color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f),
+                        shape = MaterialTheme.shapes.small
                     ) {
                         Text(
-                            text = if (currentExercise.type == ExerciseType.REST) {
-                                // Show next exercise name during rest
-                                if (currentExerciseIndex < workout.exercises.size - 1) {
-                                    var nextIndex = currentExerciseIndex + 1
-                                    var nextExercise = workout.exercises[nextIndex]
-                                    while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
-                                        nextIndex++
-                                        nextExercise = workout.exercises[nextIndex]
-                                    }
-                                    if (nextExercise.type == ExerciseType.REST) {
-                                        "Workout Complete"
+                            text = if (totalWorkExercises > 0) {
+                                "${currentWorkExerciseIndex + 1}/${totalWorkExercises}"
+                            } else {
+                                "${currentExerciseIndex + 1}/${workout.exercises.size}"
+                            },
+                            style = MaterialTheme.typography.titleMedium.copy(
+                                color = MaterialTheme.colorScheme.onSurface
+                            ),
+                            modifier = Modifier.padding(horizontal = 12.dp, vertical = 4.dp)
+                        )
+                    }
+                }
+
+                // Center section with exercise info, image, and timer
+                Column(
+                    modifier = Modifier.weight(1f),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = currentExercise.name,
+                        style = MaterialTheme.typography.headlineMedium,
+                        color = MaterialTheme.colorScheme.onBackground,
+                        textAlign = TextAlign.Center
+                    )
+                    
+                    Surface(
+                        shape = MaterialTheme.shapes.medium,
+                        modifier = Modifier
+                            .height(120.dp)
+                            .padding(vertical = 4.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(16.dp),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = if (currentExercise.type == ExerciseType.REST) {
+                                    // Show next exercise name during rest
+                                    if (currentExerciseIndex < workout.exercises.size - 1) {
+                                        var nextIndex = currentExerciseIndex + 1
+                                        var nextExercise = workout.exercises[nextIndex]
+                                        while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
+                                            nextIndex++
+                                            nextExercise = workout.exercises[nextIndex]
+                                        }
+                                        if (nextExercise.type == ExerciseType.REST) {
+                                            "Workout Complete"
+                                        } else {
+                                            "Next: ${nextExercise.name}"
+                                        }
                                     } else {
-                                        "Next: ${nextExercise.name}"
+                                        "Workout Complete"
                                     }
                                 } else {
-                                    "Workout Complete"
-                                }
-                            } else {
-                                currentExercise.instructions ?: "No instructions available"
-                            },
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-                
-                // Image section
-                currentExercise.imageResId?.let { resId ->
-                    val resourceId = context.resources.getIdentifier(resId, "drawable", context.packageName)
-                    if (resourceId != 0) {
-                        Surface(
-                            modifier = Modifier
-                                .size(300.dp)
-                                .padding(vertical = 8.dp),
-                            shape = MaterialTheme.shapes.medium,
-                        ) {
-                            Image(
-                                painter = painterResource(id = resourceId),
-                                contentDescription = "Exercise: ${currentExercise.name}",
-                                modifier = Modifier.fillMaxSize(),
-                                contentScale = ContentScale.Crop
+                                    currentExercise.instructions ?: "No instructions available"
+                                },
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                textAlign = TextAlign.Center
                             )
                         }
-                    } else {
-                        Surface(
-                            modifier = Modifier
-                                .size(300.dp)
-                                .padding(vertical = 8.dp),
-                            shape = MaterialTheme.shapes.medium,
-                        ) {
-                            Box(
-                                modifier = Modifier.fillMaxSize(),
-                                contentAlignment = Alignment.Center
-                            ) {
-                                Text(
-                                    text = "Exercise\nImage",
-                                    style = MaterialTheme.typography.bodyLarge,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    textAlign = TextAlign.Center
-                                )
-                            }
-                        }
-                    }
-                } ?: Surface(
-                    modifier = Modifier
-                        .size(300.dp)
-                        .padding(vertical = 8.dp),
-                    shape = MaterialTheme.shapes.medium,
-                ) {
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(
-                            text = "Exercise\nImage",
-                            style = MaterialTheme.typography.bodyLarge,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-                
-                // Only show timer for time-based exercises
-                if (currentExercise.measurementType == null) {
-                    Text(
-                        text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
-                        style = MaterialTheme.typography.displayLarge.copy(
-                            color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary
-                            else MaterialTheme.colorScheme.secondary
-                        )
-                    )
-                } else {
-                    // For rep-based exercises, show reps
-                    when (currentExercise.measurementType) {
-                        MeasurementType.REPS -> {
-                            Text(
-                                text = "${currentExercise.repetitions} reps",
-                                style = MaterialTheme.typography.displayMedium,
-                                color = MaterialTheme.colorScheme.secondary
-                            )
-                            if (currentExercise.weight != null) {
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.Center,
-                                    modifier = Modifier.clickable { 
-                                        currentWeight = currentExercise.weight.toString()
-                                        showWeightDialog = true 
-                                    }
-                                ) {
-                                    Text(
-                                        text = "${currentExercise.weight} lbs",
-                                        style = MaterialTheme.typography.titleLarge,
-                                        color = MaterialTheme.colorScheme.secondary
-                                    )
-                                    Icon(
-                                        imageVector = Icons.Filled.Edit,
-                                        contentDescription = "Edit weight",
-                                        modifier = Modifier
-                                            .padding(start = 8.dp)
-                                            .size(24.dp),
-                                        tint = MaterialTheme.colorScheme.secondary
-                                    )
-                                }
-                            }
-                        }
-                        MeasurementType.CUSTOM -> {
-                            Text(
-                                text = currentExercise.customMeasurement ?: "",
-                                style = MaterialTheme.typography.displayMedium,
-                                color = MaterialTheme.colorScheme.secondary
-                            )
-                            if (currentExercise.weight != null) {
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.Center,
-                                    modifier = Modifier.clickable { 
-                                        currentWeight = currentExercise.weight.toString()
-                                        showWeightDialog = true 
-                                    }
-                                ) {
-                                    Text(
-                                        text = "${currentExercise.weight} lbs",
-                                        style = MaterialTheme.typography.titleLarge,
-                                        color = MaterialTheme.colorScheme.secondary
-                                    )
-                                    Icon(
-                                        imageVector = Icons.Filled.Edit,
-                                        contentDescription = "Edit weight",
-                                        modifier = Modifier
-                                            .padding(start = 8.dp)
-                                            .size(24.dp),
-                                        tint = MaterialTheme.colorScheme.secondary
-                                    )
-                                }
-                            }
-                        }
-                        null -> {}
                     }
                     
-                    // Add "Complete" button for non-timed exercises
-                    Button(
-                        onClick = {
+                    // Image section
+                    currentExercise.imageResId?.let { resId ->
+                        val resourceId = context.resources.getIdentifier(resId, "drawable", context.packageName)
+                        if (resourceId != 0) {
+                            Surface(
+                                modifier = Modifier
+                                    .size(300.dp)
+                                    .padding(vertical = 8.dp),
+                                shape = MaterialTheme.shapes.medium,
+                            ) {
+                                Image(
+                                    painter = painterResource(id = resourceId),
+                                    contentDescription = "Exercise: ${currentExercise.name}",
+                                    modifier = Modifier.fillMaxSize(),
+                                    contentScale = ContentScale.Crop
+                                )
+                            }
+                        } else {
+                            Surface(
+                                modifier = Modifier
+                                    .size(300.dp)
+                                    .padding(vertical = 8.dp),
+                                shape = MaterialTheme.shapes.medium,
+                            ) {
+                                Box(
+                                    modifier = Modifier.fillMaxSize(),
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Text(
+                                        text = "Exercise\nImage",
+                                        style = MaterialTheme.typography.bodyLarge,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        textAlign = TextAlign.Center
+                                    )
+                                }
+                            }
+                        }
+                    } ?: Surface(
+                        modifier = Modifier
+                            .size(300.dp)
+                            .padding(vertical = 8.dp),
+                        shape = MaterialTheme.shapes.medium,
+                    ) {
+                        Box(
+                            modifier = Modifier.fillMaxSize(),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = "Exercise\nImage",
+                                style = MaterialTheme.typography.bodyLarge,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                    }
+                    
+                    // Only show timer for time-based exercises
+                    if (currentExercise.measurementType == null) {
+                        Text(
+                            text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
+                            style = MaterialTheme.typography.displayLarge.copy(
+                                color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary
+                            )
+                        )
+                    } else {
+                        // For rep-based exercises, show reps
+                        when (currentExercise.measurementType) {
+                            MeasurementType.REPS -> {
+                                Text(
+                                    text = "${currentExercise.repetitions} reps",
+                                    style = MaterialTheme.typography.displayMedium,
+                                    color = MaterialTheme.colorScheme.secondary
+                                )
+                                if (currentExercise.weight != null) {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.Center,
+                                        modifier = Modifier.clickable { 
+                                            currentWeight = currentExercise.weight.toString()
+                                            showWeightDialog = true 
+                                        }
+                                    ) {
+                                        Text(
+                                            text = "${currentExercise.weight} lbs",
+                                            style = MaterialTheme.typography.titleLarge,
+                                            color = MaterialTheme.colorScheme.secondary
+                                        )
+                                        Icon(
+                                            imageVector = Icons.Filled.Edit,
+                                            contentDescription = "Edit weight",
+                                            modifier = Modifier
+                                                .padding(start = 8.dp)
+                                                .size(24.dp),
+                                            tint = MaterialTheme.colorScheme.secondary
+                                        )
+                                    }
+                                }
+                            }
+                            MeasurementType.CUSTOM -> {
+                                Text(
+                                    text = currentExercise.customMeasurement ?: "",
+                                    style = MaterialTheme.typography.displayMedium,
+                                    color = MaterialTheme.colorScheme.secondary
+                                )
+                                if (currentExercise.weight != null) {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.Center,
+                                        modifier = Modifier.clickable { 
+                                            currentWeight = currentExercise.weight.toString()
+                                            showWeightDialog = true 
+                                        }
+                                    ) {
+                                        Text(
+                                            text = "${currentExercise.weight} lbs",
+                                            style = MaterialTheme.typography.titleLarge,
+                                            color = MaterialTheme.colorScheme.secondary
+                                        )
+                                        Icon(
+                                            imageVector = Icons.Filled.Edit,
+                                            contentDescription = "Edit weight",
+                                            modifier = Modifier
+                                                .padding(start = 8.dp)
+                                                .size(24.dp),
+                                            tint = MaterialTheme.colorScheme.secondary
+                                        )
+                                    }
+                                }
+                            }
+                            null -> {}
+                        }
+                        
+                        // Add "Complete" button for non-timed exercises
+                        Button(
+                            onClick = {
+                                if (currentExerciseIndex < workout.exercises.size - 1) {
+                                    // Cancel the current timer to avoid having multiple timers
+                                    workoutTimer.cancelCurrentTimer()
+                                    
+                                    // Immediately update the timeRemaining for visual feedback
+                                    val nextExercise = workout.exercises[currentExerciseIndex + 1]
+                                    if (nextExercise.measurementType == null) {
+                                        nextExercise.duration?.let { duration ->
+                                            timeRemaining = duration
+                                        }
+                                    }
+                                    
+                                    currentExerciseIndex++
+                                } else {
+                                    // Cancel any existing timer
+                                    workoutTimer.cancelCurrentTimer()
+                                    // Launch a coroutine to play the sound and complete the workout
+                                    CoroutineScope(Dispatchers.Main).launch {
+                                        workoutTimer.playWorkoutCompleteSound()
+                                        isWorkoutComplete = true
+                                    }
+                                }
+                            },
+                            modifier = Modifier
+                                .padding(vertical = 8.dp)
+                                .fillMaxWidth(0.7f),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.primary
+                            )
+                        ) {
+                            Text(if (currentExerciseIndex == workout.exercises.size - 1) "Complete Workout" else "Complete Exercise")
+                        }
+                    }
+                }
+
+                // Next exercise section (now at bottom)
+                Surface(
+                    shape = MaterialTheme.shapes.large,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp)
+                        .clickable {
+                            // Skip to next exercise when clicked
                             if (currentExerciseIndex < workout.exercises.size - 1) {
                                 // Cancel the current timer to avoid having multiple timers
                                 workoutTimer.cancelCurrentTimer()
@@ -435,6 +512,7 @@ fun WorkoutPlayerScreen(
                                     }
                                 }
                                 
+                                // Update exercise index which will trigger the LaunchedEffect to start the next exercise
                                 currentExerciseIndex++
                             } else {
                                 // Cancel any existing timer
@@ -446,108 +524,75 @@ fun WorkoutPlayerScreen(
                                 }
                             }
                         },
-                        modifier = Modifier
-                            .padding(vertical = 8.dp)
-                            .fillMaxWidth(0.7f),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.primary
+                ) {
+                    Column(
+                        modifier = Modifier.padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                            contentDescription = "Next Exercise",
+                            modifier = Modifier.size(24.dp),
+                            tint = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+
+                        Text(
+                            text = if (currentExerciseIndex < workout.exercises.size - 1) {
+                                var nextIndex = currentExerciseIndex + 1
+                                var nextExercise = workout.exercises[nextIndex]
+                                while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
+                                    nextIndex++
+                                    nextExercise = workout.exercises[nextIndex]
+                                }
+                                if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
+                            } else {
+                                "Workout Complete"
+                            },
+                            style = MaterialTheme.typography.titleLarge,
+                            textAlign = TextAlign.Center,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
+                    }
+                }
+
+                // Control buttons row
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 16.dp),
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    FilledTonalButton(
+                        onClick = { workoutTimer.togglePause() },
+                        modifier = Modifier.weight(1f),
+                        colors = ButtonDefaults.filledTonalButtonColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer
                         )
                     ) {
-                        Text(if (currentExerciseIndex == workout.exercises.size - 1) "Complete Workout" else "Complete Exercise")
+                        Text(if (isPaused) "Resume" else "Pause")
+                    }
+
+                    FilledTonalButton(
+                        onClick = { restartTrigger++ },
+                        modifier = Modifier.weight(1f),
+                        colors = ButtonDefaults.filledTonalButtonColors(
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer
+                        )
+                    ) {
+                        Text("Restart Exercise")
                     }
                 }
             }
 
-            // Next exercise section (now at bottom)
-            Surface(
-                shape = MaterialTheme.shapes.large,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp)
-                    .clickable {
-                        // Skip to next exercise when clicked
-                        if (currentExerciseIndex < workout.exercises.size - 1) {
-                            // Cancel the current timer to avoid having multiple timers
-                            workoutTimer.cancelCurrentTimer()
-                            
-                            // Immediately update the timeRemaining for visual feedback
-                            val nextExercise = workout.exercises[currentExerciseIndex + 1]
-                            if (nextExercise.measurementType == null) {
-                                nextExercise.duration?.let { duration ->
-                                    timeRemaining = duration
-                                }
-                            }
-                            
-                            // Update exercise index which will trigger the LaunchedEffect to start the next exercise
-                            currentExerciseIndex++
-                        } else {
-                            // Cancel any existing timer
-                            workoutTimer.cancelCurrentTimer()
-                            // Launch a coroutine to play the sound and complete the workout
-                            CoroutineScope(Dispatchers.Main).launch {
-                                workoutTimer.playWorkoutCompleteSound()
-                                isWorkoutComplete = true
-                            }
-                        }
-                    },
-            ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Filled.ArrowForward,
-                        contentDescription = "Next Exercise",
-                        modifier = Modifier.size(24.dp),
-                        tint = MaterialTheme.colorScheme.onPrimaryContainer
-                    )
-
-                    Text(
-                        text = if (currentExerciseIndex < workout.exercises.size - 1) {
-                            var nextIndex = currentExerciseIndex + 1
-                            var nextExercise = workout.exercises[nextIndex]
-                            while (nextExercise.type == ExerciseType.REST && nextIndex < workout.exercises.size - 1) {
-                                nextIndex++
-                                nextExercise = workout.exercises[nextIndex]
-                            }
-                            if (nextExercise.type == ExerciseType.REST) "Workout Complete" else nextExercise.name
-                        } else {
-                            "Workout Complete"
-                        },
-                        style = MaterialTheme.typography.titleLarge,
-                        textAlign = TextAlign.Center,
-                        color = MaterialTheme.colorScheme.onPrimaryContainer
-                    )
-                }
-            }
-
-            // Control buttons row
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 16.dp),
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
-            ) {
-                FilledTonalButton(
-                    onClick = { workoutTimer.togglePause() },
-                    modifier = Modifier.weight(1f),
-                    colors = ButtonDefaults.filledTonalButtonColors(
-                        containerColor = MaterialTheme.colorScheme.secondaryContainer
-                    )
-                ) {
-                    Text(if (isPaused) "Resume" else "Pause")
-                }
-
-                FilledTonalButton(
-                    onClick = { restartTrigger++ },
-                    modifier = Modifier.weight(1f),
-                    colors = ButtonDefaults.filledTonalButtonColors(
-                        containerColor = MaterialTheme.colorScheme.secondaryContainer
-                    )
-                ) {
-                    Text("Restart Exercise")
-                }
+            // Flash overlay - only visible when flashAlpha > 0
+            if (flashAlpha > 0) {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f))
+                        .alpha(flashAlpha)
+                )
             }
         }
     }
