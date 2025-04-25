@@ -50,24 +50,15 @@ fun WorkoutCompleteScreen(
             Text(
                 text = "You've completed",
                 style = MaterialTheme.typography.headlineMedium,
+                textAlign = TextAlign.Center
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
             
             Text(
                 text = workout.name,
                 style = MaterialTheme.typography.headlineLarge,
+                textAlign = TextAlign.Center
                 color = MaterialTheme.colorScheme.primary
-            )
-        }
-
-        Surface(
-            color = MaterialTheme.colorScheme.secondaryContainer,
-            shape = MaterialTheme.shapes.large
-        ) {
-            Text(
-                text = "Total Duration: $durationText",
-                style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurface
             )
         }
         

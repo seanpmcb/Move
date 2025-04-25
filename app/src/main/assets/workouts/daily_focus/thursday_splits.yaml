@@ -2,11 +2,11 @@ id: thursday_splits
 name: Thursday - Splits
 description: A stretching workout focused on flexibility and splits for Thursdays
 exercises:
-  - id: reverse_lunge_right
-    name: Reverse Lunge (Right)
+  - id: reverse_lunge_side_1
+    name: Reverse Runner's Lunge
     duration: 60
     type: WORK
-    instructions: Step back with right leg, lower into lunge position
+    instructions: Step back with one leg, lower into lunge position
     imageResId: null
 
   - id: switch_sides_1
@@ -16,11 +16,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: reverse_lunge_left
-    name: Reverse Lunge (Left)
+  - id: reverse_lunge_side_2
+    name: Reverse Runner's Lunge
     duration: 60
     type: WORK
-    instructions: Step back with left leg, lower into lunge position
+    instructions: Step back with the other leg, lower into lunge position
     imageResId: null
 
   - id: rest_1
@@ -30,11 +30,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: lizard_pose_right
-    name: Lizard Pose (Right)
+  - id: lizard_pose_side_1
+    name: Lizard Pose
     duration: 60
     type: WORK
-    instructions: Low lunge with right foot forward, lower forearms toward ground
+    instructions: Low lunge with one foot forward, lower forearms toward ground
     imageResId: null
 
   - id: switch_sides_2
@@ -44,11 +44,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: lizard_pose_left
-    name: Lizard Pose (Left)
+  - id: lizard_pose_side_2
+    name: Lizard Pose
     duration: 60
     type: WORK
-    instructions: Low lunge with left foot forward, lower forearms toward ground
+    instructions: Low lunge with the other foot forward, lower forearms toward ground
     imageResId: null
 
   - id: rest_2
@@ -58,11 +58,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: supine_hamstring_pull_right
-    name: Supine Hamstring Pull (Right)
+  - id: supine_hamstring_pull_side_1
+    name: Lying Hamstring Pull
     duration: 60
     type: WORK
-    instructions: Lie on back, extend right leg up, gently pull leg towards chest
+    instructions: Lie on back, extend one leg up, gently pull leg towards chest
     imageResId: null
 
   - id: switch_sides_3
@@ -72,53 +72,53 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: supine_hamstring_pull_left
-    name: Supine Hamstring Pull (Left)
+  - id: supine_hamstring_pull_side_2
+    name: Lying Hamstring Pull
     duration: 60
     type: WORK
-    instructions: Lie on back, extend left leg up, gently pull leg towards chest
+    instructions: Lie on back, extend the other leg up, gently pull leg towards chest
     imageResId: null
 
   - id: rest_3
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: kneeling_quad_right
-    name: Kneeling Quad (Right)
+  - id: kneeling_quad_side_1
+    name: Kneeling Quad Stretch
     duration: 60
     type: WORK
-    instructions: Kneel on left knee, pull right heel towards glute
+    instructions: Kneel on one knee, pull opposite heel towards glute
     imageResId: null
 
   - id: switch_sides_4
     name: Switch Sides
-    duration: 5
+    duration: 10
     type: TRANSITION
     instructions: Switch sides
     imageResId: null
 
-  - id: kneeling_quad_left
-    name: Kneeling Quad (Left)
+  - id: kneeling_quad_side_2
+    name: Kneeling Quad Stretch
     duration: 60
     type: WORK
-    instructions: Kneel on right knee, pull left heel towards glute
+    instructions: Kneel on the other knee, pull opposite heel towards glute
     imageResId: null
 
   - id: rest_4
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: side_lunge_right
-    name: Side Lunge (Right)
+  - id: side_lunge_side_1
+    name: Side Lunge
     duration: 60
     type: WORK
-    instructions: Step right foot out wide, lunge deeply while keeping left leg straight
+    instructions: Step one foot out wide, lunge deeply while keeping other leg straight
     imageResId: null
 
   - id: switch_sides_5
@@ -128,11 +128,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: side_lunge_left
-    name: Side Lunge (Left)
+  - id: side_lunge_side_2
+    name: Side Lunge
     duration: 60
     type: WORK
-    instructions: Step left foot out wide, lunge deeply while keeping right leg straight
+    instructions: Step the other foot out wide, lunge deeply while keeping opposite leg straight
     imageResId: null
 
   - id: rest_5
@@ -142,11 +142,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: lunge_right
-    name: Lunge (Right)
+  - id: lunge_side_1
+    name: Lunge with Arms Raised
     duration: 60
     type: WORK
-    instructions: Step forward with right leg, lower into lunge
+    instructions: Step forward with one leg, lower into lunge
     imageResId: null
 
   - id: switch_sides_6
@@ -156,11 +156,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: lunge_left
-    name: Lunge (Left)
+  - id: lunge_side_2
+    name: Lunge with Arms Raised
     duration: 60
     type: WORK
-    instructions: Step forward with left leg, lower into lunge
+    instructions: Step forward with the other leg, lower into lunge
     imageResId: null
 
   - id: rest_6
@@ -170,11 +170,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: front_split_right
-    name: Front Split (Right)
+  - id: front_split_side_1
+    name: Front Split
     duration: 60
     type: WORK
-    instructions: Slide into split position, right leg forward
+    instructions: Slide into split position, one leg forward
     imageResId: null
 
   - id: switch_sides_7
@@ -184,9 +184,9 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: front_split_left
-    name: Front Split (Left)
+  - id: front_split_side_2
+    name: Front Split
     duration: 60
     type: WORK
-    instructions: Slide into split position, left leg forward
+    instructions: Slide into split position, the other leg forward
     imageResId: null

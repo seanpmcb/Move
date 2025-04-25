@@ -72,6 +72,13 @@ exercises:
     instructions: Push against wall, with bent knee and hold
     imageResId: calf_stretch
 
+  - id: switch_sides_2
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to the other side
+    imageResId: calf_stretch
+
   - id: calf_stretch_1
     name: Switch Sides
     duration: 30

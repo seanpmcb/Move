@@ -9,13 +9,6 @@ exercises:
     instructions: Stand tall and bend side to side dynamically.
     imageResId: null
 
-  - id: rest_1
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: arm_circles_1
     name: Arm Circles
     duration: 15
@@ -30,25 +23,11 @@ exercises:
     instructions: Change the direction of your arm circles.
     imageResId: null
 
-  - id: rest_2
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: arm_swings
     name: Arm Swings
     duration: 30
     type: WORK
     instructions: Swing your arms forward and backward.
-    imageResId: null
-
-  - id: rest_3
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: good_mornings
@@ -58,25 +37,11 @@ exercises:
     instructions: Stand tall and hinge at the hips, keeping your back straight.
     imageResId: null
 
-  - id: rest_4
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: trunk_twists
     name: Trunk Twists
     duration: 30
     type: WORK
     instructions: Stand tall and twist your torso side to side.
-    imageResId: null
-
-  - id: rest_5
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: shoulder_rolls
@@ -93,13 +58,6 @@ exercises:
     instructions: Change the direction of your shoulder rolls.
     imageResId: null
 
-  - id: rest_6
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: neck_roll_1
     name: Neck Roll
     duration: 15
@@ -112,13 +70,6 @@ exercises:
     duration: 15
     type: WORK
     instructions: Change the direction of your neck roll.
-    imageResId: null
-
-  - id: rest_7
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: hip_circles_1
@@ -135,13 +86,6 @@ exercises:
     instructions: Change the direction of your hip circles.
     imageResId: null
 
-  - id: rest_8
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: hamstring_scoops
     name: Hamstring Scoops
     duration: 15
@@ -149,25 +93,11 @@ exercises:
     instructions: With one leg straight, bend at the hips
     imageResId: null
 
-  - id: rest_9
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: hamstring_scoops_2
     name: Hamstring Scoops
     duration: 15
     type: WORK
     instructions: With one leg straight, bend at the hips
-    imageResId: null
-
-  - id: rest_10
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: gate_openers_1
@@ -191,13 +121,6 @@ exercises:
     instructions: Switch to the other leg.
     imageResId: null
 
-  - id: rest_9
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: leg_swings_1
     name: Leg Swings
     duration: 15
@@ -217,13 +140,6 @@ exercises:
     duration: 15
     type: WORK
     instructions: Switch to the other leg.
-    imageResId: null
-
-  - id: rest_10
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: lateral_leg_swings_1
@@ -247,25 +163,11 @@ exercises:
     instructions: Switch to the other leg.
     imageResId: null
 
-  - id: rest_11
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: dynamic_wide_leg_forward_fold
     name: Dynamic Wide Leg Forward Fold
     duration: 30
     type: WORK
     instructions: Stand with legs wide and fold forward at the hips.
-    imageResId: null
-
-  - id: rest_12
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: wide_leg_torso_circles_1
@@ -282,25 +184,11 @@ exercises:
     instructions: Change the direction of your torso circles.
     imageResId: null
 
-  - id: rest_13
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: toe_touch_twist
     name: Toe Touch Twist
     duration: 30
     type: WORK
     instructions: Touch your toes while twisting your torso.
-    imageResId: null
-
-  - id: rest_14
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: standing_hip_openers
@@ -310,13 +198,6 @@ exercises:
     instructions: Open your hips while standing, alternating legs.
     imageResId: null
 
-  - id: rest_15
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: high_knee_twists
     name: High Knee Twists
     duration: 30
@@ -324,25 +205,11 @@ exercises:
     instructions: Lift your knees high while twisting your torso.
     imageResId: null
 
-  - id: rest_16
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: knee_hugs
     name: Knee Hugs
     duration: 30
     type: WORK
     instructions: Hug your knees to your chest.
-    imageResId: null
-
-  - id: rest_17
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: knee_circles_1
@@ -357,13 +224,6 @@ exercises:
     duration: 15
     type: WORK
     instructions: Change the direction of your knee circles.
-    imageResId: null
-
-  - id: rest_18
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: ankle_circles_1
@@ -399,13 +259,6 @@ exercises:
     duration: 15
     type: WORK
     instructions: Change the direction of your ankle circles.
-    imageResId: null 
-
-  - id: rest_19
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: wrist_circles

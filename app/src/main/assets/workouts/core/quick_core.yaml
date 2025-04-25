@@ -158,7 +158,7 @@ exercises:
 
   - id: bicycle_crunch_hold
     name: Bicycle Crunch Hold
-    duration: 15
+    duration: 30
     type: WORK
     instructions: Try to touch elbow to knee and hold
     imageResId: null
@@ -172,7 +172,7 @@ exercises:
 
   - id: bicycle_crunch_hold
     name: Bicycle Crunch Hold
-    duration: 15
+    duration: 30
     type: WORK
     instructions: Try to touch elbow to knee and hold
     imageResId: null
@@ -186,7 +186,7 @@ exercises:
 
   - id: side_leg_raise
     name: Side Leg Raise
-    duration: 15
+    duration: 30
     type: WORK
     instructions: Lay on side, lift leg and reach for foot
     imageResId: null
@@ -200,7 +200,7 @@ exercises:
 
   - id: side_leg_raise
     name: Side Leg Raise
-    duration: 15
+    duration: 30
     type: WORK
     instructions: Lay on side, lift leg and reach for foot
     imageResId: null
