@@ -50,14 +50,14 @@ fun WorkoutCompleteScreen(
             Text(
                 text = "You've completed",
                 style = MaterialTheme.typography.headlineMedium,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.onPrimaryContainer
             )
             
             Text(
                 text = workout.name,
                 style = MaterialTheme.typography.headlineLarge,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.primary
             )
         }
