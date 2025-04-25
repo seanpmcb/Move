@@ -151,7 +151,7 @@ exercises:
 
   - id: rest_8
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: upward_salute

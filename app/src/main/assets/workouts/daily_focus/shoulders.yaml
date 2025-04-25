@@ -30,11 +30,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: overhead_tricep_right
-    name: Overhead Tricep (Right)
+  - id: overhead_tricep
+    name: Overhead Tricep
     duration: 30
     type: WORK
-    instructions: Raise right arm overhead, bend elbow, use left hand to deepen stretch
+    instructions: Raise one arm overhead, bend elbow, use other hand to deepen stretch
     imageResId: null
 
   - id: switch_sides_1
@@ -44,11 +44,11 @@ exercises:
     instructions: Switch arms
     imageResId: null
 
-  - id: overhead_tricep_left
-    name: Overhead Tricep (Left)
+  - id: overhead_tricep
+    name: Overhead Tricep
     duration: 30
     type: WORK
-    instructions: Raise left arm overhead, bend elbow, use right hand to deepen stretch
+    instructions: Raise one arm overhead, bend elbow, use other hand to deepen stretch
     imageResId: null
 
   - id: rest_3
@@ -58,11 +58,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: wall_arm_right
-    name: Straight Wall Arm (Right)
+  - id: wall_arm
+    name: Straight Wall Arm
     duration: 30
     type: WORK
-    instructions: Place right arm against wall, twist away from wall
+    instructions: Place one arm against wall, twist away from wall
     imageResId: null
     
   - id: switch_sides_2
@@ -72,11 +72,11 @@ exercises:
     instructions: Switch arms
     imageResId: null
 
-  - id: wall_arm_left
-    name: Straight Wall Arm (Left)
+  - id: wall_arm
+    name: Straight Wall Arm
     duration: 30
     type: WORK
-    instructions: Place left arm against wall, twist away from wall
+    instructions: Place one arm against wall, twist away from wall
     imageResId: null
 
   - id: rest_4
@@ -86,11 +86,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: one_arm_hug_right
-    name: One Arm Hug (Right)
+  - id: one_arm_hug
+    name: One Arm Hug
     duration: 30
     type: WORK
-    instructions: Cross right arm across chest, use left arm to deepen stretch
+    instructions: Cross one arm across chest, use other arm to deepen stretch
     imageResId: null
 
   - id: switch_sides_3
@@ -100,16 +100,16 @@ exercises:
     instructions: Switch arms
     imageResId: null
 
-  - id: one_arm_hug_left
-    name: One Arm Hug (Left)
+  - id: one_arm_hug
+    name: One Arm Hug
     duration: 30
     type: WORK
-    instructions: Cross left arm across chest, use right arm to deepen stretch
+    instructions: Cross one arm across chest, use other arm to deepen stretch
     imageResId: null
 
   - id: rest_4
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -123,44 +123,44 @@ exercises:
 
   - id: rest_5
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: wall_pec_right
-    name: Wall Pec (Right)
+  - id: wall_pec
+    name: Wall Pec
     duration: 30
     type: WORK
-    instructions: Place bent right arm against wall, twist away from wall
+    instructions: Place bent arm against wall, twist away from wall
     imageResId: null
     
   - id: switch_sides_4
     name: Switch Arms
-    duration: 5
+    duration: 7
     type: TRANSITION
     instructions: Switch arms
     imageResId: null
 
-  - id: wall_pec_left
-    name: Wall Pec (Left)
+  - id: wall_pec
+    name: Wall Pec
     duration: 30
     type: WORK
-    instructions: Place bent left arm against wall, twist away from wall
+    instructions: Place bent arm against wall, twist away from wall
     imageResId: null
 
   - id: rest_6
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: null
 
   - id: forward_fold
-    name: Forward Fold
+    name: Forward Fold with Shoulder Opener
     duration: 60
     type: WORK
-    instructions: Stand relaxed, hinge forward from hips, let upper body hang loosely
+    instructions: Stand relaxed with hands clasped behind back, hinge forward from hips, extend arms forward
     imageResId: null
 
   - id: rest_7
@@ -170,11 +170,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: shoulder_cross_right
-    name: Shoulder Cross (Right)
+  - id: shoulder_cross
+    name: Shoulder Cross
     duration: 60
     type: WORK
-    instructions: Lie on back with right arm extended. Roll over to the right to stetch the rigth shoulder
+    instructions: Lie on back with one arm extended. Roll over to stretch the shoulder
     imageResId: null
 
   - id: switch_sides_4
@@ -184,11 +184,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: shoulder_cross_left
-    name: Shoulder Cross (Left)
+  - id: shoulder_cross
+    name: Shoulder Cross
     duration: 60
     type: WORK
-    instructions: Lie on back with left arm extended. Roll over to the left to stretch the left shoulder
+    instructions: Lie on back with one arm extended. Roll over to stretch the shoulder
     imageResId: null
 
   - id: rest_8
@@ -198,11 +198,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: shoulder_opener_right
-    name: Shoulder Opener (Right)
+  - id: shoulder_opener
+    name: Shoulder Opener
     duration: 60
     type: WORK
-    instructions: Reach right arm behind back, grasp right wrist with left hand, gently pull
+    instructions: Reach one arm behind back, grasp wrist with other hand, gently pull
     imageResId: null
 
   - id: switch_sides_5
@@ -212,11 +212,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: shoulder_opener_left
-    name: Shoulder Opener (Left)
+  - id: shoulder_opener
+    name: Shoulder Opener
     duration: 60
     type: WORK
-    instructions: Reach left arm behind back, grasp left wrist with right hand, gently pull
+    instructions: Reach one arm behind back, grasp wrist with other hand, gently pull
     imageResId: null
 
   - id: rest_9
@@ -235,7 +235,7 @@ exercises:
 
   - id: rest_10
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -244,5 +244,5 @@ exercises:
     name: Seated Chest Stretch
     duration: 60
     type: WORK
-    instructions: Sit on the floor, chest up, slide arms back with fingers pointing away
+    instructions: Sit on the floor with knees bent, slide arms back with fingers pointing away, left chest to feel the stretch
     imageResId: null

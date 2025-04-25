@@ -107,13 +107,6 @@ exercises:
     instructions: Open your hip while standing on one leg.
     imageResId: null
 
-  - id: switch_sides_1
-    name: Switch Sides
-    duration: 5
-    type: TRANSITION
-    instructions: Switch to left side
-    imageResId: null
-
   - id: gate_openers_2
     name: Gate Openers
     duration: 15
@@ -128,13 +121,6 @@ exercises:
     instructions: Swing your leg forward and backward.
     imageResId: null
 
-  - id: switch_sides_2
-    name: Switch Sides
-    duration: 5
-    type: TRANSITION
-    instructions: Switch to other side
-    imageResId: null
-
   - id: leg_swings_2
     name: Leg Swings
     duration: 15
@@ -147,13 +133,6 @@ exercises:
     duration: 15
     type: WORK
     instructions: Swing your leg side to side.
-    imageResId: null
-
-  - id: switch_sides_3
-    name: Switch Sides
-    duration: 5
-    type: TRANSITION
-    instructions: Switch to other side
     imageResId: null
 
   - id: lateral_leg_swings_2
@@ -238,13 +217,6 @@ exercises:
     duration: 15
     type: WORK
     instructions: Change the direction of your ankle circles.
-    imageResId: null
-
-  - id: switch_sides_4
-    name: Switch Sides
-    duration: 5
-    type: TRANSITION
-    instructions: Switch to other side
     imageResId: null
 
   - id: ankle_circles_2
