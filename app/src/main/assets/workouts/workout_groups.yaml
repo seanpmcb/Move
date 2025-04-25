@@ -26,26 +26,26 @@ groups:
   - id: daily_focus_group
     name: Daily Focus
     workouts:
-      - id: monday_hips
+      - id: hips
         name: Monday - Hips
         description: Focused hip opening and stretching
-        file: daily_focus/monday_hips.yaml
-      - id: tuesday_hamstrings
+        file: daily_focus/hips.yaml
+      - id: hamstrings
         name: Tuesday - Hamstrings
         description: Focused hamstring stretching
-        file: daily_focus/tuesday_hamstrings.yaml
-      - id: wednesday_lower_back
+        file: daily_focus/hamstrings.yaml
+      - id: lower_back
         name: Wednesday - Lower Back
         description: Focused lower back stretching
-        file: daily_focus/wednesday_lower_back.yaml
-      - id: thursday_splits
+        file: daily_focus/lower_back.yaml
+      - id: splits
         name: Thursday - Splits
         description: Focused splits preparation
-        file: daily_focus/thursday_splits.yaml
-      - id: friday_shoulders
+        file: daily_focus/splits.yaml
+      - id: shoulders
         name: Friday - Shoulders
         description: Focused shoulder opening stretches
-        file: daily_focus/friday_shoulders.yaml
+        file: daily_focus/shoulders.yaml
 
   - id: flexibility_group
     name: Flexibility

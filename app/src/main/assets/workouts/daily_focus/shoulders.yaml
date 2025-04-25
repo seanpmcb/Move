@@ -1,6 +1,6 @@
-id: friday_shoulders
-name: Friday - Shoulders
-description: A focused shoulder and upper body stretching workout for Fridays
+id: shoulders
+name: Shoulders
+description: A stretching workout focused on shoulder flexibility
 exercises:
   - id: upward_salute
     name: Upward Salute

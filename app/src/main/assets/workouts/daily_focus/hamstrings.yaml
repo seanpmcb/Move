@@ -1,6 +1,6 @@
-id: tuesday_hamstrings
-name: Tuesday - Hamstrings
-description: A focused hamstring stretching workout for Tuesdays
+id: hamstrings
+name: Hamstrings
+description: A stretching workout focused on hamstring flexibility
 exercises:
   - id: rag_doll
     name: Rag Doll

@@ -1,6 +1,6 @@
-id: monday_hips
-name: Monday - Hips
-description: A focused hip opening and stretching workout for Mondays
+id: hips
+name: Hips
+description: A stretching workout focused on hip flexibility
 exercises:
   - id: lizard_pose_1
     name: Lizard Pose

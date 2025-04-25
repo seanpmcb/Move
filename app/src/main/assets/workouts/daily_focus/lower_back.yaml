@@ -1,6 +1,6 @@
-id: wednesday_lower_back
-name: Wednesday - Lower Back
-description: A focused lower back stretching and relaxing workout for Wednesdays
+id: lower_back
+name: Lower Back
+description: A focused lower back stretching and relaxing workout
 exercises:
   - id: rag_doll
     name: Rag Doll

@@ -1,6 +1,6 @@
-id: thursday_splits
-name: Thursday - Splits
-description: A stretching workout focused on flexibility and splits for Thursdays
+id: splits
+name: Splits
+description: A stretching workout focused on flexibility and splits
 exercises:
   - id: reverse_lunge_side_1
     name: Reverse Runner's Lunge
