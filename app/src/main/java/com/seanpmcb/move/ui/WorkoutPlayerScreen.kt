@@ -13,7 +13,6 @@ import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.timer.WorkoutTimer
-import com.seanpmcb.move.timer.VisualFeedbackListener
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
@@ -29,9 +28,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
-import androidx.compose.ui.graphics.Color
-import androidx.compose.animation.core.*
-import androidx.compose.ui.draw.alpha
 
 @Composable
 fun WorkoutPlayerScreen(
@@ -40,32 +36,7 @@ fun WorkoutPlayerScreen(
     onWeightUpdate: (exerciseIndex: Int, newWeight: Int) -> Unit
 ) {
     val context = LocalContext.current
-    var flashAlpha by remember { mutableFloatStateOf(0f) }
-    val flashAnimation = rememberInfiniteTransition(label = "flash")
-    val flashAlphaAnim = flashAnimation.animateFloat(
-        initialValue = 0f,
-        targetValue = 1f,
-        animationSpec = infiniteRepeatable(
-            animation = tween(100),
-            repeatMode = RepeatMode.Reverse
-        ),
-        label = "flash"
-    )
-
-    val visualFeedbackListener = remember {
-        object : VisualFeedbackListener {
-            override fun onFlashScreen() {
-                flashAlpha = 0.5f // Set to 50% opacity
-                // Reset alpha after animation
-                CoroutineScope(Dispatchers.Main).launch {
-                    delay(200)
-                    flashAlpha = 0f
-                }
-            }
-        }
-    }
-
-    val workoutTimer = remember { WorkoutTimer(context, visualFeedbackListener) }
+    val workoutTimer = remember { WorkoutTimer(context) }
     var currentExerciseIndex by remember { mutableIntStateOf(0) }
     var timeRemaining by remember { mutableIntStateOf(0) }
     val isPaused by workoutTimer.isPaused().collectAsState(initial = false)
@@ -583,16 +554,6 @@ fun WorkoutPlayerScreen(
                         Text("Restart Exercise")
                     }
                 }
-            }
-
-            // Flash overlay - only visible when flashAlpha > 0
-            if (flashAlpha > 0) {
-                Box(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.5f))
-                        .alpha(flashAlpha)
-                )
             }
         }
     }
