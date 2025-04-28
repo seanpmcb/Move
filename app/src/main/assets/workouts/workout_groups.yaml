@@ -35,15 +35,15 @@ groups:
         description: Focused hip opening and stretching
         file: daily_focus/hips.yaml
 
-      - id: hamstrings
-        name: Tuesday - Hamstrings
-        description: Focused hamstring stretching
-        file: daily_focus/hamstrings.yaml
-
       - id: lower_back
-        name: Wednesday - Lower Back
+        name: Tuesday - Lower Back
         description: Focused lower back stretching
         file: daily_focus/lower_back.yaml
+
+      - id: hamstrings
+        name: Wednesday - Hamstrings
+        description: Focused hamstring stretching
+        file: daily_focus/hamstrings.yaml
 
       - id: splits
         name: Thursday - Splits

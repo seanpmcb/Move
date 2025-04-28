@@ -26,6 +26,9 @@ import androidx.compose.runtime.mutableStateOf
 import com.seanpmcb.move.ui.WorkoutPreviewScreen
 import com.seanpmcb.move.ui.workout.WorkoutViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.seanpmcb.move.ui.SettingsScreen
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Settings
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +36,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             var isPreviewMode by remember { mutableStateOf(false) }
+            var showSettings by remember { mutableStateOf(false) }
             val viewModel: WorkoutViewModel = viewModel()
             
             // Initialize the ViewModel with the context
@@ -54,6 +58,14 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     when {
+                        showSettings -> {
+                            BackHandler {
+                                showSettings = false
+                            }
+                            SettingsScreen(
+                                onBackClick = { showSettings = false }
+                            )
+                        }
                         isLoading -> {
                             Box(
                                 modifier = Modifier.fillMaxSize(),
@@ -109,7 +121,8 @@ class MainActivity : ComponentActivity() {
                                     viewModel.loadWorkout(workout.id)
                                     isPreviewMode = true
                                 },
-                                workoutDurations = viewModel.workoutDurations.collectAsState().value
+                                workoutDurations = viewModel.workoutDurations.collectAsState().value,
+                                onSettingsClick = { showSettings = true }
                             )
                         }
                     }
@@ -123,7 +136,8 @@ class MainActivity : ComponentActivity() {
 fun WorkoutGroupList(
     groups: List<WorkoutGroup>,
     onWorkoutSelected: (WorkoutReference) -> Unit,
-    workoutDurations: Map<String, Int?> = emptyMap()
+    workoutDurations: Map<String, Int?> = emptyMap(),
+    onSettingsClick: () -> Unit
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
@@ -133,7 +147,9 @@ fun WorkoutGroupList(
             WorkoutGroupCard(
                 group = group,
                 onWorkoutSelected = onWorkoutSelected,
-                workoutDurations = workoutDurations
+                workoutDurations = workoutDurations,
+                showSettings = groups.indexOf(group) == 0,
+                onSettingsClick = onSettingsClick
             )
         }
     }
@@ -143,7 +159,9 @@ fun WorkoutGroupList(
 fun WorkoutGroupCard(
     group: WorkoutGroup,
     onWorkoutSelected: (WorkoutReference) -> Unit,
-    workoutDurations: Map<String, Int?> = emptyMap()
+    workoutDurations: Map<String, Int?> = emptyMap(),
+    showSettings: Boolean = false,
+    onSettingsClick: () -> Unit
 ) {
     Card(
         modifier = Modifier
@@ -156,10 +174,27 @@ fun WorkoutGroupCard(
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
-            Text(
-                text = group.name,
-                style = MaterialTheme.typography.headlineSmall
-            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = group.name,
+                    style = MaterialTheme.typography.headlineSmall
+                )
+                if (showSettings) {
+                    IconButton(
+                        onClick = onSettingsClick,
+                        modifier = Modifier.size(32.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Settings,
+                            contentDescription = "Settings"
+                        )
+                    }
+                }
+            }
             Spacer(modifier = Modifier.height(8.dp))
             group.workouts.forEach { workout ->
                 WorkoutItem(
