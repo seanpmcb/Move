@@ -5,15 +5,23 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.foundation.clickable
+import com.seanpmcb.move.data.AppSettingsRepository
+import kotlinx.coroutines.launch
 
 @Composable
 fun SettingsScreen(
     onBackClick: () -> Unit
 ) {
+    val context = LocalContext.current
+    val settingsRepository = remember { AppSettingsRepository(context) }
+    val settings by settingsRepository.appSettings.collectAsState(initial = null)
+    val scope = rememberCoroutineScope()
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -52,12 +60,35 @@ fun SettingsScreen(
                     .padding(16.dp)
                     .fillMaxWidth()
             ) {
-                // Sound settings
-                Text(
-                    text = "Sound Effects",
-                    style = MaterialTheme.typography.headlineSmall
-                )
-                Spacer(modifier = Modifier.height(8.dp))
+                // Master sound effects toggle
+                    Row(
+                        modifier = Modifier
+                            .padding(8.dp)
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(
+                            modifier = Modifier.weight(1f)
+                        ) {
+                            Text(
+                                text = "Sound Effects",
+                                style = MaterialTheme.typography.titleLarge
+                            )
+                            Text(
+                                text = "Enable or disable all sound effects",
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                        }
+                        Switch(
+                            checked = settings?.soundEffects?.enabled ?: true,
+                            onCheckedChange = { enabled ->
+                                scope.launch {
+                                    settingsRepository.updateSoundEnabled(enabled)
+                                }
+                            }
+                        )
+                    }
                 
                 // Sub-settings for Sound Effects
                 Column(
@@ -66,7 +97,13 @@ fun SettingsScreen(
                     Surface(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { /* TODO: Handle click */ },
+                            .clickable { 
+                                if (settings?.soundEffects?.enabled == true) {
+                                    scope.launch {
+                                        settingsRepository.updateSoundStepCountdown(!(settings?.soundEffects?.stepCountdown ?: true))
+                                    }
+                                }
+                            },
                         color = MaterialTheme.colorScheme.surfaceVariant,
                         shape = MaterialTheme.shapes.small
                     ) {
@@ -90,8 +127,15 @@ fun SettingsScreen(
                                 )
                             }
                             Switch(
-                                checked = true, // TODO: Connect to actual settings
-                                onCheckedChange = { /* TODO: Update settings */ }
+                                checked = settings?.soundEffects?.stepCountdown ?: true,
+                                onCheckedChange = { enabled ->
+                                    if (settings?.soundEffects?.enabled == true) {
+                                        scope.launch {
+                                            settingsRepository.updateSoundStepCountdown(enabled)
+                                        }
+                                    }
+                                },
+                                enabled = settings?.soundEffects?.enabled ?: true
                             )
                         }
                     }
@@ -100,7 +144,13 @@ fun SettingsScreen(
                     Surface(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { /* TODO: Handle click */ },
+                            .clickable { 
+                                if (settings?.soundEffects?.enabled == true) {
+                                    scope.launch {
+                                        settingsRepository.updateSoundNextExercise(!(settings?.soundEffects?.nextExercise ?: true))
+                                    }
+                                }
+                            },
                         color = MaterialTheme.colorScheme.surfaceVariant,
                         shape = MaterialTheme.shapes.small
                     ) {
@@ -124,8 +174,15 @@ fun SettingsScreen(
                                 )
                             }
                             Switch(
-                                checked = true, // TODO: Connect to actual settings
-                                onCheckedChange = { /* TODO: Update settings */ }
+                                checked = settings?.soundEffects?.nextExercise ?: true,
+                                onCheckedChange = { enabled ->
+                                    if (settings?.soundEffects?.enabled == true) {
+                                        scope.launch {
+                                            settingsRepository.updateSoundNextExercise(enabled)
+                                        }
+                                    }
+                                },
+                                enabled = settings?.soundEffects?.enabled ?: true
                             )
                         }
                     }
@@ -134,7 +191,13 @@ fun SettingsScreen(
                     Surface(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { /* TODO: Handle click */ },
+                            .clickable { 
+                                if (settings?.soundEffects?.enabled == true) {
+                                    scope.launch {
+                                        settingsRepository.updateSoundExerciseDescription(!(settings?.soundEffects?.exerciseDescription ?: true))
+                                    }
+                                }
+                            },
                         color = MaterialTheme.colorScheme.surfaceVariant,
                         shape = MaterialTheme.shapes.small
                     ) {
@@ -158,8 +221,15 @@ fun SettingsScreen(
                                 )
                             }
                             Switch(
-                                checked = true, // TODO: Connect to actual settings
-                                onCheckedChange = { /* TODO: Update settings */ }
+                                checked = settings?.soundEffects?.exerciseDescription ?: true,
+                                onCheckedChange = { enabled ->
+                                    if (settings?.soundEffects?.enabled == true) {
+                                        scope.launch {
+                                            settingsRepository.updateSoundExerciseDescription(enabled)
+                                        }
+                                    }
+                                },
+                                enabled = settings?.soundEffects?.enabled ?: true
                             )
                         }
                     }
@@ -188,7 +258,11 @@ fun SettingsScreen(
                 Surface(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { /* TODO: Handle click */ },
+                        .clickable { 
+                            scope.launch {
+                                settingsRepository.updateVisualEffects(!(settings?.visualEffects ?: true))
+                            }
+                        },
                     color = MaterialTheme.colorScheme.surfaceVariant,
                     shape = MaterialTheme.shapes.small
                 ) {
@@ -212,8 +286,12 @@ fun SettingsScreen(
                             )
                         }
                         Switch(
-                            checked = true, // TODO: Connect to actual settings
-                            onCheckedChange = { /* TODO: Update settings */ }
+                            checked = settings?.visualEffects ?: true,
+                            onCheckedChange = { enabled ->
+                                scope.launch {
+                                    settingsRepository.updateVisualEffects(enabled)
+                                }
+                            }
                         )
                     }
                 }

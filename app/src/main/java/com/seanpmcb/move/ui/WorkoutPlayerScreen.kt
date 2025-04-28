@@ -207,10 +207,12 @@ fun WorkoutPlayerScreen(
                         .padding(bottom = 24.dp)
                 ) {
                     LinearProgressIndicator(
-                        progress = if (totalWorkExercises > 0) {
-                            (currentWorkExerciseIndex + 1).toFloat() / totalWorkExercises
-                        } else {
-                            0f
+                        progress = {
+                            if (totalWorkExercises > 0) {
+                                (currentWorkExerciseIndex + 1).toFloat() / totalWorkExercises
+                            } else {
+                                0f
+                            }
                         },
                         modifier = Modifier
                             .fillMaxWidth()
