@@ -216,7 +216,7 @@ fun WorkoutPlayerScreen(
                     .fillMaxSize()
                     .systemBarsPadding()
                     .background(
-                        if (timerState.isPulsing) {
+                        if (timerState.isPulsing && !isPaused) {
                             MaterialTheme.colorScheme.onBackground.copy(alpha = pulseAlpha)
                         } else {
                             MaterialTheme.colorScheme.background

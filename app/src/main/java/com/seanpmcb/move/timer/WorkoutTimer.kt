@@ -65,11 +65,17 @@ class WorkoutTimer(
             // Initial countdown for first exercise or restart
             if (isFirstExercise || withCountdown) {
                 for (i in 5 downTo 1) {
+                    // Emit without pulse first
                     emit(TimerState(
                         timeRemaining = -i, // Negative numbers indicate preparation countdown
-                        isPulsing = i <= 3 && settings.visualEffects.enabled && settings.visualEffects.countdownPulse
+                        isPulsing = false
                     ))
                     if (i <= 3) {
+                        // Emit with pulse and play beep simultaneously
+                        emit(TimerState(
+                            timeRemaining = -i,
+                            isPulsing = settings.visualEffects.enabled && settings.visualEffects.countdownPulse
+                        ))
                         playCountdownBeep()
                     }
                     delay(1000)
@@ -81,11 +87,17 @@ class WorkoutTimer(
 
             // Main exercise timer
             for (i in exercise.duration!! downTo 1) {
+                // Emit without pulse first
                 emit(TimerState(
                     timeRemaining = i,
-                    isPulsing = i <= 3 && settings.visualEffects.enabled && settings.visualEffects.countdownPulse
+                    isPulsing = false
                 ))
                 if (i <= 3) {
+                    // Emit with pulse and play beep simultaneously
+                    emit(TimerState(
+                        timeRemaining = i,
+                        isPulsing = settings.visualEffects.enabled && settings.visualEffects.countdownPulse
+                    ))
                     playCountdownBeep()
                 }
                 delay(1000)
@@ -93,10 +105,11 @@ class WorkoutTimer(
                     delay(100)
                 }
             }
+            // Final state with pulse
             emit(TimerState(
                 timeRemaining = 0,
                 isPulsing = settings.visualEffects.enabled && settings.visualEffects.countdownPulse
-            )) // Emit final zero for completion
+            ))
         } else {
             // For rep-based or custom exercises, just emit 1 as a placeholder
             // This prevents the timer from immediately finishing and keeps the exercise displayed
