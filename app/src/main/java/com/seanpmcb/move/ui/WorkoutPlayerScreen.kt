@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.Workout
+import com.seanpmcb.move.data.AppSettingsRepository
 import com.seanpmcb.move.timer.WorkoutTimer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
@@ -36,7 +37,8 @@ fun WorkoutPlayerScreen(
     onWeightUpdate: (exerciseIndex: Int, newWeight: Int) -> Unit
 ) {
     val context = LocalContext.current
-    val workoutTimer = remember { WorkoutTimer(context) }
+    val settingsRepository = remember { AppSettingsRepository(context) }
+    val workoutTimer = remember { WorkoutTimer(context, settingsRepository) }
     var currentExerciseIndex by remember { mutableIntStateOf(0) }
     var timeRemaining by remember { mutableIntStateOf(0) }
     val isPaused by workoutTimer.isPaused().collectAsState(initial = false)

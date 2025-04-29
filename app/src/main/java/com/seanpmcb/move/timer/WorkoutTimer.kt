@@ -8,11 +8,13 @@ import android.media.AudioManager
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.MeasurementType
+import com.seanpmcb.move.data.AppSettingsRepository
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
 class WorkoutTimer(
-    private val context: Context
+    private val context: Context,
+    private val settingsRepository: AppSettingsRepository
 ) {
     private val soundPool: SoundPool = SoundPool.Builder()
         .setMaxStreams(2)
@@ -105,13 +107,21 @@ class WorkoutTimer(
     fun isPaused(): Flow<Boolean> = isPaused.asStateFlow()
 
     private fun playCountdownBeep() {
-        // 800Hz for 100ms
-        toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 100)
+        // Check if sound effects are enabled and step countdown is enabled
+        val settings = runBlocking { settingsRepository.appSettings.first() }
+        if (settings.soundEffects.enabled && settings.soundEffects.stepCountdown) {
+            // 800Hz for 100ms
+            toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 100)
+        }
     }
 
     private suspend fun playVictorySound() {
-        // Single lower pitch beep instead of high-pitched double beep
-        toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 300)
+        // Check if sound effects are enabled
+        val settings = settingsRepository.appSettings.first()
+        if (settings.soundEffects.enabled) {
+            // Single lower pitch beep instead of high-pitched double beep
+            toneGen.startTone(ToneGenerator.TONE_CDMA_PIP, 300)
+        }
     }
 
     suspend fun playWorkoutCompleteSound() {
