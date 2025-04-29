@@ -249,50 +249,84 @@ fun SettingsScreen(
                     .padding(16.dp)
                     .fillMaxWidth()
             ) {
-                Text(
-                    text = "Visual Effects",
-                    style = MaterialTheme.typography.headlineSmall
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                
-                Surface(
+                // Master visual effects toggle
+                Row(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { 
-                            scope.launch {
-                                settingsRepository.updateVisualEffects(!(settings?.visualEffects ?: true))
-                            }
-                        },
-                    color = MaterialTheme.colorScheme.surfaceVariant,
-                    shape = MaterialTheme.shapes.small
+                        .padding(8.dp)
+                        .fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Row(
-                        modifier = Modifier
-                            .padding(8.dp)
-                            .fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
+                    Column(
+                        modifier = Modifier.weight(1f)
                     ) {
-                        Column(
-                            modifier = Modifier.weight(1f)
+                        Text(
+                            text = "Visual Effects",
+                            style = MaterialTheme.typography.titleLarge
+                        )
+                        Text(
+                            text = "Enable or disable all visual effects",
+                            style = MaterialTheme.typography.bodyMedium
+                        )
+                    }
+                    Switch(
+                        checked = settings?.visualEffects?.enabled ?: true,
+                        onCheckedChange = { enabled ->
+                            scope.launch {
+                                settingsRepository.updateVisualEffectsEnabled(enabled)
+                            }
+                        }
+                    )
+                }
+                
+                // Sub-settings for Visual Effects
+                Column(
+                    modifier = Modifier.padding(start = 16.dp)
+                ) {
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { 
+                                if (settings?.visualEffects?.enabled == true) {
+                                    scope.launch {
+                                        settingsRepository.updateVisualEffectsCountdownPulse(!(settings?.visualEffects?.countdownPulse ?: true))
+                                    }
+                                }
+                            },
+                        color = MaterialTheme.colorScheme.surfaceVariant,
+                        shape = MaterialTheme.shapes.small
+                    ) {
+                        Row(
+                            modifier = Modifier
+                                .padding(8.dp)
+                                .fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Text(
-                                text = "Enable visual effects",
-                                style = MaterialTheme.typography.bodyLarge
-                            )
-                            Text(
-                                text = "Enable or disable visual effects",
-                                style = MaterialTheme.typography.bodyMedium
+                            Column(
+                                modifier = Modifier.weight(1f)
+                            ) {
+                                Text(
+                                    text = "Countdown pulse",
+                                    style = MaterialTheme.typography.bodyLarge
+                                )
+                                Text(
+                                    text = "Enable or disable countdown pulse effect",
+                                    style = MaterialTheme.typography.bodyMedium
+                                )
+                            }
+                            Switch(
+                                checked = settings?.visualEffects?.countdownPulse ?: true,
+                                onCheckedChange = { enabled ->
+                                    if (settings?.visualEffects?.enabled == true) {
+                                        scope.launch {
+                                            settingsRepository.updateVisualEffectsCountdownPulse(enabled)
+                                        }
+                                    }
+                                },
+                                enabled = settings?.visualEffects?.enabled ?: true
                             )
                         }
-                        Switch(
-                            checked = settings?.visualEffects ?: true,
-                            onCheckedChange = { enabled ->
-                                scope.launch {
-                                    settingsRepository.updateVisualEffects(enabled)
-                                }
-                            }
-                        )
                     }
                 }
             }

@@ -3,6 +3,7 @@ package com.seanpmcb.move.ui
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -14,6 +15,7 @@ import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.Workout
 import com.seanpmcb.move.data.AppSettingsRepository
 import com.seanpmcb.move.timer.WorkoutTimer
+import com.seanpmcb.move.timer.TimerState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.automirrored.filled.ArrowForward
@@ -29,6 +31,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.rememberInfiniteTransition
 
 @Composable
 fun WorkoutPlayerScreen(
@@ -40,7 +47,7 @@ fun WorkoutPlayerScreen(
     val settingsRepository = remember { AppSettingsRepository(context) }
     val workoutTimer = remember { WorkoutTimer(context, settingsRepository) }
     var currentExerciseIndex by remember { mutableIntStateOf(0) }
-    var timeRemaining by remember { mutableIntStateOf(0) }
+    var timerState: TimerState by remember { mutableStateOf(TimerState(timeRemaining = 0)) }
     val isPaused by workoutTimer.isPaused().collectAsState(initial = false)
     var restartTrigger by remember { mutableIntStateOf(0) }
     var isWorkoutComplete by remember { mutableStateOf(false) }
@@ -48,6 +55,17 @@ fun WorkoutPlayerScreen(
     var showWeightDialog by remember { mutableStateOf(false) }
     var currentWeight by remember { mutableStateOf("") }
     var isInitialStart by remember { mutableStateOf(true) }
+    val isDarkTheme = isSystemInDarkTheme()
+    val pulseAnimation = rememberInfiniteTransition(label = "pulse")
+    val pulseAlpha by pulseAnimation.animateFloat(
+        initialValue = 0f,
+        targetValue = 0.7f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(500),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "pulseAlpha"
+    )
 
     // Derive current exercise from the index
     val currentExercise by remember(currentExerciseIndex) {
@@ -95,9 +113,9 @@ fun WorkoutPlayerScreen(
             workoutTimer.startExerciseTimer(
                 exercise = currentExercise,
                 isFirstExercise = currentExerciseIndex == 0
-            ).collect { time ->
-                timeRemaining = time
-                if (time == 0) {
+            ).collect { state ->
+                timerState = state
+                if (state.timeRemaining == 0) {
                     // Auto progress to next exercise when timer ends
                     if (currentExerciseIndex < workout.exercises.size - 1) {
                         currentExerciseIndex++
@@ -115,9 +133,8 @@ fun WorkoutPlayerScreen(
             workoutTimer.startExerciseTimer(
                 exercise = currentExercise,
                 isFirstExercise = currentExerciseIndex == 0
-            ).collect { time ->
-                // We just need to collect this to display the exercise
-                timeRemaining = time
+            ).collect { state ->
+                timerState = state
             }
         }
     }
@@ -132,9 +149,9 @@ fun WorkoutPlayerScreen(
             workoutTimer.startExerciseTimer(
                 exercise = currentExercise,
                 withCountdown = true
-            ).collect { time ->
-                timeRemaining = time
-                if (time == 0) {
+            ).collect { state ->
+                timerState = state
+                if (state.timeRemaining == 0) {
                     // Reset the restart trigger before moving to next exercise
                     restartTrigger = 0
                     // When exercise completes, continue with the rest of the workout
@@ -153,8 +170,8 @@ fun WorkoutPlayerScreen(
             workoutTimer.startExerciseTimer(
                 exercise = currentExercise,
                 withCountdown = true
-            ).collect { time ->
-                timeRemaining = time
+            ).collect { state ->
+                timerState = state
             }
         }
     }
@@ -198,7 +215,13 @@ fun WorkoutPlayerScreen(
                 modifier = Modifier
                     .fillMaxSize()
                     .systemBarsPadding()
-                    .background(MaterialTheme.colorScheme.background)
+                    .background(
+                        if (timerState.isPulsing) {
+                            MaterialTheme.colorScheme.onBackground.copy(alpha = pulseAlpha)
+                        } else {
+                            MaterialTheme.colorScheme.background
+                        }
+                    )
                     .padding(24.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -355,9 +378,9 @@ fun WorkoutPlayerScreen(
                     // Only show timer for time-based exercises
                     if (currentExercise.measurementType == null) {
                         Text(
-                            text = if (timeRemaining < 0) "${-timeRemaining}" else "$timeRemaining",
+                            text = if (timerState.timeRemaining < 0) "${-timerState.timeRemaining}" else "${timerState.timeRemaining}",
                             style = MaterialTheme.typography.displayLarge.copy(
-                                color = if (timeRemaining <= 3) MaterialTheme.colorScheme.primary
+                                color = if (timerState.timeRemaining <= 3) MaterialTheme.colorScheme.primary
                                 else MaterialTheme.colorScheme.secondary
                             )
                         )
@@ -440,7 +463,7 @@ fun WorkoutPlayerScreen(
                                     val nextExercise = workout.exercises[currentExerciseIndex + 1]
                                     if (nextExercise.measurementType == null) {
                                         nextExercise.duration?.let { duration ->
-                                            timeRemaining = duration
+                                            timerState = TimerState(timeRemaining = duration)
                                         }
                                     }
                                     
@@ -483,7 +506,7 @@ fun WorkoutPlayerScreen(
                                 val nextExercise = workout.exercises[currentExerciseIndex + 1]
                                 if (nextExercise.measurementType == null) {
                                     nextExercise.duration?.let { duration ->
-                                        timeRemaining = duration
+                                        timerState = TimerState(timeRemaining = duration)
                                     }
                                 }
                                 

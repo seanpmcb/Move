@@ -16,7 +16,8 @@ class AppSettingsRepository(private val context: Context) {
     private val soundStepCountdownKey = booleanPreferencesKey("sound_step_countdown")
     private val soundNextExerciseKey = booleanPreferencesKey("sound_next_exercise")
     private val soundExerciseDescriptionKey = booleanPreferencesKey("sound_exercise_description")
-    private val visualEffectsKey = booleanPreferencesKey("visual_effects")
+    private val visualEffectsEnabledKey = booleanPreferencesKey("visual_effects_enabled")
+    private val visualEffectsCountdownPulseKey = booleanPreferencesKey("visual_effects_countdown_pulse")
 
     val appSettings: Flow<AppSettings> = context.appSettingsDataStore.data
         .map { preferences ->
@@ -27,7 +28,10 @@ class AppSettingsRepository(private val context: Context) {
                     nextExercise = preferences[soundNextExerciseKey] ?: true,
                     exerciseDescription = preferences[soundExerciseDescriptionKey] ?: true
                 ),
-                visualEffects = preferences[visualEffectsKey] ?: true
+                visualEffects = VisualEffects(
+                    enabled = preferences[visualEffectsEnabledKey] ?: true,
+                    countdownPulse = preferences[visualEffectsCountdownPulseKey] ?: true
+                )
             )
         }
 
@@ -55,9 +59,15 @@ class AppSettingsRepository(private val context: Context) {
         }
     }
 
-    suspend fun updateVisualEffects(enabled: Boolean) {
+    suspend fun updateVisualEffectsEnabled(enabled: Boolean) {
         context.appSettingsDataStore.edit { preferences ->
-            preferences[visualEffectsKey] = enabled
+            preferences[visualEffectsEnabledKey] = enabled
+        }
+    }
+
+    suspend fun updateVisualEffectsCountdownPulse(enabled: Boolean) {
+        context.appSettingsDataStore.edit { preferences ->
+            preferences[visualEffectsCountdownPulseKey] = enabled
         }
     }
 } 

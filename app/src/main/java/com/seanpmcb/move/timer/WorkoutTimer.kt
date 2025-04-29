@@ -12,6 +12,11 @@ import com.seanpmcb.move.data.AppSettingsRepository
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
+data class TimerState(
+    val timeRemaining: Int,
+    val isPulsing: Boolean = false
+)
+
 class WorkoutTimer(
     private val context: Context,
     private val settingsRepository: AppSettingsRepository
@@ -30,7 +35,7 @@ class WorkoutTimer(
     private var isPaused = MutableStateFlow(false)
 
     private var currentExercise: Exercise? = null
-    private var currentFlowCollector: FlowCollector<Int>? = null
+    private var currentFlowCollector: FlowCollector<TimerState>? = null
     private var currentTimerJob: Job? = null
     
     // Call this to cancel the current timer before starting a new one
@@ -43,7 +48,7 @@ class WorkoutTimer(
         exercise: Exercise, 
         isFirstExercise: Boolean = false,
         withCountdown: Boolean = false
-    ): Flow<Int> = flow {
+    ): Flow<TimerState> = flow {
         // Cancel any existing timer first
         cancelCurrentTimer()
         
@@ -52,12 +57,18 @@ class WorkoutTimer(
         // Set a reference to the current coroutine job for cancellation
         currentTimerJob = currentCoroutineContext()[Job]
 
+        // Get current settings
+        val settings = settingsRepository.appSettings.first()
+
         // For TIME-based exercises, use the timer
         if (exercise.measurementType == null) {
             // Initial countdown for first exercise or restart
             if (isFirstExercise || withCountdown) {
                 for (i in 5 downTo 1) {
-                    emit(-i) // Negative numbers indicate preparation countdown
+                    emit(TimerState(
+                        timeRemaining = -i, // Negative numbers indicate preparation countdown
+                        isPulsing = i <= 3 && settings.visualEffects.enabled && settings.visualEffects.countdownPulse
+                    ))
                     if (i <= 3) {
                         playCountdownBeep()
                     }
@@ -70,7 +81,10 @@ class WorkoutTimer(
 
             // Main exercise timer
             for (i in exercise.duration!! downTo 1) {
-                emit(i)
+                emit(TimerState(
+                    timeRemaining = i,
+                    isPulsing = i <= 3 && settings.visualEffects.enabled && settings.visualEffects.countdownPulse
+                ))
                 if (i <= 3) {
                     playCountdownBeep()
                 }
@@ -79,12 +93,15 @@ class WorkoutTimer(
                     delay(100)
                 }
             }
-            emit(0) // Emit final zero for completion
+            emit(TimerState(
+                timeRemaining = 0,
+                isPulsing = settings.visualEffects.enabled && settings.visualEffects.countdownPulse
+            )) // Emit final zero for completion
         } else {
             // For rep-based or custom exercises, just emit 1 as a placeholder
             // This prevents the timer from immediately finishing and keeps the exercise displayed
             // The user will tap the "Complete Exercise" button to progress
-            emit(1)
+            emit(TimerState(timeRemaining = 1))
         }
     }.catch { e ->
         // Handle cancellation or errors gracefully
@@ -96,7 +113,7 @@ class WorkoutTimer(
         }
     }
 
-    fun restartCurrentExercise(): Flow<Int>? {
+    fun restartCurrentExercise(): Flow<TimerState>? {
         return currentExercise?.let { startExerciseTimer(it, withCountdown = true) }
     }
 
