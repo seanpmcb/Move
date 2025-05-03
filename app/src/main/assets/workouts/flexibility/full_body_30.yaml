@@ -84,14 +84,14 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: forward_fold
+    imageResId: forward_pike
 
-  - id: forward_fold
-    name: Forward Fold
+  - id: forward_pike
+    name: Forward Pike
     duration: 30
     type: WORK
-    instructions: Stand with feet together, fold forward at hips
-    imageResId: forward_fold
+    instructions: Stand with legs bent, bend chest to touch knees, straighten legs
+    imageResId: forward_pike
 
   - id: rest_6
     name: Rest
@@ -168,14 +168,14 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: squat_stretch
+    imageResId: squat
 
-  - id: squat_stretch
-    name: Squat Stretch
+  - id: squat
+    name: Squat
     duration: 30
     type: WORK
     instructions: Stand with feet wide, squat down, elbows inside knees
-    imageResId: squat_stretch
+    imageResId: squat
 
   - id: rest_10
     name: Rest
@@ -185,7 +185,7 @@ exercises:
     imageResId: lunge
 
   - id: lunge_1
-    name: Lunge
+    name: Lunge with Arms Raised
     duration: 30
     type: WORK
     instructions: Step one foot back into a lunge, extend arms overhead
@@ -199,7 +199,7 @@ exercises:
     imageResId: lunge
 
   - id: lunge_2
-    name: Lunge
+    name: Lunge with Arms Raised
     duration: 30
     type: WORK
     instructions: Step one foot back into a lunge, extend arms overhead
@@ -336,14 +336,14 @@ exercises:
     duration: 7
     type: REST
     instructions: Take a short break
-    imageResId: toe_kneeling_squat
+    imageResId: kneeling_on_toes
 
-  - id: toe_kneeling_squat
-    name: Toe Kneeling Squat
+  - id: kneeling_on_toes
+    name: Kneeling on Toes
     duration: 30
     type: WORK
     instructions: Kneel with toes tucked under
-    imageResId: toe_kneeling_squat
+    imageResId: kneeling_on_toes
 
   - id: rest_19
     name: Rest
@@ -417,7 +417,7 @@ exercises:
 
   - id: rest_22
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: frog_pose
@@ -445,7 +445,7 @@ exercises:
 
   - id: rest_24
     name: Rest
-    duration: 15
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: twisted_sphinx
@@ -473,7 +473,7 @@ exercises:
 
   - id: rest_25
     name: Rest
-    duration: 5
+    duration: 10
     type: REST
     instructions: Take a short break
     imageResId: seated_twist
@@ -560,7 +560,7 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: hamstring
+    imageResId: lying_hamstring_pull
 
   - id: lying_hamstring_pull_1
     name: Lying Hamstring Pull
@@ -574,7 +574,7 @@ exercises:
     duration: 5
     type: TRANSITION
     instructions: Switch to the other side
-    imageResId: hamstring
+    imageResId: lying_hamstring_pull
 
   - id: lying_hamstring_pull_2
     name: Lying Hamstring Pull
@@ -588,18 +588,18 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: butterfly
+    imageResId: reclined_butterfly
 
   - id: reclined_butterfly
     name: Reclined Butterfly
     duration: 30
     type: WORK
     instructions: Lie on back, soles of feet together
-    imageResId: butterfly
+    imageResId: reclined_butterfly
 
   - id: rest_31
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: spinal_twist
@@ -627,7 +627,7 @@ exercises:
 
   - id: rest_32
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: lying_quad_stretch
@@ -655,7 +655,7 @@ exercises:
 
   - id: rest_33
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: butterfly
@@ -795,7 +795,7 @@ exercises:
 
   - id: rest_41
     name: Rest
-    duration: 15
+    duration: 20
     type: REST
     instructions: Take a short break
     imageResId: legs_up_wall
