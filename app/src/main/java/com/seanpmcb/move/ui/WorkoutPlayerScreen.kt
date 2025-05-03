@@ -111,7 +111,8 @@ fun WorkoutPlayerScreen(
         if (currentExercise.measurementType == null) {
             manualProgressionMode = false
             workoutTimer.startExerciseTimer(
-                exercise = currentExercise,
+                workout = workout,
+                exerciseIndex = currentExerciseIndex,
                 isFirstExercise = currentExerciseIndex == 0
             ).collect { state ->
                 timerState = state
@@ -131,7 +132,8 @@ fun WorkoutPlayerScreen(
             // The user will tap the Complete Exercise button
             manualProgressionMode = true
             workoutTimer.startExerciseTimer(
-                exercise = currentExercise,
+                workout = workout,
+                exerciseIndex = currentExerciseIndex,
                 isFirstExercise = currentExerciseIndex == 0
             ).collect { state ->
                 timerState = state
@@ -147,7 +149,8 @@ fun WorkoutPlayerScreen(
             manualProgressionMode = false
             // Start the current exercise timer with a countdown
             workoutTimer.startExerciseTimer(
-                exercise = currentExercise,
+                workout = workout,
+                exerciseIndex = currentExerciseIndex,
                 withCountdown = true
             ).collect { state ->
                 timerState = state
@@ -168,7 +171,8 @@ fun WorkoutPlayerScreen(
             // For non-timed exercises, just show them
             manualProgressionMode = true
             workoutTimer.startExerciseTimer(
-                exercise = currentExercise,
+                workout = workout,
+                exerciseIndex = currentExerciseIndex,
                 withCountdown = true
             ).collect { state ->
                 timerState = state

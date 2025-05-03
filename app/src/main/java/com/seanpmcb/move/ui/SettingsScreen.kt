@@ -269,14 +269,14 @@ fun SettingsScreen(
                             style = MaterialTheme.typography.bodyMedium
                         )
                     }
-                    Switch(
-                        checked = settings?.visualEffects?.enabled ?: true,
-                        onCheckedChange = { enabled ->
-                            scope.launch {
-                                settingsRepository.updateVisualEffectsEnabled(enabled)
-                            }
-                        }
-                    )
+                    // Switch(
+                    //     checked = settings?.visualEffects?.enabled ?: true,
+                    //     onCheckedChange = { enabled ->
+                    //         scope.launch {
+                    //             settingsRepository.updateVisualEffectsEnabled(enabled)
+                    //         }
+                    //     }
+                    // )
                 }
                 
                 // Sub-settings for Visual Effects

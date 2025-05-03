@@ -5,12 +5,15 @@ import android.media.AudioAttributes
 import android.media.SoundPool
 import android.media.ToneGenerator
 import android.media.AudioManager
+import android.speech.tts.TextToSpeech
 import com.seanpmcb.move.data.Exercise
 import com.seanpmcb.move.data.ExerciseType
 import com.seanpmcb.move.data.MeasurementType
 import com.seanpmcb.move.data.AppSettingsRepository
+import com.seanpmcb.move.data.Workout
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
+import java.util.*
 
 data class TimerState(
     val timeRemaining: Int,
@@ -33,10 +36,26 @@ class WorkoutTimer(
 
     private val toneGen = ToneGenerator(AudioManager.STREAM_MUSIC, 100)
     private var isPaused = MutableStateFlow(false)
+    private var tts: TextToSpeech? = null
+    private var nextWorkExercise: Exercise? = null
 
     private var currentExercise: Exercise? = null
     private var currentFlowCollector: FlowCollector<TimerState>? = null
     private var currentTimerJob: Job? = null
+
+    init {
+        tts = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                tts?.language = Locale.US
+                // Try to set voice VI
+                val voices = tts?.voices
+                val voiceVI = voices?.find { it.name.contains("6", ignoreCase = true) }
+                if (voiceVI != null) {
+                    tts?.voice = voiceVI
+                }
+            }
+        }
+    }
     
     // Call this to cancel the current timer before starting a new one
     fun cancelCurrentTimer() {
@@ -44,14 +63,25 @@ class WorkoutTimer(
         currentTimerJob = null
     }
 
+    private suspend fun speakNextExercise() {
+        val settings = settingsRepository.appSettings.first()
+        if (settings.soundEffects.enabled && settings.soundEffects.nextExercise) {
+            nextWorkExercise?.let { nextExercise ->
+                tts?.speak("Next up: ${nextExercise.name}", TextToSpeech.QUEUE_FLUSH, null, null)
+            }
+        }
+    }
+
     fun startExerciseTimer(
-        exercise: Exercise, 
+        workout: Workout,
+        exerciseIndex: Int,
         isFirstExercise: Boolean = false,
         withCountdown: Boolean = false
     ): Flow<TimerState> = flow {
         // Cancel any existing timer first
         cancelCurrentTimer()
         
+        val exercise = workout.exercises[exerciseIndex]
         currentExercise = exercise
         currentFlowCollector = this
         // Set a reference to the current coroutine job for cancellation
@@ -59,6 +89,11 @@ class WorkoutTimer(
 
         // Get current settings
         val settings = settingsRepository.appSettings.first()
+
+        // Find next work exercise
+        nextWorkExercise = workout.exercises
+            .drop(exerciseIndex + 1)
+            .firstOrNull { it.type == ExerciseType.WORK }
 
         // For TIME-based exercises, use the timer
         if (exercise.measurementType == null) {
@@ -99,6 +134,9 @@ class WorkoutTimer(
                         isPulsing = settings.visualEffects.enabled && settings.visualEffects.countdownPulse
                     ))
                     playCountdownBeep()
+                } else if (i == 7 && exercise.type == ExerciseType.WORK) {
+                    // Announce next work exercise when 5 seconds remain
+                    speakNextExercise()
                 }
                 delay(1000)
                 while (isPaused.value) {
@@ -126,8 +164,8 @@ class WorkoutTimer(
         }
     }
 
-    fun restartCurrentExercise(): Flow<TimerState>? {
-        return currentExercise?.let { startExerciseTimer(it, withCountdown = true) }
+    fun restartCurrentExercise(workout: Workout, exerciseIndex: Int): Flow<TimerState>? {
+        return currentExercise?.let { startExerciseTimer(workout, exerciseIndex, withCountdown = true) }
     }
 
     fun togglePause() {
@@ -162,5 +200,7 @@ class WorkoutTimer(
         cancelCurrentTimer()
         soundPool.release()
         toneGen.release()
+        tts?.stop()
+        tts?.shutdown()
     }
 } 
