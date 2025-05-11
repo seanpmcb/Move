@@ -100,18 +100,11 @@ exercises:
     instructions: With one leg straight, bend at the hips
     imageResId: null
 
-  - id: gate_openers_1
-    name: Gate Openers
-    duration: 15
+  - id: gate_openers
+    name: Alternating Gate Openers
+    duration: 30
     type: WORK
-    instructions: Open your hip while standing on one leg.
-    imageResId: null
-
-  - id: gate_openers_2
-    name: Gate Openers
-    duration: 15
-    type: WORK
-    instructions: Switch to the other leg.
+    instructions: Lift one knee up, to the side, and then down. Repeat.
     imageResId: null
 
   - id: leg_swings_1

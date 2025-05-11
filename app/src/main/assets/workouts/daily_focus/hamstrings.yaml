@@ -45,7 +45,7 @@ exercises:
     imageResId: null
 
   - id: side_lunge_2
-    name: Side Lunge
+    name: Switch Sides
     duration: 60
     type: WORK
     instructions: Step one foot out wide, lunge deeply while keeping the other leg straight
@@ -58,8 +58,8 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: kneeling_hamstring_lunge_1
-    name: Kneeling Hamstring Lunge
+  - id: reverse_runners_lunge_1
+    name: Reverse Runners Lunge
     duration: 60
     type: WORK
     instructions: Kneel on one leg, keep the other leg straight, fold forward
@@ -72,8 +72,8 @@ exercises:
     instructions: Switch legs
     imageResId: null
 
-  - id: kneeling_hamstring_lunge_2
-    name: Kneeling Hamstring Lunge
+  - id: reverse_runners_lunge_2
+    name: Reverse Runners Lunge
     duration: 60
     type: WORK
     instructions: Kneel on one leg, keep the other leg straight, fold forward
@@ -115,7 +115,7 @@ exercises:
     imageResId: null
 
   - id: hurdler_2
-    name: Hurdler
+    name: Switch Sides
     duration: 60
     type: WORK
     instructions: Sit with one leg extended, bend the other knee placing foot against inner thigh, hinge forward
@@ -142,8 +142,8 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: supine_hamstring_1
-    name: Supine Hamstring Pull
+  - id: lying_hamstring_1
+    name: Lying Hamstring Pull
     duration: 60
     type: WORK
     instructions: Lie on back, extend one leg up, gently pull leg towards chest
@@ -156,8 +156,8 @@ exercises:
     instructions: Switch legs
     imageResId: null
 
-  - id: supine_hamstring_2
-    name: Supine Hamstring Pull
+  - id: lying_hamstring_2
+    name: Lying Hamstring Pull
     duration: 60
     type: WORK
     instructions: Lie on back, extend one leg up, gently pull leg towards chest

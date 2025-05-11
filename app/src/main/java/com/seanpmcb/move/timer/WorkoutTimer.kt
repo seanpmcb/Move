@@ -72,6 +72,15 @@ class WorkoutTimer(
         }
     }
 
+    private suspend fun speakCurrentExercise() {
+        val settings = settingsRepository.appSettings.first()
+        if (settings.soundEffects.enabled && settings.soundEffects.nextExercise) {
+            currentExercise?.let { exercise ->
+                tts?.speak(exercise.name, TextToSpeech.QUEUE_FLUSH, null, null)
+            }
+        }
+    }
+
     fun startExerciseTimer(
         workout: Workout,
         exerciseIndex: Int,
@@ -93,7 +102,7 @@ class WorkoutTimer(
         // Find next work exercise
         nextWorkExercise = workout.exercises
             .drop(exerciseIndex + 1)
-            .firstOrNull { it.type == ExerciseType.WORK }
+            .firstOrNull { it.type == ExerciseType.WORK || it.type == ExerciseType.TRANSITION }
 
         // For TIME-based exercises, use the timer
         if (exercise.measurementType == null) {
@@ -119,6 +128,9 @@ class WorkoutTimer(
                     }
                 }
             }
+
+            // Announce current exercise
+            speakCurrentExercise()
 
             // Main exercise timer
             for (i in exercise.duration!! downTo 1) {
@@ -193,7 +205,13 @@ class WorkoutTimer(
     }
 
     suspend fun playWorkoutCompleteSound() {
-        playVictorySound()
+        val settings = settingsRepository.appSettings.first()
+        if (settings.soundEffects.enabled && settings.soundEffects.nextExercise) {
+            playVictorySound()
+            if (settings.soundEffects.nextExercise) {
+                tts?.speak("Session Complete", TextToSpeech.QUEUE_FLUSH, null, null)
+            }
+        }
     }
 
     fun release() {

@@ -184,11 +184,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: side_leg_raise
-    name: Side Leg Raise
+  - id: side_crunch_leg_raise
+    name: Side Crunch With Leg Raised
     duration: 30
     type: WORK
-    instructions: Lay on side, lift leg and reach for foot
+    instructions: On the floor, perform a side crunch hold and lift leg
     imageResId: null
 
   - id: switch_sides_1
@@ -198,11 +198,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: side_leg_raise
-    name: Side Leg Raise
+  - id: side_crunch_leg_raise
+    name: Side Crunch With Leg Raised
     duration: 30
     type: WORK
-    instructions: Lay on side, lift leg and reach for foot
+    instructions: On the floor, perform a side crunch hold and lift leg
     imageResId: null
 
   - id: rest_4

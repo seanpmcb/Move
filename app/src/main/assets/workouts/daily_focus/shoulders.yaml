@@ -170,8 +170,8 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: shoulder_cross
-    name: Shoulder Cross
+  - id: lying_shoulder_cross
+    name: Lying Shoulder Cross
     duration: 60
     type: WORK
     instructions: Lie on back with one arm extended. Roll over to stretch the shoulder
@@ -184,8 +184,8 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: shoulder_cross
-    name: Shoulder Cross
+  - id: lying_shoulder_cross
+    name: Lying Shoulder Cross
     duration: 60
     type: WORK
     instructions: Lie on back with one arm extended. Roll over to stretch the shoulder
@@ -198,11 +198,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: shoulder_opener
-    name: Shoulder Opener
+  - id: lying_shoulder_opener
+    name: Lying Shoulder Opener
     duration: 60
     type: WORK
-    instructions: Reach one arm behind back, grasp wrist with other hand, gently pull
+    instructions: Lie on stomach with one arm extended. Roll over to stretch the shoulder
     imageResId: null
 
   - id: switch_sides_5
@@ -212,11 +212,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: shoulder_opener
-    name: Shoulder Opener
+  - id: lying_shoulder_opener
+    name: Lying Shoulder Opener
     duration: 60
     type: WORK
-    instructions: Reach one arm behind back, grasp wrist with other hand, gently pull
+    instructions: Lie on stomach with one arm extended. Roll over to stretch the shoulder
     imageResId: null
 
   - id: rest_9
@@ -240,9 +240,9 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: seated_chest_stretch
-    name: Seated Chest Stretch
+  - id: kneeling_chest_stretch
+    name: Kneeling Chest Stretch
     duration: 60
     type: WORK
-    instructions: Sit on the floor with knees bent, slide arms back with fingers pointing away, left chest to feel the stretch
+    instructions: Kneel on flow with hands clasped behind back. Extend arms back and down to stretch
     imageResId: null
