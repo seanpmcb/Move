@@ -308,14 +308,14 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: kneel
+    imageResId: hero_pose
 
-  - id: kneel
-    name: Kneel
+  - id: hero_pose
+    name: Hero Pose
     duration: 30
     type: WORK
-    instructions: Kneel on mat with knees together
-    imageResId: kneel
+    instructions: Kneel on mat with knees together, sit back between heels
+    imageResId: hero_pose
 
   - id: rest_17
     name: Rest
@@ -336,14 +336,14 @@ exercises:
     duration: 7
     type: REST
     instructions: Take a short break
-    imageResId: kneeling_on_toes
+    imageResId: hero_pose_toes_tucked
 
-  - id: kneeling_on_toes
-    name: Kneeling on Toes
+  - id: hero_pose_toes_tucked
+    name: Hero Pose with Toes Tucked
     duration: 30
     type: WORK
     instructions: Kneel with toes tucked under
-    imageResId: kneeling_on_toes
+    imageResId: hero_pose_toes_tucked
 
   - id: rest_19
     name: Rest

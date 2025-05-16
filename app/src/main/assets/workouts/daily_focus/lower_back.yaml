@@ -73,10 +73,10 @@ exercises:
     imageResId: null
 
   - id: kneeling
-    name: Kneeling
+    name: Hero Pose
     duration: 60
     type: WORK
-    instructions: Kneel on floor, sit back on heels, lengthen spine upward
+    instructions: Kneel on floor, sit back between heels, lengthen spine upward
     imageResId: null
 
   - id: rest_5

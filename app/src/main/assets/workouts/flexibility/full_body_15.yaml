@@ -60,7 +60,7 @@ exercises:
 
   - id: side_lunge
     name: Side Lunge
-    duration: 15
+    duration: 30
     type: WORK
     instructions: Step one foot out to side, bend knee
     imageResId: side_lunge
@@ -74,7 +74,7 @@ exercises:
 
   - id: side_lunge
     name: Side Lunge
-    duration: 15
+    duration: 30
     type: WORK
     instructions: Step one foot out to side, bend knee
     imageResId: side_lunge
@@ -157,10 +157,10 @@ exercises:
     imageResId: kneel
 
   - id: kneel
-    name: Kneel
+    name: Hero Pose
     duration: 30
     type: WORK
-    instructions: Kneel on mat with knees together
+    instructions: Kneel on mat with knees together, sit back between heels
     imageResId: kneel
 
   - id: rest_10
@@ -238,70 +238,70 @@ exercises:
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: figure_four
+    imageResId: lying_figure_four
 
-  - id: figure_four
-    name: Figure Four
+  - id: lying_figure_four
+    name: Lying Figure Four
     duration: 30
     type: WORK
     instructions: Lie on back, one ankle on opposite knee
-    imageResId: figure_four
+    imageResId: lying_figure_four
 
   - id: switch_sides_5
     name: Switch Sides
     duration: 5
     type: TRANSITION
     instructions: Switch to other side
-    imageResId: figure_four
+    imageResId: lying_figure_four
 
-  - id: figure_four
-    name: Figure Four
+  - id: lying_figure_four
+    name: Lying Figure Four
     duration: 30
     type: WORK
     instructions: Lie on back, one ankle on opposite knee
-    imageResId: figure_four
+    imageResId: lying_figure_four
 
   - id: rest_14
     name: Rest
     duration: 5
     type: REST
     instructions: Take a short break
-    imageResId: hamstring
+    imageResId: lying_hamstring_pull
 
-  - id: hamstring
-    name: Hamstring Pull
+  - id: lying_hamstring_pull
+    name: Lying Hamstring Pull
     duration: 30
     type: WORK
     instructions: Lie on back, one leg straight up, pull leg to stretch the hamstrings
-    imageResId: hamstring
+    imageResId: lying_hamstring_pull
 
   - id: switch_sides_6
     name: Switch Sides
     duration: 5
     type: TRANSITION
     instructions: Switch to other side
-    imageResId: hamstring
+    imageResId: lying_hamstring_pull
 
-  - id: hamstring
-    name: Hamstring Pull
+  - id: lying_hamstring_pull
+    name: Lying Hamstring Pull
     duration: 30
     type: WORK
     instructions: Lie on back, one leg straight up, pull leg to stretch the hamstrings
-    imageResId: hamstring
+    imageResId: lying_hamstring_pull
 
   - id: rest_15
     name: Rest
     duration: 7
     type: REST
     instructions: Take a short break
-    imageResId: butterfly
+    imageResId: reclined_butterfly
 
   - id: reclined_butterfly
     name: Reclined Butterfly
     duration: 30
     type: WORK
     instructions: Lie on back, soles of feet together
-    imageResId: butterfly
+    imageResId: reclined_butterfly
 
   - id: rest_16
     name: Rest
@@ -336,28 +336,28 @@ exercises:
     duration: 7
     type: REST
     instructions: Take a short break
-    imageResId: quad_stretch
+    imageResId: lying_quad_stretch
 
-  - id: quad_stretch
-    name: Quad Stretch
+  - id: lying_quad_stretch
+    name: Lying Quad Stretch
     duration: 30
     type: WORK
     instructions: Lie on side, bend one knee back
-    imageResId: quad_stretch
+    imageResId: lying_quad_stretch
 
   - id: switch_sides_8
     name: Switch Sides
     duration: 7
     type: TRANSITION
     instructions: Switch to other side
-    imageResId: quad_stretch
+    imageResId: lying_quad_stretch
 
-  - id: quad_stretch
-    name: Quad Stretch
+  - id: lying_quad_stretch
+    name: Lying Quad Stretch
     duration: 30
     type: WORK
     instructions: Lie on side, bend one knee back
-    imageResId: quad_stretch
+    imageResId: lying_quad_stretch
 
   - id: rest_18
     name: Rest
