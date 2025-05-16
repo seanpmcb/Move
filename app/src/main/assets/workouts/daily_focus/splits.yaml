@@ -86,11 +86,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: kneeling_quad_side_1
-    name: Kneeling Quad Stretch
+  - id: bound_crescent_low_lunge_1
+    name: Bound Crescent Low Lunge
     duration: 60
     type: WORK
-    instructions: Kneel on one knee, pull opposite heel towards glute
+    instructions: Step into low lunge, clasp hands around the back foot, lift chest and arms
     imageResId: null
 
   - id: switch_sides_4
@@ -100,11 +100,11 @@ exercises:
     instructions: Switch sides
     imageResId: null
 
-  - id: kneeling_quad_side_2
-    name: Kneeling Quad Stretch
+  - id: bound_crescent_low_lunge_2
+    name: Bound Crescent Low Lunge
     duration: 60
     type: WORK
-    instructions: Kneel on the other knee, pull opposite heel towards glute
+    instructions: Step into low lunge, clasp hands around the back foot, lift chest and arms
     imageResId: null
 
   - id: rest_4
@@ -143,10 +143,10 @@ exercises:
     imageResId: null
 
   - id: lunge_side_1
-    name: Lunge with Arms Raised
+    name: Low Lunge with Arms Raised
     duration: 60
     type: WORK
-    instructions: Step forward with one leg, lower into lunge
+    instructions: Step forward with one leg, lower into lunge, raise arms overhead
     imageResId: null
 
   - id: switch_sides_6
@@ -157,10 +157,10 @@ exercises:
     imageResId: null
 
   - id: lunge_side_2
-    name: Lunge with Arms Raised
+    name: Low Lunge with Arms Raised
     duration: 60
     type: WORK
-    instructions: Step forward with the other leg, lower into lunge
+    instructions: Step forward with the other leg, lower into lunge, raise arms overhead
     imageResId: null
 
   - id: rest_6

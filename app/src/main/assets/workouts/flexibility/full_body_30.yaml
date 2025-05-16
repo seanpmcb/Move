@@ -185,7 +185,7 @@ exercises:
     imageResId: lunge
 
   - id: lunge_1
-    name: Lunge with Arms Raised
+    name: Low Lunge with Arms Raised
     duration: 30
     type: WORK
     instructions: Step one foot back into a lunge, extend arms overhead
@@ -199,7 +199,7 @@ exercises:
     imageResId: lunge
 
   - id: lunge_2
-    name: Lunge with Arms Raised
+    name: Low Lunge with Arms Raised
     duration: 30
     type: WORK
     instructions: Step one foot back into a lunge, extend arms overhead
@@ -238,28 +238,28 @@ exercises:
     duration: 7
     type: REST
     instructions: Take a short break
-    imageResId: kneeling_quad
+    imageResId: bound_crescent_low_lunge
 
-  - id: standing_quad_stretch_1
-    name: Standing Quad Stretch
+  - id: bound_crescent_low_lunge_1
+    name: Bound Crescent Low Lunge
     duration: 30
     type: WORK
-    instructions: Stand with one leg extended, bend the other knee back, hold that foot
-    imageResId: standing_quad_stretch
+    instructions: Step into low lunge, clasp hands around the back foot, lift chest and arms
+    imageResId: bound_crescent_low_lunge
 
   - id: switch_sides_6
     name: Switch Sides
     duration: 5
     type: TRANSITION
     instructions: Switch to the other side
-    imageResId: standing_quad_stretch
+    imageResId: bound_crescent_low_lunge
 
-  - id: standing_quad_stretch_2
-    name: Standing Quad Stretch
+  - id: bound_crescent_low_lunge_2
+    name: Bound Crescent Low Lunge
     duration: 30
     type: WORK
-    instructions: Stand with one leg extended, bend the other knee back, hold that foot
-    imageResId: standing_quad_stretch
+    instructions: Step into low lunge, clasp hands around the back foot, lift chest and arms
+    imageResId: bound_crescent_low_lunge
 
   - id: rest_13
     name: Rest

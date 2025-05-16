@@ -16,11 +16,11 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: lunge_side_1
-    name: Lunge
+  - id: lunge_slide_1
+    name: Low Lunge with Arms Raised
     duration: 60
     type: WORK
-    instructions: Step forward with one leg, lower into lunge position
+    instructions: Step forward with one leg, lower into lunge position, raise arms overhead
     imageResId: null
 
   - id: switch_sides_1
@@ -31,10 +31,10 @@ exercises:
     imageResId: null
 
   - id: lunge_side_2
-    name: Lunge
+    name: Low Lunge with Arms Raised
     duration: 60
     type: WORK
-    instructions: Step forward with the other leg, lower into lunge position
+    instructions: Step forward with the other leg, lower into lunge position, raise arms overhead
     imageResId: null
 
   - id: rest_2

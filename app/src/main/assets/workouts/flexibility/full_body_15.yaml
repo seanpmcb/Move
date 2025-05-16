@@ -87,7 +87,7 @@ exercises:
     imageResId: lunge
 
   - id: lunge
-    name: Lunge with arms raised
+    name: Low Lunge with Arms Raised
     duration: 30
     type: WORK
     instructions: Step one foot back into a lunge, arms raised overhead
@@ -101,7 +101,7 @@ exercises:
     imageResId: lunge
 
   - id: lunge
-    name: Lunge with arms raised
+    name: Low Lunge with Arms Raised
     duration: 30
     type: WORK
     instructions: Step one foot back into a lunge, arms raised overhead
