@@ -94,7 +94,7 @@ exercises:
     imageResId: null
 
   - id: hamstring_scoops_2
-    name: Hamstring Scoops
+    name: Switch Sides
     duration: 15
     type: WORK
     instructions: With one leg straight, bend at the hips
@@ -115,7 +115,7 @@ exercises:
     imageResId: null
 
   - id: leg_swings_2
-    name: Leg Swings
+    name: Switch Legs
     duration: 15
     type: WORK
     instructions: Switch to the other leg.
@@ -129,7 +129,7 @@ exercises:
     imageResId: null
 
   - id: lateral_leg_swings_2
-    name: Lateral Leg Swings
+    name: Switch Legs
     duration: 15
     type: WORK
     instructions: Switch to the other leg.
