@@ -63,7 +63,12 @@ class WorkoutTimer(
         currentTimerJob = null
     }
 
-    private suspend fun speakNextExercise() {
+    private suspend fun speakNextExercise(workout: Workout, exerciseIndex: Int) {
+        // Find next work exercise
+        nextWorkExercise = workout.exercises
+            .drop(exerciseIndex + 1)
+            .firstOrNull { it.type == ExerciseType.WORK || it.type == ExerciseType.TRANSITION }
+
         val settings = settingsRepository.appSettings.first()
         if (settings.soundEffects.enabled && settings.soundEffects.nextExercise) {
             nextWorkExercise?.let { nextExercise ->
@@ -98,11 +103,6 @@ class WorkoutTimer(
 
         // Get current settings
         val settings = settingsRepository.appSettings.first()
-
-        // Find next work exercise
-        nextWorkExercise = workout.exercises
-            .drop(exerciseIndex + 1)
-            .firstOrNull { it.type == ExerciseType.WORK || it.type == ExerciseType.TRANSITION }
 
         // For TIME-based exercises, use the timer
         if (exercise.measurementType == null) {
@@ -147,8 +147,8 @@ class WorkoutTimer(
                     ))
                     playCountdownBeep()
                 } else if (i == 7 && exercise.type == ExerciseType.WORK) {
-                    // Announce next work exercise when 5 seconds remain
-                    speakNextExercise()
+                    // Announce next work exercise when 7 seconds remain
+                    speakNextExercise(workout, exerciseIndex)
                 }
                 delay(1000)
                 while (isPaused.value) {
