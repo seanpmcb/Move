@@ -103,3 +103,16 @@ groups:
         name: 30 Minute Bodyweight
         description: A 30-minute bodyweight workout focusing on major muscle groups
         file: strength/thirty_min_bodyweight.yaml
+
+  - id: posture_group
+    name: Posture
+    workouts:
+      - id: quick_posture
+        name: Quick Posture
+        description: A 5-minute workout to improve posture and strengthen postural muscles
+        file: posture/quick_posture.yaml
+
+      - id: posture_foundation
+        name: Posture Foundation
+        description: A 12-minute comprehensive workout to build postural strength and improve alignment
+        file: posture/posture_foundation.yaml

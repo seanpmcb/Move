@@ -1,0 +1,108 @@
+id: quick_posture
+name: Quick Posture
+description: A 5-minute workout to improve posture and strengthen postural muscles
+exercises:
+  - id: wall_angels
+    name: Wall Angels
+    duration: 60
+    type: WORK
+    instructions: Stand with back against wall, feet shoulder-width apart. Slide arms up and down wall while maintaining contact
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: chin_tucks
+    name: Chin Tucks
+    duration: 45
+    type: WORK
+    instructions: Sit or stand tall, gently tuck chin toward chest, hold for 2-3 seconds, release
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: shoulder_blade_squeezes
+    name: Shoulder Blade Squeezes
+    duration: 45
+    type: WORK
+    instructions: Sit or stand tall, squeeze shoulder blades together, hold for 2-3 seconds, release
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: chest_opener
+    name: Chest Opener
+    duration: 60
+    type: WORK
+    instructions: Stand tall, clasp hands behind back, lift chest and gently pull shoulders back
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: cat_cow
+    name: Cat-Cow
+    duration: 60
+    type: WORK
+    instructions: On hands and knees, alternate between arching back (cow) and rounding back (cat)
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: bird_dog_right
+    name: Bird Dog (Right)
+    duration: 30
+    type: WORK
+    instructions: On hands and knees, extend right arm forward and left leg back, maintain balance
+    imageResId: null
+
+  - id: switch_sides_1
+    name: Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch to left side
+    imageResId: null
+
+  - id: bird_dog_left
+    name: Bird Dog (Left)
+    duration: 30
+    type: WORK
+    instructions: On hands and knees, extend left arm forward and right leg back, maintain balance
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: dead_bug
+    name: Dead Bug
+    duration: 45
+    type: WORK
+    instructions: Lie on back, knees bent, feet flat. Extend opposite arm and leg while maintaining core engagement
+    imageResId: null 

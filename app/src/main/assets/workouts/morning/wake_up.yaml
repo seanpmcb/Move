@@ -79,14 +79,14 @@ exercises:
     instructions: Switch to the other side
     imageResId: calf_stretch
 
-  - id: calf_stretch_1
-    name: Switch Sides
+  - id: calf_stretch_3
+    name: Calf Stretch
     duration: 30
     type: WORK
     instructions: Push against wall, straight legand hold
     imageResId: calf_stretch
 
-  - id: calf_stretch_2
+  - id: calf_stretch_4
     name: Soleus Stretch
     duration: 30
     type: WORK

@@ -45,7 +45,7 @@ exercises:
     imageResId: null
 
   - id: side_lunge_2
-    name: Switch Sides
+    name: Side Lunge
     duration: 60
     type: WORK
     instructions: Step one foot out wide, lunge deeply while keeping the other leg straight
