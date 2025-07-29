@@ -2,16 +2,16 @@ id: posture_foundation
 name: Posture Foundation
 description: A 12-minute comprehensive workout to build postural strength and improve alignment
 exercises:
-  - id: wall_angels
-    name: Wall Angels
-    duration: 90
+  - id: wall_angels_1
+    name: Wall Angels (Set 1)
+    duration: 45
     type: WORK
-    instructions: Stand with back against wall, feet shoulder-width apart. Slide arms up and down wall while maintaining contact
+    instructions: Stand with back against wall, feet shoulder-width apart. Slide arms up and down wall while maintaining contact. Focus on keeping lower back pressed against the wall.
     imageResId: null
 
   - id: rest_1
     name: Rest
-    duration: 7
+    duration: 5
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -20,7 +20,7 @@ exercises:
     name: Chin Tucks
     duration: 60
     type: WORK
-    instructions: Sit or stand tall, gently tuck chin toward chest, hold for 2-3 seconds, release
+    instructions: Sit or stand tall, gently tuck chin toward chest, hold for 2-3 seconds, release. Focus on elongating the back of your neck.
     imageResId: null
 
   - id: rest_2
@@ -34,7 +34,7 @@ exercises:
     name: Shoulder Blade Squeezes
     duration: 60
     type: WORK
-    instructions: Sit or stand tall, squeeze shoulder blades together, hold for 2-3 seconds, release
+    instructions: Sit or stand tall, squeeze shoulder blades together as if holding a pencil between them, hold for 2-3 seconds, release.
     imageResId: null
 
   - id: rest_3
@@ -44,25 +44,25 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: chest_opener
-    name: Chest Opener
-    duration: 90
+  - id: chest_opener_1
+    name: Chest Opener (Set 1)
+    duration: 45
     type: WORK
-    instructions: Stand tall, clasp hands behind back, lift chest and gently pull shoulders back
+    instructions: Stand tall, clasp hands behind back, lift chest and gently pull shoulders back. Feel the stretch across your chest.
     imageResId: null
 
   - id: rest_4
     name: Rest
-    duration: 7
+    duration: 5
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: cat_cow
-    name: Cat-Cow
-    duration: 90
+  - id: cat_cow_1
+    name: Cat-Cow (Set 1)
+    duration: 45
     type: WORK
-    instructions: On hands and knees, alternate between arching back (cow) and rounding back (cat)
+    instructions: On hands and knees, alternate between arching back (cow) and rounding back (cat). Synchronize with your breath.
     imageResId: null
 
   - id: rest_5
@@ -76,26 +76,26 @@ exercises:
     name: Bird Dog (Right)
     duration: 45
     type: WORK
-    instructions: On hands and knees, extend right arm forward and left leg back, maintain balance
+    instructions: On hands and knees, extend right arm forward and left leg back, maintaining a stable core and level hips.
     imageResId: null
 
   - id: switch_sides_1
     name: Switch Sides
-    duration: 7
+    duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Prepare to switch to the left side.
     imageResId: null
 
   - id: bird_dog_left
     name: Bird Dog (Left)
     duration: 45
     type: WORK
-    instructions: On hands and knees, extend left arm forward and right leg back, maintain balance
+    instructions: On hands and knees, extend left arm forward and right leg back, maintaining a stable core and level hips.
     imageResId: null
 
   - id: rest_6
     name: Rest
-    duration: 7
+    duration: 5
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -104,7 +104,7 @@ exercises:
     name: Dead Bug
     duration: 60
     type: WORK
-    instructions: Lie on back, knees bent, feet flat. Extend opposite arm and leg while maintaining core engagement
+    instructions: Lie on back, knees bent, feet flat. Extend opposite arm and leg while maintaining core engagement and pressing your lower back into the floor.
     imageResId: null
 
   - id: rest_7
@@ -114,16 +114,16 @@ exercises:
     instructions: Take a short break
     imageResId: null
 
-  - id: plank
-    name: Plank
+  - id: plank_forearm
+    name: Forearm Plank
     duration: 60
     type: WORK
-    instructions: Hold plank position with straight arms, engage core and maintain neutral spine
+    instructions: Hold a forearm plank position, keeping your body in a straight line from head to heels. Engage your core and glutes.
     imageResId: null
 
   - id: rest_8
     name: Rest
-    duration: 7
+    duration: 5
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -132,7 +132,7 @@ exercises:
     name: Superman
     duration: 60
     type: WORK
-    instructions: Lie face down, lift arms and legs off ground, hold position
+    instructions: Lie face down, lift arms and legs off the ground simultaneously, squeezing your glutes and upper back. Hold briefly, then release.
     imageResId: null
 
   - id: rest_9
@@ -146,21 +146,21 @@ exercises:
     name: Bridge
     duration: 60
     type: WORK
-    instructions: Lie on back, knees bent, lift hips up while engaging glutes and core
+    instructions: Lie on back, knees bent, feet flat. Lift your hips up towards the ceiling, squeezing your glutes at the top. Lower with control.
     imageResId: null
 
   - id: rest_10
     name: Rest
-    duration: 7
+    duration: 5
     type: REST
     instructions: Take a short break
     imageResId: null
 
-  - id: scapular_pull_ups
-    name: Scapular Pull-ups
+  - id: scapular_push_ups
+    name: Scapular Push-ups
     duration: 60
     type: WORK
-    instructions: Hang from bar or door frame, pull shoulder blades down and back without bending arms
+    instructions: Start in a high plank position. Keeping arms straight, allow your chest to drop towards the floor by squeezing your shoulder blades, then push back up.
     imageResId: null
 
   - id: rest_11
@@ -174,26 +174,54 @@ exercises:
     name: Standing Balance (Right)
     duration: 30
     type: WORK
-    instructions: Stand on right leg, lift left knee, maintain balance and good posture
+    instructions: Stand on your right leg, lift your left knee towards your chest, and maintain balance and good posture. Engage your core.
     imageResId: null
 
   - id: switch_sides_2
     name: Switch Sides
-    duration: 7
+    duration: 5
     type: TRANSITION
-    instructions: Switch to left side
+    instructions: Prepare to switch to the left side.
     imageResId: null
 
   - id: standing_balance_left
     name: Standing Balance (Left)
     duration: 30
     type: WORK
-    instructions: Stand on left leg, lift right knee, maintain balance and good posture
+    instructions: Stand on your left leg, lift your right knee towards your chest, and maintain balance and good posture. Engage your core.
     imageResId: null
 
   - id: rest_12
     name: Rest
-    duration: 7
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: wall_angels_2
+    name: Wall Angels (Set 2)
+    duration: 45
+    type: WORK
+    instructions: Stand with back against wall, feet shoulder-width apart. Slide arms up and down wall while maintaining contact. Focus on keeping lower back pressed against the wall.
+    imageResId: null
+
+  - id: rest_13
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break
+    imageResId: null
+
+  - id: chest_opener_2
+    name: Chest Opener (Set 2)
+    duration: 45
+    type: WORK
+    instructions: Stand tall, clasp hands behind back, lift chest and gently pull shoulders back. Feel the stretch across your chest.
+    imageResId: null
+
+  - id: rest_14
+    name: Rest
+    duration: 5
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -202,5 +230,5 @@ exercises:
     name: Child's Pose
     duration: 60
     type: WORK
-    instructions: Kneel and sit back on heels, extend arms forward, relax and breathe
-    imageResId: null 
+    instructions: Kneel and sit back on heels, extend arms forward, resting your forehead on the ground. Relax and breathe deeply.
+    imageResId: null

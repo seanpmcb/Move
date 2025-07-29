@@ -8,7 +8,7 @@ groups:
         file: morning/wake_up.yaml
 
       - id: quick_core
-        name: Quick Core
+        name: Quick Core Holds
         description: A quick core workout focusing on plank variations
         file: core/quick_core.yaml
         
@@ -82,7 +82,7 @@ groups:
     name: Core
     workouts:
       - id: quick_core
-        name: Quick Core
+        name: Quick Core Holds
         description: A quick core workout focusing on plank variations
         file: core/quick_core.yaml
 
