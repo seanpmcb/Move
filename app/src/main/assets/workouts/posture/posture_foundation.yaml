@@ -3,17 +3,10 @@ name: Posture Foundation
 description: A 12-minute comprehensive workout to build postural strength and improve alignment
 exercises:
   - id: wall_angels_1
-    name: Wall Angels (Set 1)
+    name: Wall Angels
     duration: 45
     type: WORK
     instructions: Stand with back against wall, feet shoulder-width apart. Slide arms up and down wall while maintaining contact. Focus on keeping lower back pressed against the wall.
-    imageResId: null
-
-  - id: rest_1
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
     imageResId: null
 
   - id: chin_tucks
@@ -23,13 +16,6 @@ exercises:
     instructions: Sit or stand tall, gently tuck chin toward chest, hold for 2-3 seconds, release. Focus on elongating the back of your neck.
     imageResId: null
 
-  - id: rest_2
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: shoulder_blade_squeezes
     name: Shoulder Blade Squeezes
     duration: 60
@@ -37,15 +23,8 @@ exercises:
     instructions: Sit or stand tall, squeeze shoulder blades together as if holding a pencil between them, hold for 2-3 seconds, release.
     imageResId: null
 
-  - id: rest_3
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: chest_opener_1
-    name: Chest Opener (Set 1)
+    name: Chest Opener
     duration: 45
     type: WORK
     instructions: Stand tall, clasp hands behind back, lift chest and gently pull shoulders back. Feel the stretch across your chest.
@@ -65,25 +44,11 @@ exercises:
     instructions: On hands and knees, alternate between arching back (cow) and rounding back (cat). Synchronize with your breath.
     imageResId: null
 
-  - id: rest_5
-    name: Rest
-    duration: 5
-    type: REST
-    instructions: Take a short break
-    imageResId: null
-
   - id: bird_dog_right
     name: Bird Dog (Right)
     duration: 45
     type: WORK
     instructions: On hands and knees, extend right arm forward and left leg back, maintaining a stable core and level hips.
-    imageResId: null
-
-  - id: switch_sides_1
-    name: Switch Sides
-    duration: 5
-    type: TRANSITION
-    instructions: Prepare to switch to the left side.
     imageResId: null
 
   - id: bird_dog_left
@@ -177,13 +142,6 @@ exercises:
     instructions: Stand on your right leg, lift your left knee towards your chest, and maintain balance and good posture. Engage your core.
     imageResId: null
 
-  - id: switch_sides_2
-    name: Switch Sides
-    duration: 5
-    type: TRANSITION
-    instructions: Prepare to switch to the left side.
-    imageResId: null
-
   - id: standing_balance_left
     name: Standing Balance (Left)
     duration: 30
@@ -199,7 +157,7 @@ exercises:
     imageResId: null
 
   - id: wall_angels_2
-    name: Wall Angels (Set 2)
+    name: Wall Angels
     duration: 45
     type: WORK
     instructions: Stand with back against wall, feet shoulder-width apart. Slide arms up and down wall while maintaining contact. Focus on keeping lower back pressed against the wall.
@@ -213,7 +171,7 @@ exercises:
     imageResId: null
 
   - id: chest_opener_2
-    name: Chest Opener (Set 2)
+    name: Chest Opener
     duration: 45
     type: WORK
     instructions: Stand tall, clasp hands behind back, lift chest and gently pull shoulders back. Feel the stretch across your chest.
