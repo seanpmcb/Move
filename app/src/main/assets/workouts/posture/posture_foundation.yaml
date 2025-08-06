@@ -80,10 +80,10 @@ exercises:
     imageResId: null
 
   - id: plank_forearm
-    name: Forearm Plank
+    name: Elbow Plank
     duration: 60
     type: WORK
-    instructions: Hold a forearm plank position, keeping your body in a straight line from head to heels. Engage your core and glutes.
+    instructions: Hold an elbow plank position, keeping your body in a straight line from head to heels. Engage your core and glutes.
     imageResId: null
 
   - id: rest_8
@@ -102,7 +102,7 @@ exercises:
 
   - id: rest_9
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null
@@ -116,7 +116,7 @@ exercises:
 
   - id: rest_10
     name: Rest
-    duration: 5
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: null

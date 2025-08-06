@@ -1,0 +1,83 @@
+id: hand_arthritis_workout_1
+name: Hand Arthritis Daily Workout
+description: A gentle daily workout to maintain mobility and reduce pain in hands with arthritis. This workout should be done slowly and carefully. Stop if you feel any sharp pain.
+exercises:
+  - id: hand_squeeze_warmup
+    name: Hand Squeeze
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Gently squeeze a soft ball or a rolled-up sock in your palm. Hold for 3-5 seconds and release."
+    imageResId: null
+  
+  - id: finger_bends
+    name: Finger Bends
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Slowly bend each finger one at a time, bringing the tip towards the palm, then gently straighten it back out."
+    imageResId: null
+    
+  - id: wrist_circles
+    name: Wrist Circles
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Make a fist and gently rotate your wrists in slow circles, 10 times clockwise and 10 times counter-clockwise."
+    imageResId: null
+
+  - id: finger_spreads
+    name: Finger Spreads
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Place your hand flat on a table and slowly spread your fingers apart as wide as you can without pain. Hold for a few seconds, then bring them back together."
+    imageResId: null
+    
+  - id: thumb_touch
+    name: Thumb Touch
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Touch your thumb to the tip of each finger, one by one."
+    imageResId: null
+
+  - id: grip_strengthening
+    name: Grip Strengthening
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Squeeze a soft ball or rolled-up towel with your entire hand. Hold for 3-5 seconds and release."
+    imageResId: null
+
+  - id: pinch_strengthening
+    name: Pinch Strengthening
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Pinch a soft object between your thumb and each of your fingers. Hold for a few seconds and release."
+    imageResId: null
+
+  - id: wrist_stretch_extensor
+    name: Wrist Stretch (Extensor)
+    type: WORK
+    measurementType: REPS
+    repetitions: 2
+    instructions: "Extend arm with palm down. Gently pull fingers and palm towards your body with the other hand. Hold for 15-30 seconds. Repeat twice per arm."
+    imageResId: null
+    
+  - id: wrist_stretch_flexor
+    name: Wrist Stretch (Flexor)
+    type: WORK
+    measurementType: REPS
+    repetitions: 2
+    instructions: "Extend arm with fingers pointing down. Gently pull fingers and palm towards your body with the other hand. Hold for 15-30 seconds. Repeat twice per arm."
+    imageResId: null
+  
+  - id: finger_stretch
+    name: Finger Stretch
+    type: WORK
+    measurementType: REPS
+    repetitions: 10
+    instructions: "Place your palm flat on a table. Gently lift each finger one at a time, holding for a few seconds before lowering it."
+    imageResId: null

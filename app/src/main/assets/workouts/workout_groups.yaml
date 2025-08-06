@@ -116,3 +116,11 @@ groups:
         name: Posture Foundation
         description: A 12-minute comprehensive workout to build postural strength and improve alignment
         file: posture/posture_foundation.yaml
+
+  - id: prevention_group
+    name: Prevention
+    workouts:
+      - id: hand_arthritis
+        name: Hand Arthritis
+        description: A gentle daily workout to maintain mobility and reduce pain in hands with arthritis
+        file: prevention/hand_arthritis.yaml
