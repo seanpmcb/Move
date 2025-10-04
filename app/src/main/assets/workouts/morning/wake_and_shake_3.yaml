@@ -60,14 +60,14 @@ exercises:
 
   - id: neck_roll_1
     name: Neck Roll
-    duration: 15
+    duration: 20
     type: WORK
     instructions: Gently roll your neck in a circular motion.
     imageResId: null
 
   - id: neck_roll_2
     name: Change Direction
-    duration: 15
+    duration: 20
     type: WORK
     instructions: Change the direction of your neck roll.
     imageResId: null
@@ -165,7 +165,7 @@ exercises:
 
   - id: standing_hip_openers
     name: Standing Hip Openers
-    duration: 30
+    duration: 45
     type: WORK
     instructions: Open your hips while standing, alternating legs.
     imageResId: null

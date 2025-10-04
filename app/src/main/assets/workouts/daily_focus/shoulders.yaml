@@ -200,7 +200,14 @@ exercises:
 
   - id: lying_shoulder_opener
     name: Lying Shoulder Opener
-    duration: 60
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach with one arm extended. Roll over to stretch the shoulder
+    imageResId: null
+
+  - id: lying_shoulder_opener
+    name: Rotate Arm
+    duration: 30
     type: WORK
     instructions: Lie on stomach with one arm extended. Roll over to stretch the shoulder
     imageResId: null
@@ -214,7 +221,14 @@ exercises:
 
   - id: lying_shoulder_opener
     name: Lying Shoulder Opener
-    duration: 60
+    duration: 30
+    type: WORK
+    instructions: Lie on stomach with one arm extended. Roll over to stretch the shoulder
+    imageResId: null
+
+  - id: lying_shoulder_opener
+    name: Rotate Arm
+    duration: 30
     type: WORK
     instructions: Lie on stomach with one arm extended. Roll over to stretch the shoulder
     imageResId: null

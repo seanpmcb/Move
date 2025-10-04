@@ -165,7 +165,7 @@ exercises:
 
   - id: rest_10
     name: Rest
-    duration: 10
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: pigeon
@@ -193,7 +193,7 @@ exercises:
 
   - id: rest_11
     name: Rest
-    duration: 10
+    duration: 7
     type: REST
     instructions: Take a short break
     imageResId: seated_twist
@@ -277,7 +277,7 @@ exercises:
 
   - id: switch_sides_6
     name: Switch Sides
-    duration: 5
+    duration: 7
     type: TRANSITION
     instructions: Switch to other side
     imageResId: lying_hamstring_pull

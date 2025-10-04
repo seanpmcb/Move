@@ -6,7 +6,7 @@ exercises:
     name: Reverse Runner's Lunge
     duration: 60
     type: WORK
-    instructions: Step back with one leg, lower into lunge position
+    instructions: Kneel with one leg forward, rock hips back to stretch the hamstring of the front leg
     imageResId: null
 
   - id: switch_sides_1
@@ -20,7 +20,7 @@ exercises:
     name: Reverse Runner's Lunge
     duration: 60
     type: WORK
-    instructions: Step back with the other leg, lower into lunge position
+    instructions: Kneel with the other leg forward, rock hips back to stretch the hamstring of the front leg
     imageResId: null
 
   - id: rest_1
