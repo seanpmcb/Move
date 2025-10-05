@@ -59,12 +59,12 @@ groups:
     name: Flexibility
     workouts:
       - id: full_body_15
-        name: Full Body 15
+        name: Full Body Short
         description: A comprehensive full body flexibility workout
         file: flexibility/full_body_15.yaml
 
       - id: full_body_30
-        name: Full Body 30
+        name: Full Body Medium
         description: A longer full body flexibility workout
         file: flexibility/full_body_30.yaml
 
@@ -74,8 +74,8 @@ groups:
         file: flexibility/ten_minute_relax.yaml
 
       - id: twenty_minute_relax
-        name: 20 Minute Relax
-        description: A 20-minute relaxation workout focusing on major muscle groups 
+        name: 21 Minute Relax
+        description: A 21-minute relaxation workout focusing on major muscle groups 
         file: flexibility/twenty_minute_relax.yaml
 
   - id: core_group
@@ -109,12 +109,12 @@ groups:
     workouts:
       - id: quick_posture
         name: Quick Posture
-        description: A 5-minute workout to improve posture and strengthen postural muscles
+        description: A short workout to improve posture and strengthen postural muscles
         file: posture/quick_posture.yaml
 
       - id: posture_foundation
         name: Posture Foundation
-        description: A 12-minute comprehensive workout to build postural strength and improve alignment
+        description: A comprehensive workout to build postural strength and improve alignment
         file: posture/posture_foundation.yaml
 
   - id: prevention_group
@@ -124,3 +124,26 @@ groups:
         name: Hand Arthritis
         description: A gentle daily workout to maintain mobility and reduce pain in hands with arthritis
         file: prevention/hand_arthritis.yaml
+
+  - id: recovery_group
+    name: Recovery
+    workouts:
+      - id: short_post_run_stretch
+        name: Short Post-Run Cool-Down
+        description: A static stretching routine for major muscle groups used in running
+        file: core/post_workout/short_post_run.yaml
+
+      - id: medium_post_run_stretch
+        name: Medium Post-Run Deep Stretch
+        description: An extended static routine focusing on deep hip, hamstring, and calf recovery after a long or intense run
+        file: core/post_workout/medium_post_run.yaml
+
+      - id: short_post_ride_stretch
+        name: Short Post-Ride Cool-Down
+        description: A quick static stretching routine targeting muscles used in cycling
+        file: core/post_workout/short_post_ride.yaml
+
+      - id: medium_post_ride_stretch
+        name: Medium Post-Ride Deep Stretch
+        description: A 12-15 minute static routine focused on releasing deep hip, gluteal, and back tension common after cycling
+        file: core/post_workout/medium_post_ride.yaml

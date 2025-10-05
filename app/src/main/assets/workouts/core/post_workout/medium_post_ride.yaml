@@ -1,0 +1,198 @@
+id: medium_post_ride_stretch
+name: Medium Post-Ride Deep Stretch
+description: A 12-15 minute static routine focused on releasing the deep hip, gluteal, and back tension common after cycling.
+exercises:
+  # 1. Kneeling Hip Flexor Stretch (Right Leg Back)
+  - id: kneeling_hip_flexor_r
+    name: Kneeling Hip Flexor (R Back)
+    duration: 45
+    type: WORK
+    instructions: Right knee down, left foot forward (90 degrees). Gently tuck pelvis under, press hips forward. Raise right arm overhead for a deeper stretch.
+    imageResId: null
+
+  - id: transition_1
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Carefully switch sides.
+    imageResId: null
+
+  # 1. Kneeling Hip Flexor Stretch (Left Leg Back)
+  - id: kneeling_hip_flexor_l
+    name: Kneeling Hip Flexor (L Back)
+    duration: 45
+    type: WORK
+    instructions: Left knee down, right foot forward (90 degrees). Gently tuck pelvis under, press hips forward. Raise left arm overhead for a deeper stretch.
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move to the floor for Pigeon Pose.
+    imageResId: null
+
+  # 2. Pigeon Pose (Deep Glute & Hip)
+  - id: pigeon_pose_r
+    name: Pigeon Pose (R Glute)
+    duration: 45
+    type: WORK
+    instructions: Bring right knee forward, right foot angled towards the left hand. Extend left leg straight back. Hold chest upright or fold forward over the knee.
+    imageResId: null
+
+  - id: transition_2
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Slowly transition to the opposite side.
+    imageResId: null
+
+  # 2. Pigeon Pose (Deep Glute & Hip)
+  - id: pigeon_pose_l
+    name: Pigeon Pose (L Glute)
+    duration: 45
+    type: WORK
+    instructions: Bring left knee forward, left foot angled towards the right hand. Extend right leg straight back. Hold chest upright or fold forward over the knee.
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Sit up for the hamstring stretch.
+    imageResId: null
+
+  # 3. Seated Single-Leg Hamstring Stretch (Right)
+  - id: seated_hamstring_r
+    name: Seated Hamstring (R)
+    duration: 45
+    type: WORK
+    instructions: Sit with right leg straight, left knee bent. Hinge forward from hips toward the right foot, keeping your back flat.
+    imageResId: null
+
+  - id: transition_3
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs.
+    imageResId: null
+
+  # 3. Seated Single-Leg Hamstring Stretch (Left)
+  - id: seated_hamstring_l
+    name: Seated Hamstring (L)
+    duration: 45
+    type: WORK
+    instructions: Sit with left leg straight, right knee bent. Hinge forward from hips toward the left foot, keeping your back flat.
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move to standing for the quad stretch.
+    imageResId: null
+
+  # 4. Standing Quad Stretch (Right)
+  - id: standing_quad_stretch_r
+    name: Standing Quad Stretch (R)
+    duration: 45
+    type: WORK
+    instructions: Stand, grab right foot/ankle, and gently pull toward buttock. Keep knees together and tuck hips slightly.
+    imageResId: null
+
+  - id: transition_4
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 4. Standing Quad Stretch (Left)
+  - id: standing_quad_stretch_l
+    name: Standing Quad Stretch (L)
+    duration: 45
+    type: WORK
+    instructions: Stand, grab left foot/ankle, and gently pull toward buttock. Keep knees together and tuck hips slightly.
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Sit down for the Adductor stretch.
+    imageResId: null
+
+  # 5. Seated Adductor Stretch (Butterfly)
+  - id: seated_adductor
+    name: Seated Adductor Stretch
+    duration: 45
+    type: WORK
+    instructions: Sit with the soles of your feet together, knees dropped out to the sides. Sit tall and gently hinge forward if comfortable.
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Lie on your back for the spinal twist.
+    imageResId: null
+
+  # 6. Supine Spinal Twist (Right)
+  - id: supine_twist_r
+    name: Supine Spinal Twist (R)
+    duration: 45
+    type: WORK
+    instructions: Lie on back. Pull right knee to chest, then gently drop it across the body to the left. Keep right shoulder pressed to the floor. Look right.
+    imageResId: null
+
+  - id: transition_6
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Bring knee back to center and switch sides.
+    imageResId: null
+
+  # 6. Supine Spinal Twist (Left)
+  - id: supine_twist_l
+    name: Supine Spinal Twist (L)
+    duration: 45
+    type: WORK
+    instructions: Lie on back. Pull left knee to chest, then gently drop it across the body to the right. Keep left shoulder pressed to the floor. Look left.
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Transition to the wall/curb for the calf stretch.
+    imageResId: null
+
+  # 7. Wall Soleus/Achilles Stretch (Bent Knee)
+  - id: wall_soleus_r
+    name: Wall Soleus Stretch (R)
+    duration: 45
+    type: WORK
+    instructions: Face wall, right foot back. Keep heel down and **bend the knee** to focus on the lower calf (Soleus) and Achilles tendon.
+    imageResId: null
+
+  - id: transition_7
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs.
+    imageResId: null
+
+  # 7. Wall Soleus/Achilles Stretch (Bent Knee)
+  - id: wall_soleus_l
+    name: Wall Soleus Stretch (L)
+    duration: 45
+    type: WORK
+    instructions: Face wall, left foot back. Keep heel down and **bend the knee** to focus on the lower calf (Soleus) and Achilles tendon.
+    imageResId: null
+
+  - id: rest_7
+    name: Final Cool Down
+    duration: 30
+    type: REST
+    instructions: Routine complete. Take a few deep breaths and relax.
+    imageResId: null

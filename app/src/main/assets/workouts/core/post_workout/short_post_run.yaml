@@ -1,0 +1,206 @@
+id: post_run_stretch
+name: Post-Run Cool-Down
+description: A static stretching routine for major muscle groups used in running (Quads, Hip Flexors, Glutes, IT Band, Hamstrings, Calves).
+exercises:
+  # 1. Standing Quad Stretch (Right)
+  - id: quad_stretch_r
+    name: Standing Quad Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Stand, grab right foot/ankle, and gently pull toward buttock. Keep knees together and hips slightly tucked.
+    imageResId: null
+
+  - id: transition_1
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 1. Standing Quad Stretch (Left)
+  - id: quad_stretch_l
+    name: Standing Quad Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Stand, grab left foot/ankle, and gently pull toward buttock. Keep knees together and hips slightly tucked.
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break.
+    imageResId: null
+
+  # 2. Standing Hip Flexor Stretch (Right Leg Back)
+  - id: hip_flexor_stretch_r
+    name: Standing Hip Flexor Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Take a step forward, keeping the right (back) leg straight. Tuck pelvis under (posterior tilt) and shift weight forward until you feel a stretch in the front of the right hip.
+    imageResId: null
+
+  - id: transition_2
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 2. Standing Hip Flexor Stretch (Left Leg Back)
+  - id: hip_flexor_stretch_l
+    name: Standing Hip Flexor Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Take a step forward, keeping the left (back) leg straight. Tuck pelvis under (posterior tilt) and shift weight forward until you feel a stretch in the front of the left hip.
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move to the floor for glute/IT band stretches.
+    imageResId: null
+
+  # 3. Figure-Four Stretch (Right Ankle Over Left Knee)
+  - id: figure_four_stretch_r
+    name: Figure-Four Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Lie on your back. Cross right ankle over left knee. Pull left knee gently toward chest. Feel the stretch in the right glute.
+    imageResId: null
+
+  - id: transition_3
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 3. Figure-Four Stretch (Left Ankle Over Right Knee)
+  - id: figure_four_stretch_l
+    name: Figure-Four Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Lie on your back. Cross left ankle over right knee. Pull right knee gently toward chest. Feel the stretch in the left glute.
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Transition to standing for the IT band stretch.
+    imageResId: null
+
+  # 4. Standing Cross-Legged Stretch (TFL/IT Band Focus) (Right)
+  - id: itband_stretch_r
+    name: IT Band Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Cross your right foot behind your left. Lean your upper body to the left side and push your right hip out. Reach your right arm overhead.
+    imageResId: null
+
+  - id: transition_4
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 4. Standing Cross-Legged Stretch (TFL/IT Band Focus) (Left)
+  - id: itband_stretch_l
+    name: IT Band Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Cross your left foot behind your right. Lean your upper body to the right side and push your left hip out. Reach your left arm overhead.
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Transition to Hamstring stretch.
+    imageResId: null
+
+  # 5. Standing Hamstring Stretch (Right)
+  - id: hamstring_stretch_r
+    name: Standing Hamstring Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Place right heel on a low surface. Hinge at hips, keeping back straight, until you feel a pull along the back of the thigh.
+    imageResId: null
+
+  - id: transition_5
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 5. Standing Hamstring Stretch (Left)
+  - id: hamstring_stretch_l
+    name: Standing Hamstring Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Place left heel on a low surface. Hinge at hips, keeping back straight, until you feel a pull along the back of the thigh.
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Transition to Calf stretch.
+    imageResId: null
+
+  # 6. Wall Calf Stretch (Right - Knee Straight for Gastrocnemius)
+  - id: calf_stretch_gastro_r
+    name: Wall Calf Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Stand facing a wall. Place the ball of your right foot against the wall (heel down). Lean forward, keeping the knee straight.
+    imageResId: null
+
+  - id: transition_6
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 6. Wall Calf Stretch (Left - Knee Straight for Gastrocnemius)
+  - id: calf_stretch_gastro_l
+    name: Wall Calf Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Stand facing a wall. Place the ball of your left foot against the wall (heel down). Lean forward, keeping the knee straight.
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Transition to the lower calf stretch (Soleus).
+    imageResId: null
+
+  # 7. Wall Soleus Stretch (Right - Knee Bent for Soleus)
+  - id: calf_stretch_soleus_r
+    name: Wall Soleus Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Stand facing a wall, heel down. Bend your right knee slightly and lean forward. Feel the stretch lower in the calf.
+    imageResId: null
+
+  - id: transition_7
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 7. Wall Soleus Stretch (Left - Knee Bent for Soleus)
+  - id: calf_stretch_soleus_l
+    name: Wall Soleus Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Stand facing a wall, heel down. Bend your left knee slightly and lean forward. Feel the stretch lower in the calf.
+    imageResId: null

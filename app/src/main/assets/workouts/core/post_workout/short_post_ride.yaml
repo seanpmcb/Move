@@ -1,0 +1,153 @@
+id: short_post_ride_stretch
+name: Short Post-Ride Cool-Down
+description: A quick static stretching routine (approx. 7 minutes) targeting muscles used in cycling (Hip Flexors, Quads, Glutes, Hamstrings, Calves).
+exercises:
+  # 1. Kneeling Hip Flexor Stretch (Right Leg Back)
+  - id: kneeling_hip_flexor_r
+    name: Kneeling Hip Flexor (R Back)
+    duration: 30
+    type: WORK
+    instructions: Right knee down, left foot forward (90 degrees). Gently tuck pelvis under and shift hips forward. Feel stretch in the front of the right hip/thigh.
+    imageResId: null
+
+  - id: transition_1
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Carefully switch sides.
+    imageResId: null
+
+  # 1. Kneeling Hip Flexor Stretch (Left Leg Back)
+  - id: kneeling_hip_flexor_l
+    name: Kneeling Hip Flexor (L Back)
+    duration: 30
+    type: WORK
+    instructions: Left knee down, right foot forward (90 degrees). Gently tuck pelvis under and shift hips forward. Feel stretch in the front of the left hip/thigh.
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move to standing for the quad stretch.
+    imageResId: null
+
+  # 2. Standing Quad Stretch (Right)
+  - id: quad_stretch_r
+    name: Standing Quad Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Stand, grab right foot/ankle, and gently pull toward buttock. Keep knees together and hips slightly tucked.
+    imageResId: null
+
+  - id: transition_2
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Prepare for the opposite leg.
+    imageResId: null
+
+  # 2. Standing Quad Stretch (Left)
+  - id: quad_stretch_l
+    name: Standing Quad Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Stand, grab left foot/ankle, and gently pull toward buttock. Keep knees together and hips slightly tucked.
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move to the floor for glute stretch.
+    imageResId: null
+
+  # 3. Figure-Four Stretch (Right Ankle Over Left Knee)
+  - id: figure_four_stretch_r
+    name: Figure-Four Stretch (R Glute)
+    duration: 30
+    type: WORK
+    instructions: Lie on your back. Cross right ankle over left knee. Reach hands through and pull left knee gently toward chest.
+    imageResId: null
+
+  - id: transition_3
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Slowly switch sides.
+    imageResId: null
+
+  # 3. Figure-Four Stretch (Left Ankle Over Right Knee)
+  - id: figure_four_stretch_l
+    name: Figure-Four Stretch (L Glute)
+    duration: 30
+    type: WORK
+    instructions: Lie on your back. Cross left ankle over right knee. Reach hands through and pull right knee gently toward chest.
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Sit up for the hamstring stretch.
+    imageResId: null
+
+  # 4. Seated Single-Leg Hamstring Stretch (Right)
+  - id: seated_hamstring_r
+    name: Seated Hamstring (R)
+    duration: 30
+    type: WORK
+    instructions: Sit with right leg straight, left knee bent (sole against right inner thigh). Hinge forward from hips toward the right foot.
+    imageResId: null
+
+  - id: transition_4
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs.
+    imageResId: null
+
+  # 4. Seated Single-Leg Hamstring Stretch (Left)
+  - id: seated_hamstring_l
+    name: Seated Hamstring (L)
+    duration: 30
+    type: WORK
+    instructions: Sit with left leg straight, right knee bent (sole against left inner thigh). Hinge forward from hips toward the left foot.
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move to a wall or curb for calf stretch.
+    imageResId: null
+
+  # 5. Wall Soleus/Achilles Stretch (Bent Knee)
+  - id: wall_soleus_r
+    name: Wall Soleus Stretch (R)
+    duration: 30
+    type: WORK
+    instructions: Face wall, right foot back. Keep heel down and **bend the knee** to focus on the lower calf (Soleus) and Achilles tendon.
+    imageResId: null
+
+  - id: transition_5
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs.
+    imageResId: null
+
+  # 5. Wall Soleus/Achilles Stretch (Bent Knee)
+  - id: wall_soleus_l
+    name: Wall Soleus Stretch (L)
+    duration: 30
+    type: WORK
+    instructions: Face wall, left foot back. Keep heel down and **bend the knee** to focus on the lower calf (Soleus) and Achilles tendon.
+    imageResId: null
+
+  - id: rest_5
+    name: Final Cool Down
+    duration: 10
+    type: REST
+    instructions: Routine complete. Take a few deep breaths.
+    imageResId: null

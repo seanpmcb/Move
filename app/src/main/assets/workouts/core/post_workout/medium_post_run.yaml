@@ -1,0 +1,222 @@
+id: medium_post_run_stretch
+name: Medium Post-Run Deep Stretch
+description: An extended static routine (approx. 18 minutes) focusing on deep hip, hamstring, and calf recovery after a long or intense run.
+exercises:
+  # 1. Kneeling Quad Stretch
+  - id: kneeling_quad_stretch_r
+    name: Kneeling Quad Stretch (R)
+    duration: 45
+    type: WORK
+    instructions: Kneel on left knee, right foot flat in front. Reach back and pull right heel towards glute. Tuck pelvis slightly.
+    imageResId: null
+
+  - id: transition_1
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Carefully switch sides.
+    imageResId: null
+
+  - id: kneeling_quad_stretch_l
+    name: Kneeling Quad Stretch (L)
+    duration: 45
+    type: WORK
+    instructions: Kneel on right knee, left foot flat in front. Reach back and pull left heel towards glute. Tuck pelvis slightly.
+    imageResId: null
+
+  - id: rest_1
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Take a short break.
+    imageResId: null
+
+  # 2. Kneeling Hip Flexor Stretch (with Psoas variation)
+  - id: kneeling_hip_flexor_r
+    name: Kneeling Hip Flexor (R Back)
+    duration: 45
+    type: WORK
+    instructions: Right knee at 90 degrees, left knee down. Tuck pelvis, press hips forward. Raise left arm overhead and lean gently to the right.
+    imageResId: null
+
+  - id: transition_2
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Carefully switch sides.
+    imageResId: null
+
+  - id: kneeling_hip_flexor_l
+    name: Kneeling Hip Flexor (L Back)
+    duration: 45
+    type: WORK
+    instructions: Left knee at 90 degrees, right knee down. Tuck pelvis, press hips forward. Raise right arm overhead and lean gently to the left.
+    imageResId: null
+
+  - id: rest_2
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move into Pigeon Pose position.
+    imageResId: null
+
+  # 3. Pigeon Pose (Deep Hip & Glute)
+  - id: pigeon_pose_r
+    name: Pigeon Pose (R)
+    duration: 60
+    type: WORK
+    instructions: Bring right knee forward, right foot towards left hand (angle depending on comfort). Extend left leg straight back. Hold chest upright or fold forward over the knee.
+    imageResId: null
+
+  - id: transition_3
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Slowly transition to the opposite side.
+    imageResId: null
+
+  - id: pigeon_pose_l
+    name: Pigeon Pose (L)
+    duration: 60
+    type: WORK
+    instructions: Bring left knee forward, left foot towards right hand. Extend right leg straight back. Hold chest upright or fold forward over the knee.
+    imageResId: null
+
+  - id: rest_3
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Transition onto your back for the spinal twist.
+    imageResId: null
+
+  # 4. Supine Spinal Twist (IT Band Focus)
+  - id: spinal_twist_r
+    name: Supine Spinal Twist (R)
+    duration: 45
+    type: WORK
+    instructions: Lie on back. Pull right knee to chest, then gently drop it across the body to the left. Keep right shoulder pressed to the floor. Look right.
+    imageResId: null
+
+  - id: transition_4
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Bring knee back to center and switch sides.
+    imageResId: null
+
+  - id: spinal_twist_l
+    name: Supine Spinal Twist (L)
+    duration: 45
+    type: WORK
+    instructions: Lie on back. Pull left knee to chest, then gently drop it across the body to the right. Keep left shoulder pressed to the floor. Look left.
+    imageResId: null
+
+  - id: rest_4
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Sit up for the hamstring stretch.
+    imageResId: null
+
+  # 5. Seated Hamstring Stretch (Two-Legged)
+  - id: seated_hamstring
+    name: Seated Hamstring Stretch
+    duration: 45
+    type: WORK
+    instructions: Sit with both legs extended straight. Hinge from hips (keep back flat) and reach towards your toes or ankles. Flex feet slightly.
+    imageResId: null
+
+  - id: rest_5
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Prepare for the Adductor stretch.
+    imageResId: null
+
+  # 6. Seated Adductor Stretch (Butterfly/Bound Angle)
+  - id: seated_adductor
+    name: Seated Adductor Stretch
+    duration: 60
+    type: WORK
+    instructions: Sit with the soles of your feet together, knees dropped out to the sides. Sit tall, and optionally, gently hinge forward from the hips.
+    imageResId: null
+
+  - id: rest_6
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Move to hands and knees position.
+    imageResId: null
+
+  # 7. Downward Dog with Calf Pedal
+  - id: down_dog_pedal
+    name: Down Dog Calf Pedal
+    duration: 60
+    type: WORK
+    instructions: From hands and knees, lift hips high into an inverted 'V'. Alternate bending one knee and pressing the opposite heel into the floor (pedaling action).
+    imageResId: null
+
+  - id: rest_7
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Transition to a wall or stable object.
+    imageResId: null
+
+  # 8. Wall Calf Stretch (Gastrocnemius - Straight Knee)
+  - id: wall_calf_gastro_r
+    name: Wall Calf Stretch (R, Straight)
+    duration: 45
+    type: WORK
+    instructions: Place ball of right foot on wall/step, heel on ground. Keep right knee **straight** and lean forward to stretch the upper calf.
+    imageResId: null
+
+  - id: transition_8
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs.
+    imageResId: null
+
+  - id: wall_calf_gastro_l
+    name: Wall Calf Stretch (L, Straight)
+    duration: 45
+    type: WORK
+    instructions: Place ball of left foot on wall/step, heel on ground. Keep left knee **straight** and lean forward to stretch the upper calf.
+    imageResId: null
+
+  - id: rest_8
+    name: Rest
+    duration: 5
+    type: REST
+    instructions: Prepare for the Soleus stretch on the same side.
+    imageResId: null
+
+  # 9. Wall Soleus Stretch (Bent Knee)
+  - id: wall_calf_soleus_r
+    name: Wall Soleus Stretch (R, Bent)
+    duration: 45
+    type: WORK
+    instructions: Keep foot position. Bend the right knee **slightly** while keeping the heel down, leaning into the wall to stretch the lower calf.
+    imageResId: null
+
+  - id: transition_9
+    name: Transition/Switch Sides
+    duration: 5
+    type: TRANSITION
+    instructions: Switch legs.
+    imageResId: null
+
+  - id: wall_calf_soleus_l
+    name: Wall Soleus Stretch (L, Bent)
+    duration: 45
+    type: WORK
+    instructions: Keep foot position. Bend the left knee **slightly** while keeping the heel down, leaning into the wall to stretch the lower calf.
+    imageResId: null
+
+  - id: rest_9
+    name: Final Rest/Cool Down
+    duration: 30
+    type: REST
+    instructions: Final cool-down and breathing.
+    imageResId: null
